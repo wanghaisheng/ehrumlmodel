@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>血型章节 Nom - conformance rules</title>
+<shortdesc id="shortdesc">[Section: templateId <tt>Section_template_Root_OID.1.1</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Section</category></metadata>
+<resourceid id="Section_template_Root_OID.1.1"/>
+</prolog>
+<body>
+<section id="description">
+<p>包含计算机可理解的ABO血型 RH血型编码信息</p>
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>code</b></tt> (CONF-0008)<tt><b>/@code</b>="882-1" </tt><i>ABO+RH血型代码</i> (CodeSystem:<tt> 2.16.840.1.113883.6.1 LOINC</tt>)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>text</b></tt> (CONF-0010)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>title</b></tt> = "血型" (CONF-0009)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>entry</b></tt>
+<ol>
+<li>Contains exactly one [1..1] <xref href="../ABO血型观察条目.dita">AB O血型观察条目</xref> (templateId: <tt>Entry_template_Root_OID.1</tt>)</li></ol></li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>entry</b></tt>
+<ol>
+<li>Contains exactly one [1..1] <xref href="../RH血型观察条目.dita">R H血型观察条目</xref> (templateId: <tt>Entry_template_Root_OID.1</tt>)</li></ol></li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>code</b></tt> (CONF-0008)<tt><b>/@code</b>="882-1" </tt><i>ABO+RH血型代码</i> (CodeSystem:<tt> 2.16.840.1.113883.6.1 LOINC</tt>)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>title</b></tt> = "血型" (CONF-0009)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>text</b></tt> (CONF-0010)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>entry</b></tt>
+<ol>
+<li>Contains exactly one [1..1] <xref href="../ABO血型观察条目.dita">AB O血型观察条目</xref> (templateId: <tt>Entry_template_Root_OID.1</tt>)</li></ol></li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>entry</b></tt>
+<ol>
+<li>Contains exactly one [1..1] <xref href="../RH血型观察条目.dita">R H血型观察条目</xref> (templateId: <tt>Entry_template_Root_OID.1</tt>)</li></ol></li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <templateId root="Section_template_Root_OID.1.1"/>
+  <id root="1889904088"/>
+  <code code="882-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ABO+RH血型代码"/>
+  <title>血型</title>
+  <text/>
+</section>]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">血型章节 Nom</ph></p>
+<p id="shortdesc">[Section: templateId <tt>Section_template_Root_OID.1.1</tt>]</p>
+</body>
+</topic>

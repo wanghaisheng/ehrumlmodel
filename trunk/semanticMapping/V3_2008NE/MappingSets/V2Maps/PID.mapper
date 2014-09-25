@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/V3_2008NE/ClassModel/PRPA_MT101301UV02.ecore" structureType="V2" structureURL="platform:/resource/V3_2008NE/Structures/V2Structures/ADT_A28Def.xml" topElementType="PID_Type">
+  <rootElement name="PID" type="PID_Type" description="patient identification segment" minMultiplicity="1" expanded="true">
+    <nodeMappingSet>
+      <objectMappings mappedClass="IdentifiedPerson" mappedPackage="PRPA_MT101301UV02">
+        <fixedPropertyValues mappedProperty="classCode" fixedValue="IDENT" valueType="string"/>
+      </objectMappings>
+      <objectMappings mappedClass="Person" mappedPackage="PRPA_MT101301UV02">
+        <fixedPropertyValues mappedProperty="classCode" fixedValue="PSN" valueType="string"/>
+        <fixedPropertyValues mappedProperty="determinerCode" fixedValue="INSTANCE" valueType="string"/>
+      </objectMappings>
+      <associationMappings>
+        <mappedEnd1 mappedClass="IdentifiedPerson" mappedPackage="PRPA_MT101301UV02" mappedRole=""/>
+        <mappedEnd2 mappedClass="Person" mappedPackage="PRPA_MT101301UV02" mappedRole="identifiedPerson" requiredForObject="true"/>
+      </associationMappings>
+    </nodeMappingSet>
+    <annotations>
+      <notes key="V2NodeType" value="Segment"/>
+    </annotations>
+    <childElements name="PID.1" type="SI" description="Set ID - PID" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="4"/>
+        <notes key="V2DataType" value="SI"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.2" type="CX" description="Patient ID" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="36"/>
+        <notes key="V2DataType" value="CX"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.3" type="CX" description="Patient Identifier List" minMultiplicity="1" expanded="true" maxMultiplicity="-1">
+      <nodeMappingSet>
+        <objectMappings mappedClass="II" mappedPackage="datatypes">
+          <mappingConditions xsi:type="com.charteris.mapper:ValueCondition" leftPath="." leftFunction="position(PID.3)" rightValue="1"/>
+        </objectMappings>
+        <associationMappings>
+          <mappedEnd1 mappedClass="IdentifiedPerson" mappedPackage="PRPA_MT101301UV02" mappedRole=""/>
+          <mappedEnd2 mappedClass="II" mappedPackage="datatypes" mappedRole="id" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="36"/>
+        <notes key="V2DataType" value="CX"/>
+      </annotations>
+      <childElements name="CX.1" type="ST" description="ID" expanded="true">
+        <nodeMappingSet>
+          <propertyMappings mappedClass="II" mappedPackage="datatypes" mappedProperty="extension"/>
+        </nodeMappingSet>
+        <annotations>
+          <notes key="V2NodeType" value="Component"/>
+          <notes key="Length" value="3"/>
+          <notes key="V2DataType" value="ST"/>
+        </annotations>
+      </childElements>
+      <childElements name="CX.2" type="ST" description="check digit" expanded="true">
+        <annotations>
+          <notes key="V2NodeType" value="Component"/>
+          <notes key="V2DataType" value="ST"/>
+        </annotations>
+      </childElements>
+      <childElements name="CX.3" type="ID" description="code identifying the check digit scheme employed" expanded="true">
+        <annotations>
+          <notes key="V2NodeType" value="Component"/>
+          <notes key="Length" value="3"/>
+          <notes key="V2DataType" value="ID"/>
+        </annotations>
+      </childElements>
+      <childElements name="CX.4" type="HD" description="assigning authority" expanded="true">
+        <annotations>
+          <notes key="V2NodeType" value="Component"/>
+          <notes key="Length" value="11"/>
+          <notes key="V2DataType" value="HD"/>
+        </annotations>
+        <childElements name="HD.1" type="IS" description="namespace ID" expanded="true">
+          <annotations>
+            <notes key="V2NodeType" value="SubComponent"/>
+            <notes key="Table" value="0300"/>
+            <notes key="Length" value="3"/>
+            <notes key="V2DataType" value="IS"/>
+          </annotations>
+        </childElements>
+        <childElements name="HD.2" type="ST" description="universal ID" expanded="true">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="II" mappedPackage="datatypes" mappedProperty="root"/>
+          </nodeMappingSet>
+          <annotations>
+            <notes key="V2NodeType" value="SubComponent"/>
+            <notes key="Length" value="3"/>
+            <notes key="V2DataType" value="ST"/>
+          </annotations>
+        </childElements>
+        <childElements name="HD.3" type="ID" description="universal ID type" expanded="true">
+          <annotations>
+            <notes key="V2NodeType" value="SubComponent"/>
+            <notes key="Table" value="0301"/>
+            <notes key="Length" value="3"/>
+            <notes key="V2DataType" value="ID"/>
+          </annotations>
+        </childElements>
+      </childElements>
+      <childElements name="CX.5" type="IS" description="identifier type code" expanded="true">
+        <annotations>
+          <notes key="V2NodeType" value="Component"/>
+          <notes key="Table" value="0203"/>
+          <notes key="Length" value="3"/>
+          <notes key="V2DataType" value="IS"/>
+        </annotations>
+      </childElements>
+      <childElements name="CX.6" type="HD" description="assigning facility">
+        <annotations>
+          <notes key="V2NodeType" value="Component"/>
+          <notes key="Length" value="11"/>
+          <notes key="V2DataType" value="HD"/>
+        </annotations>
+      </childElements>
+    </childElements>
+    <childElements name="PID.4" type="CX" description="Alternate Patient ID - PID" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="36"/>
+        <notes key="V2DataType" value="CX"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.5" type="XPN" description="Patient Name" minMultiplicity="1" maxMultiplicity="-1">
+      <nodeMappingSet>
+        <objectMappings mappedClass="PN" mappedPackage="datatypes"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="Person" mappedPackage="PRPA_MT101301UV02" mappedRole=""/>
+          <mappedEnd2 mappedClass="PN" mappedPackage="datatypes" mappedRole="name" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="48"/>
+        <notes key="V2DataType" value="XPN"/>
+      </annotations>
+      <importMappingSet mappingSetURI="platform:/resource/V3_2008NE/MappingSets/V2Maps/XPN.mapper">
+        <parameterClassValues mappedClass="PN" mappedPackage="datatypes"/>
+      </importMappingSet>
+    </childElements>
+    <childElements name="PID.6" type="XPN" description="Mother's Maiden Name" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="48"/>
+        <notes key="V2DataType" value="XPN"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.7" type="TS" description="Date/Time Of Birth" expanded="true">
+      <nodeMappingSet>
+        <objectMappings mappedClass="TS" mappedPackage="datatypes"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="Person" mappedPackage="PRPA_MT101301UV02" mappedRole=""/>
+          <mappedEnd2 mappedClass="TS" mappedPackage="datatypes" mappedRole="birthTime" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="26"/>
+        <notes key="V2DataType" value="TS"/>
+      </annotations>
+      <childElements name="TS.1" type="NM" description="Date/Time" expanded="true">
+        <nodeMappingSet>
+          <propertyMappings mappedClass="TS" mappedPackage="datatypes" mappedProperty="value"/>
+        </nodeMappingSet>
+        <annotations>
+          <notes key="V2NodeType" value="Component"/>
+          <notes key="Length" value="26"/>
+          <notes key="V2DataType" value="NM"/>
+        </annotations>
+      </childElements>
+      <childElements name="TS.2" type="ST" description="degree of precision" expanded="true">
+        <annotations>
+          <notes key="V2NodeType" value="Component"/>
+          <notes key="V2DataType" value="ST"/>
+        </annotations>
+      </childElements>
+    </childElements>
+    <childElements name="PID.8" type="IS" description="Sex" expanded="true">
+      <nodeMappingSet>
+        <objectMappings mappedClass="CE" mappedPackage="datatypes">
+          <fixedPropertyValues mappedProperty="codeSystem" fixedValue="2.16.840.1.113883.5.1" valueType=""/>
+        </objectMappings>
+        <propertyMappings mappedClass="CE" mappedPackage="datatypes" mappedProperty="code"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="Person" mappedPackage="PRPA_MT101301UV02" mappedRole=""/>
+          <mappedEnd2 mappedClass="CE" mappedPackage="datatypes" mappedRole="administrativeGenderCode" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0001"/>
+        <notes key="Length" value="1"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.9" type="XPN" description="Patient Alias" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="48"/>
+        <notes key="V2DataType" value="XPN"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.10" type="CE" description="Race" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0005"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.11" type="XAD" description="Patient Address" maxMultiplicity="-1">
+      <nodeMappingSet>
+        <objectMappings mappedClass="AD" mappedPackage="datatypes"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="IdentifiedPerson" mappedPackage="PRPA_MT101301UV02" mappedRole=""/>
+          <mappedEnd2 mappedClass="AD" mappedPackage="datatypes" mappedRole="addr" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="106"/>
+        <notes key="V2DataType" value="XAD"/>
+      </annotations>
+      <importMappingSet mappingSetURI="platform:/resource/V3_2008NE/MappingSets/V2Maps/XAD.mapper">
+        <parameterClassValues mappedClass="AD" mappedPackage="datatypes"/>
+      </importMappingSet>
+    </childElements>
+    <childElements name="PID.12" type="IS" description="County Code" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0289"/>
+        <notes key="Length" value="4"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.13" type="XTN" description="Phone Number - Home" maxMultiplicity="-1">
+      <nodeMappingSet>
+        <objectMappings mappedClass="TEL" mappedPackage="datatypes">
+          <fixedPropertyValues mappedProperty="use" fixedValue="H" valueType=""/>
+        </objectMappings>
+        <associationMappings>
+          <mappedEnd1 mappedClass="IdentifiedPerson" mappedPackage="PRPA_MT101301UV02" mappedRole=""/>
+          <mappedEnd2 mappedClass="TEL" mappedPackage="datatypes" mappedRole="telecom" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="40"/>
+        <notes key="V2DataType" value="XTN"/>
+      </annotations>
+      <importMappingSet mappingSetURI="platform:/resource/V3_2008NE/MappingSets/V2Maps/XTN.mapper">
+        <parameterClassValues mappedClass="TEL" mappedPackage="datatypes"/>
+      </importMappingSet>
+    </childElements>
+    <childElements name="PID.14" type="XTN" description="Phone Number - Business" maxMultiplicity="-1">
+      <nodeMappingSet>
+        <objectMappings mappedClass="TEL" mappedPackage="datatypes" subset="s1">
+          <fixedPropertyValues mappedProperty="use" fixedValue="WP" valueType=""/>
+        </objectMappings>
+        <associationMappings>
+          <mappedEnd1 mappedClass="IdentifiedPerson" mappedPackage="PRPA_MT101301UV02" mappedRole=""/>
+          <mappedEnd2 mappedClass="TEL" mappedPackage="datatypes" subset="s1" mappedRole="telecom" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="40"/>
+        <notes key="V2DataType" value="XTN"/>
+      </annotations>
+      <importMappingSet mappingSetURI="platform:/resource/V3_2008NE/MappingSets/V2Maps/XTN.mapper">
+        <parameterClassValues mappedClass="TEL" mappedPackage="datatypes" subset="s1"/>
+      </importMappingSet>
+    </childElements>
+    <childElements name="PID.15" type="CE" description="Primary Language">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0296"/>
+        <notes key="Length" value="60"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.16" type="CE" description="Marital Status">
+      <nodeMappingSet>
+        <objectMappings mappedClass="CE" mappedPackage="datatypes" subset="s1"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="Person" mappedPackage="PRPA_MT101301UV02" mappedRole=""/>
+          <mappedEnd2 mappedClass="CE" mappedPackage="datatypes" subset="s1" mappedRole="maritalStatusCode" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0002"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.17" type="CE" description="Religion">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0006"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.18" type="CX" description="Patient Account Number">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="36"/>
+        <notes key="V2DataType" value="CX"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.19" type="ST" description="SSN Number - Patient" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="16"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.20" type="DLN" description="Driver's License Number - Patient">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="25"/>
+        <notes key="V2DataType" value="DLN"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.21" type="CX" description="Mother's Identifier">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="36"/>
+        <notes key="V2DataType" value="CX"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.22" type="CE" description="Ethnic Group" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0189"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.23" type="ST" description="Birth Place" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="60"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.24" type="ID" description="Multiple Birth Indicator" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0136"/>
+        <notes key="Length" value="1"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.25" type="NM" description="Birth Order" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.26" type="CE" description="Citizenship" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0171"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.27" type="CE" description="Veterans Military Status">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0172"/>
+        <notes key="Length" value="60"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.28" type="CE" description="Nationality">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0212"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.29" type="TS" description="Patient Death Date and Time">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="26"/>
+        <notes key="V2DataType" value="TS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PID.30" type="ID" description="Patient Death Indicator" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0136"/>
+        <notes key="Length" value="1"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+  </rootElement>
+  <mappingParameters>
+    <nameSpaces uRL="urn:hl7-org:v2xml" prefix=""/>
+  </mappingParameters>
+</com.charteris.mapper:MappedStructure>

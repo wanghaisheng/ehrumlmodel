@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generic:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:generic="http://www.com.charteris.mapper/test">
+  <contains_ClinicalDocument>
+    <code code="34133-9" codeSystem="2.16.840.1.113883.6.1"/>
+    <documentationOf>
+      <serviceEvent classCode="PCPR"/>
+    </documentationOf>
+    <recordTarget>
+      <patientRole>
+        <id root="12345678" extension="110094"/>
+        <patient>
+          <name>
+            <given representation="TXT" mediaType="text/plain" partType="GIV" textContent="Elmer" element_position="1"/>
+            <family representation="TXT" mediaType="text/plain" partType="FAM" textContent="Fudd" element_position="2"/>
+            <suffix representation="TXT" mediaType="text/plain" partType="SFX" textContent="Jnr" element_position="3"/>
+          </name>
+          <administrativeGenderCode/>
+          <birthTime>
+            <center value="19410506"/>
+          </birthTime>
+        </patient>
+      </patientRole>
+    </recordTarget>
+    <component_T>
+      <structuredBody_T>
+        <component_Problem>
+          <section_Problem>
+            <code code="11450-4" codeSystem="2.16.840.1.113883.6.1"/>
+            <entry_ProblemAct>
+              <act_ProblemAct>
+                <code nullFlavor="NA"/>
+                <statusCode code="55561003"/>
+                <entryRelationship_ProblemObservation>
+                  <observation_ProblemObservation>
+                    <statusCode code="completed"/>
+                    <effectiveTime>
+                      <low value="20090718"/>
+                      <high value="20100106"/>
+                    </effectiveTime>
+                    <value code="233604007" codeSystem="2.16.840.1.115885.7.97"/>
+                  </observation_ProblemObservation>
+                </entryRelationship_ProblemObservation>
+              </act_ProblemAct>
+            </entry_ProblemAct>
+          </section_Problem>
+        </component_Problem>
+      </structuredBody_T>
+    </component_T>
+  </contains_ClinicalDocument>
+</generic:Container>

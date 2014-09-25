@@ -1,0 +1,42 @@
+<!--  EHR CDA 规范  手术史章节: Section_template_Root_OID.6 -->
+
+<!-- errors -->
+
+<pattern id='p-Section_template_Root_OID.6-errors' see='#p-Section_template_Root_OID.6-errors'>
+	<title>EHR CDA 规范  手术史章节 - 错误验证阶段</title>
+ <rule context='*[cda:templateId/@root="Section_template_Root_OID.6"]'>
+	<!-- Verify that the template id is used on the appropriate type of object --> 
+   <assert test='../cda:section'> 
+      Error: EHR CDA规范 手术史章节(Section_template_Root_OID.6)只能用在section中。 
+   </assert> 
+    <assert test="cda:text">
+       Error:  EHR CDA 规范  手术史章节必须包含一个叙述性文本.
+    </assert>
+
+    <assert test="cda:code[@code='47519-4']">
+       Error: EHR CDA 规范  手术史章节应该为47519-4 (History of procedures).
+    </assert>
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+      Error: EHR CDA 规范  手术史章节(Section_template_Root_OID.6, 手术史章节的code必须来自LOINC编码系统(2.16.840.1.113883.6.1). 
+   </assert> 
+   <assert test='.//cda:templateId[@root = "Entry_template_Root_OID.11" or 
+										   "Entry_template_Root_OID.12" or
+										   "Entry_template_Root_OID.13"]'> 
+     <!-- Verify that all required data elements are present -->
+      Error: EHR CDA规范 社会史章节 (Section_template_Root_OID.2.1), 必须包含一个及一个以上的"手术操作act条目"|"手术操作observation条目"|"手术操作Procedure条目"
+   </assert>    
+ </rule>
+</pattern>
+
+<!-- warning -->
+
+<pattern id='p-Section_template_Root_OID.6-warning' see='#p-Section_template_Root_OID.6-warning'>
+	<title>EHR CDA 规范  手术史章节 - warning validation phase</title>
+ <rule context='*[cda:templateId/@root="Section_template_Root_OID.6"]'>
+<!--
+ <assert test=".//cda:entry">
+       Warning: EHR CDA 规范  手术史章节必须包含临床声明
+    </assert>
+-->
+ </rule>
+</pattern>

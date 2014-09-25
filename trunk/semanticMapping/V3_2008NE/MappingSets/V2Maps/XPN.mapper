@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/V3_2008NE/ClassModel/PRPA_MT101301UV02.ecore" structureType="V2" structureURL="platform:/resource/V3_2008NE/Structures/V2Structures/ADT_A28Def.xml" topElementType="XPN">
+  <rootElement name="top" type="XPN" description="" fixedValue="" expanded="true" maxMultiplicity="-1">
+    <nodeMappingSet>
+      <objectMappings mappedClass="PN" mappedPackage="datatypes"/>
+    </nodeMappingSet>
+    <annotations>
+      <notes key="V2NodeType" value="Field"/>
+      <notes key="Length" value="48"/>
+      <notes key="V2DataType" value="XPN"/>
+    </annotations>
+    <childElements name="XPN.1" type="CM" description="family+last name prefix" expanded="true">
+      <nodeMappingSet>
+        <objectMappings mappedClass="en.family" mappedPackage="datatypes">
+          <fixedPropertyValues mappedProperty="representation" fixedValue="TXT" valueType="string"/>
+          <fixedPropertyValues mappedProperty="mediaType" fixedValue="text/plain" valueType="string"/>
+          <fixedPropertyValues mappedProperty="partType" fixedValue="FAM" valueType="string"/>
+        </objectMappings>
+        <propertyMappings mappedClass="en.family" mappedPackage="datatypes" mappedProperty="textContent"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="PN" mappedPackage="datatypes" mappedRole=""/>
+          <mappedEnd2 mappedClass="en.family" mappedPackage="datatypes" mappedRole="family" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="CM"/>
+      </annotations>
+    </childElements>
+    <childElements name="XPN.2" type="ST" description="given name" expanded="true">
+      <nodeMappingSet>
+        <objectMappings mappedClass="en.given" mappedPackage="datatypes">
+          <fixedPropertyValues mappedProperty="representation" fixedValue="TXT" valueType="string"/>
+          <fixedPropertyValues mappedProperty="mediaType" fixedValue="text/plain" valueType="string"/>
+          <fixedPropertyValues mappedProperty="partType" fixedValue="GIV" valueType="string"/>
+        </objectMappings>
+        <propertyMappings mappedClass="en.given" mappedPackage="datatypes" mappedProperty="textContent"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="PN" mappedPackage="datatypes" mappedRole=""/>
+          <mappedEnd2 mappedClass="en.given" mappedPackage="datatypes" mappedRole="given" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="XPN.3" type="ST" description="middle initial or name" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="XPN.4" type="ST" description="suffix (e.g., JR or III)" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="XPN.5" type="ST" description="prefix (e.g., DR)" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="XPN.6" type="IS" description="degree (e.g., MD)" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="XPN.7" type="ID" description="name type code" expanded="true">
+      <nodeMappingSet>
+        <propertyMappings mappedClass="PN" mappedPackage="datatypes" mappedProperty="use"/>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="XPN.8" type="ID" description="Name Representation code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+  </rootElement>
+  <mappingParameters>
+    <nameSpaces uRL="urn:hl7-org:v2xml" prefix=""/>
+  </mappingParameters>
+  <parameterClasses className="PN" packageName="datatypes"/>
+</com.charteris.mapper:MappedStructure>

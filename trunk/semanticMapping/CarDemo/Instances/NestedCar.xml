@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<drivers country = "England" >
+	<person name = "Black" license = "L12778" age = "45" > 
+		<drivesCar make = "Ford" type = "saloon" reg = "KLL788" />
+		<drivesCar make = "Ferrari" type = "sports" reg = "PEW445" />
+	</person>
+	<person name = "Jones" license = "L4314" age = "28" > 
+		<drivesCar make = "Alfa Romeo" type = "sports" reg = "VBG998" />
+	</person>
+</drivers>

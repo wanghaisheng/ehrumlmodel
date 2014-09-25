@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><procedures>
+				<proc type="create">
+					<context/>
+					<step caseNo="start" class="region" specialNode="false" stepNumber="0" stepType="getAllObjects" subset="" tagName="drivers"/>
+				</proc>
+				<element name="drivers">
+					<procedures>
+						<proc type="create">
+							<context>
+								<ClassSet class="region" subset=""/>
+							</context>
+							<step caseNo="C.1" minIs1="false" pName="country" stepNumber="0" stepType="getProperty">
+								<ClassSet class="region" subset=""/>
+							</step>
+							<step appendFlag="false" attName="country" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+							<step assocName="containsPerson|pContainedBy" caseNo="2.1" endsNotInContext="1" maxIs1="false" minIs1="false" stepNumber="2" stepType="associationInstance" tagName="person">
+								<classSet1 class="person" subset=""/>
+								<classSet2 class="region" subset=""/>
+							</step>
+						</proc>
+					</procedures>
+					<element name="person">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="region" subset=""/>
+									<ClassSet class="person" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="surname" stepNumber="0" stepType="getProperty">
+									<ClassSet class="person" subset=""/>
+								</step>
+								<step appendFlag="false" attName="name" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+								<step caseNo="C.1" minIs1="false" pName="licence" stepNumber="2" stepType="getProperty">
+									<ClassSet class="person" subset=""/>
+								</step>
+								<step appendFlag="false" attName="license" caseNo="att" stepNumber="3" stepType="addAttribute"/>
+								<step caseNo="C.1" minIs1="false" pName="age" stepNumber="4" stepType="getProperty">
+									<ClassSet class="person" subset=""/>
+								</step>
+								<step appendFlag="false" attName="age" caseNo="att" stepNumber="5" stepType="addAttribute"/>
+								<step assocName="drivenBy|drives" caseNo="2.3" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="6" stepType="associationInstance" tagName="drivesCar">
+									<classSet1 class="person" subset=""/>
+									<classSet2 class="car" subset=""/>
+								</step>
+							</proc>
+						</procedures>
+						<element name="drivesCar">
+							<procedures>
+								<proc type="create">
+									<context>
+										<ClassSet class="region" subset=""/>
+										<ClassSet class="person" subset=""/>
+										<ClassSet class="car" subset=""/>
+									</context>
+									<step caseNo="5" className="car" mapperPath="platform:/resource/CarDemo/MappingSets/car.mapper" stepNumber="0" stepType="fillElement" subset=""/>
+								</proc>
+							</procedures>
+							<CompilationIssue actual="" expected="" nature="8" occurrences="1" path="/drivers/person/drivesCar" problemType="Association containsCar should be required for class car"/>
+							<CompilationIssue actual="" expected="" nature="8" occurrences="1" path="/drivers/person/drivesCar" problemType="Association drives should be required for class car"/>
+						</element>
+						<CompilationIssue actual="" expected="" nature="8" occurrences="1" path="/drivers/person" problemType="Association containsPerson should be required for class person"/>
+					</element>
+				</element>
+			</procedures>

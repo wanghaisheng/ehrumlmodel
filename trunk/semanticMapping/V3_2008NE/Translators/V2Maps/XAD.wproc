@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><procedures>
+				<proc type="create">
+					<context/>
+					<step caseNo="start" class="datatypes.AD" specialNode="false" stepNumber="0" stepType="getAllObjects" subset="" tagName="top"/>
+				</proc>
+				<element name="top" path="/top">
+					<procedures>
+						<proc type="create">
+							<context>
+								<ClassSet class="datatypes.AD" subset=""/>
+							</context>
+							<step assocName="streetAddressLine" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="0" stepType="associationInstance" tagName="XAD.1">
+								<classSet1 class="datatypes.AD" subset=""/>
+								<classSet2 class="datatypes.adxp.streetAddressLine" subset=""/>
+							</step>
+							<step assocName="city" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="1" stepType="associationInstance" tagName="XAD.3">
+								<classSet1 class="datatypes.AD" subset=""/>
+								<classSet2 class="datatypes.adxp.city" subset=""/>
+							</step>
+							<step assocName="postalCode" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="2" stepType="associationInstance" tagName="XAD.5">
+								<classSet1 class="datatypes.AD" subset=""/>
+								<classSet2 class="datatypes.adxp.postalCode" subset=""/>
+							</step>
+							<step caseNo="3.5.2" minIs1="false" pName="use" stepNumber="3" stepType="getProperty">
+								<ClassSet class="datatypes.AD" subset=""/>
+							</step>
+							<step caseNo="3.5.2" ifString="true" stepNumber="4" stepType="addElement" tagName="XAD.7"/>
+						</proc>
+					</procedures>
+					<element name="XAD.1" path="/top/XAD.1">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="datatypes.AD" subset=""/>
+									<ClassSet class="datatypes.adxp.streetAddressLine" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="element_position" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.adxp.streetAddressLine" subset=""/>
+								</step>
+								<step appendFlag="false" attName="element_position_virtual_att" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+								<step caseNo="C.1" minIs1="false" pName="textContent" stepNumber="2" stepType="getProperty">
+									<ClassSet class="datatypes.adxp.streetAddressLine" subset=""/>
+								</step>
+								<step appendFlag="false" caseNo="content" stepNumber="3" stepType="setText"/>
+							</proc>
+						</procedures>
+					</element>
+					<element name="XAD.3" path="/top/XAD.3">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="datatypes.AD" subset=""/>
+									<ClassSet class="datatypes.adxp.city" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="element_position" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.adxp.city" subset=""/>
+								</step>
+								<step appendFlag="false" attName="element_position_virtual_att" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+								<step caseNo="C.1" minIs1="false" pName="textContent" stepNumber="2" stepType="getProperty">
+									<ClassSet class="datatypes.adxp.city" subset=""/>
+								</step>
+								<step appendFlag="false" caseNo="content" stepNumber="3" stepType="setText"/>
+							</proc>
+						</procedures>
+					</element>
+					<element name="XAD.5" path="/top/XAD.5">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="datatypes.AD" subset=""/>
+									<ClassSet class="datatypes.adxp.postalCode" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="element_position" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.adxp.postalCode" subset=""/>
+								</step>
+								<step appendFlag="false" attName="element_position_virtual_att" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+								<step caseNo="C.1" minIs1="false" pName="textContent" stepNumber="2" stepType="getProperty">
+									<ClassSet class="datatypes.adxp.postalCode" subset=""/>
+								</step>
+								<step appendFlag="false" caseNo="content" stepNumber="3" stepType="setText"/>
+							</proc>
+						</procedures>
+					</element>
+					<element name="XAD.7" path="/top/XAD.7">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="datatypes.AD" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="use" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.AD" subset=""/>
+								</step>
+								<step appendFlag="false" caseNo="content" stepNumber="1" stepType="setText"/>
+							</proc>
+						</procedures>
+					</element>
+				</element>
+			</procedures>

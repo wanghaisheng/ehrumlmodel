@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/CCDMappings/ClassModel/POCD_Green.ecore">
+  <mappingParameters/>
+</com.charteris.mapper:MappedStructure>

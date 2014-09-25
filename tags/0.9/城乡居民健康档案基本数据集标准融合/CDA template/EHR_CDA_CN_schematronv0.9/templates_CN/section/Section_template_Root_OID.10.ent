@@ -1,0 +1,39 @@
+<!--  EHR CDA 规范 功能状态章节: Section_template_Root_OID.10 -->
+
+<!-- errors -->
+
+  <pattern id="p-Section_template_Root_OID.10-errors">
+    <title>EHR CDA 规范 功能状态章节 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Section_template_Root_OID.10"]'>
+
+     <!-- Verify that the template id is used on the appropriate type of object --> 
+   <assert test='../cda:section'> 
+      Error: In EHR CDA 规范 功能状态章节 (Section_template_Root_OID.10), the Functional Status can only be 
+      used on sections. 
+   </assert> 
+   <!-- Verify the section type code --> 
+   <assert test='cda:code[@code = "47420-5"]'> 
+      Error: In EHR CDA 规范 功能状态章节 (Section_template_Root_OID.10), the section type code of a Functional 
+      Status must be 47420-5 
+   </assert> 
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+      Error: In EHR CDA 规范 功能状态章节 (Section_template_Root_OID.10), the section type code must come from 
+      the LOINC code system (2.16.840.1.113883.6.1). 
+   </assert> 
+
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Section_template_Root_OID.10-warnings">
+    <title>EHR CDA 规范 功能状态章节 - warning validation phase</title>
+
+<!--
+    <rule context='*[cda:templateId/@root="Section_template_Root_OID.10"]'>
+      <report test="."/>
+    </rule>
+-->
+
+  </pattern>

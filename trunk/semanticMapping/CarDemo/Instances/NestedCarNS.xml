@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nc:drivers country = "England"
+		xmlns:nc="http://com.charteris.example" >
+	<nc:person name = "Black" license = "L12778" age = "45" > 
+		<nc:drivesCar make = "Ford" type = "saloon" reg = "KLL788" />
+		<nc:drivesCar make = "Ferrari" type = "sports" reg = "PEW445" />
+	</nc:person>
+	<nc:person name = "Jones" license = "L4314" age = "28" > 
+		<nc:drivesCar make = "Alfa Romeo" type = "sports" reg = "VBG998" />
+	</nc:person>
+</nc:drivers>

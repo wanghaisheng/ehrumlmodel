@@ -1,0 +1,46 @@
+<!--  EHR CDA 规范  章节名称: 章节模板标识 -->
+
+<!-- errors -->
+
+<pattern id='p-章节模板标识-errors' see='#p-章节模板标识-errors'>
+	<title>EHR CDA 规范  章节名称 - 错误验证阶段</title>
+ <rule context='*[cda:templateId/@root="章节模板标识"]'>
+	<!-- Verify that the template id is used on the appropriate type of object --> 
+   <assert test='../cda:section'> 
+      Error: EHR CDA规范 章节名称(章节模板标识)只能用在section中。 
+   </assert> 
+    <assert test="cda:text">
+       Error:  EHR CDA 规范  章节名称必须包含一个叙述性文本.
+    </assert>
+
+    <assert test="cda:code[@code='对应的LOINC码']">
+       Error: EHR CDA 规范  章节名称应该为对应的LOINC码 (LOINC码对应的名称).
+    </assert>
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+      Error: EHR CDA 规范  章节名称(章节模板标识, 章节名称的code必须来自LOINC编码系统(2.16.840.1.113883.6.1). 
+   </assert> 
+ </rule>
+</pattern>
+
+<!-- warning -->
+
+<pattern id='p-章节模板标识-warning' see='#p-章节模板标识-warning'>
+	<title>EHR CDA 规范  章节名称 - warning validation phase</title>
+ <rule context='*[cda:templateId/@root="章节模板标识"]'>
+<!--
+ <assert test=".//cda:entry">
+       Warning: EHR CDA 规范  章节名称必须包含临床声明
+    </assert>
+-->
+ </rule>
+</pattern>
+<!--
+说明
+1.用特定的章节名称字符串替换“章节名称”
+2.用特定的字符串替换"章节模板标识"
+3.用特定的字符串替换"对应的LOINC码"
+4.用特定的字符串替换"LOINC码对应的名称"
+5.
+
+
+-->

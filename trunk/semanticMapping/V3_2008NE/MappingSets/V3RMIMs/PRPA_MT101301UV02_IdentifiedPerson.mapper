@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/V3_2008NE/ClassModel/PRPA_MT101301UV02.ecore" structureURL="" topElementType="PRPA_MT101301UV02_IdentifiedPerson">
+  <rootElement name="IdentifiedPerson" type="PRPA_MT101301UV02_IdentifiedPerson" expanded="true">
+    <childElements name="id" type="II" minMultiplicity="1" maxMultiplicity="-1"/>
+    <childElements name="addr" type="AD" maxMultiplicity="-1"/>
+    <childElements name="telecom" type="TEL" maxMultiplicity="-1"/>
+    <childElements name="statusCode" type="CS" minMultiplicity="1"/>
+    <childElements name="effectiveTime" type="IVL_TS"/>
+    <childElements name="confidentialityCode" type="CE" maxMultiplicity="-1"/>
+    <childElements name="assigningOrganization" type="COCT_HD150003UV03_Organization" minMultiplicity="1"/>
+    <childElements name="identifiedPerson" type="" minMultiplicity="1" expanded="true">
+      <childElements name="id" type="II" maxMultiplicity="-1"/>
+      <childElements name="name" type="PN" minMultiplicity="1" maxMultiplicity="-1"/>
+      <childElements name="desc" type="ED"/>
+      <childElements name="telecom" type="TEL" maxMultiplicity="-1"/>
+      <childElements name="administrativeGenderCode" type="CE"/>
+      <childElements name="birthTime" type="TS"/>
+      <childElements name="deceasedInd" type="BL"/>
+      <childElements name="deceasedTime" type="TS"/>
+      <childElements name="multipleBirthInd" type="BL"/>
+      <childElements name="multipleBirthOrderNumber" type="INT"/>
+      <childElements name="organDonorInd" type="BL"/>
+      <childElements name="addr" type="AD" maxMultiplicity="-1"/>
+      <childElements name="maritalStatusCode" type="CE"/>
+      <childElements name="asCitizen" type="PRPA_MT101301UV02_Citizen" maxMultiplicity="-1"/>
+      <childElements name="asEmployee" type="PRPA_MT101301UV02_Employee" maxMultiplicity="-1"/>
+      <childElements name="asMember" type="PRPA_MT101301UV02_Member" maxMultiplicity="-1"/>
+      <childElements name="asOtherIDs" type="PRPA_MT101301UV02_OtherIDs" maxMultiplicity="-1"/>
+      <childElements name="asStudent" type="PRPA_MT101301UV02_Student" maxMultiplicity="-1"/>
+      <childElements name="birthPlace" type="PRPA_MT101301UV02_BirthPlace"/>
+      <childElements name="contactParty" type="PRPA_MT101301UV02_ContactParty" maxMultiplicity="-1"/>
+      <childElements name="guardian" type="PRPA_MT101301UV02_Guardian" maxMultiplicity="-1"/>
+      <childElements name="languageCommunication" type="PRPA_MT101301UV02_LanguageCommunication" maxMultiplicity="-1"/>
+      <childElements name="personalRelationship" type="PRPA_MT101301UV02_PersonalRelationship" maxMultiplicity="-1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="classCode" minMultiplicity="1"/>
+      <attributeDefs name="determinerCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="subjectOf" type="" expanded="true" maxMultiplicity="-1">
+      <childElements name="administrativeObservation" type="PRPA_MT101301UV02_AdministrativeObservation" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+    <childElements name="typeID" type="II"/>
+    <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+    <attributeDefs name="classCode" minMultiplicity="1"/>
+    <attributeDefs name="nullFlavor"/>
+  </rootElement>
+  <mappingParameters mappingClass="com.charteris.mapper.converters.V3_XML_ITS">
+    <nameSpaces uRL="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+  </mappingParameters>
+</com.charteris.mapper:MappedStructure>

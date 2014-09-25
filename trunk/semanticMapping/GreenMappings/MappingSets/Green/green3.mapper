@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/CCDMappings/ClassModel/POCD_Green.ecore">
+  <rootElement name="ClinicalDocument" description="Made from ITS" minMultiplicity="1" expanded="true">
+    <nodeMappingSet>
+      <objectMappings mappedClass="ClinicalDocument" mappedPackage="CDA"/>
+    </nodeMappingSet>
+    <childElements name="id" minMultiplicity="1" expanded="true">
+      <nodeMappingSet>
+        <objectMappings mappedClass="II" mappedPackage="datatypes"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="ClinicalDocument" mappedPackage="CDA" mappedRole=""/>
+          <mappedEnd2 mappedClass="II" mappedPackage="datatypes" mappedRole="id" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <attributeDefs name="idRoot">
+        <nodeMappingSet>
+          <propertyMappings mappedClass="II" mappedPackage="datatypes" mappedProperty="root"/>
+        </nodeMappingSet>
+      </attributeDefs>
+    </childElements>
+  </rootElement>
+  <mappingParameters/>
+</com.charteris.mapper:MappedStructure>

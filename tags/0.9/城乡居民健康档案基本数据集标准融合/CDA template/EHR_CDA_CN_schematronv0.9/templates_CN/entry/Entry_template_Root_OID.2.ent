@@ -1,0 +1,90 @@
+<!--  EHR CDA规范 社会史观察条目: Entry_template_Root_OID.2 -->
+
+<!-- errors -->
+
+  <pattern id="p-Entry_template_Root_OID.2-errors">
+    <title>EHR CDA规范 社会史观察条目 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.2"]'>
+    <assert test='cda:templateId[@root="Entry_template_Root_OID.2"]'>
+       Error: In EHR CDA规范 社会史观察条目(Entry_template_Root_OID.2)必须包含 ：Entry_template_Root_OID.2
+    </assert>
+<!--    
+	<assert test='cda:id'>
+       Error: In EHR CDA规范 社会史观察条目(Entry_template_Root_OID.2), 每个社会史观察条目必须包含一个"id" 标识符
+    </assert>
+-->
+    <assert test='cda:code'>
+       Error: In EHR CDA规范 社会史观察条目(Entry_template_Root_OID.2),社会史观察条目必须包含一个它所要描述的数据元
+    </assert>
+
+    <assert test='cda:text/cda:reference'>
+       Error: In EHR CDA规范 社会史观察条目(Entry_template_Root_OID.2), 每个社会史观察条目可以包含一个text元素，它包含一个reference
+	   指向对应的section下的text元素中的自由文本所表示的自由文本信息
+    </assert>
+
+    <assert test='cda:statusCode[@code = "completed"]'>
+       Error: In EHR CDA规范 社会史观察条目(Entry_template_Root_OID.2), statuscode必须是completed.
+    </assert>
+
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Entry_template_Root_OID.2-warnings">
+    <title>EHR CDA规范 社会史观察条目 - warning validation phase</title>
+
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.2"]'>
+    <assert test='cda:code[@code = "HDSD00.01.007" or
+                           @code = "HDSD00.01.011" or
+                           @code = "HDSD00.01.015" or
+                           @code = "HDSD00.01.016" or
+                           @code = "HDSD00.01.037" or
+                           @code = "HDSD00.01.038" or	
+                           @code = "HDSD00.01.039" or
+                           @code = "HDSD00.01.040" or
+                           @code = "HDSD00.01.041" or
+                           @code = "HDSD00.01.042"'>
+       Warning: In EHR CDA规范 社会史观察条目 (Entry_template_Root_OID.2)中code必须使用来自城乡居民健康档案基本数据集或者LOINC或者SNOMED中对应代码。
+    </assert>
+    <assert test='cda:value[@codeSystem="GB/T 4658-2006 学历代码" or
+                            @codeSystem="GB/T 6565-2009 职业分类与代码" or 
+							@codeSystem="CV03.00.302 厨房排风设施类别代码表" or
+							@codeSystem="CV03.00.303 燃料类型类别代码表" or
+							@codeSystem="CV03.00.304 厕所类别代码表" or
+							@codeSystem="CV03.00.30x 家庭禽畜栏类别代码表" or							
+							@codeSystem=""]'>
+       Warning: In EHR CDA规范 社会史观察条目 (Entry_template_Root_OID.2),推荐的value的值域代码有   
+
+    </assert>	
+
+   <assert test='not(cda:value) or cda:value[@xsi:type = "PQ" or @xsi:type="CD" or @xsi:type="ANY"]'>
+      Warning: In EHR CDA规范 社会史观察条目 (Entry_template_Root_OID.2), the data type to use for each observation
+      should be drawn from the table (PQ, CD or ANY).
+   </assert>
+
+   <assert test='not(cda:repeatNumber)'>
+      Warning: In EHR CDA规范 社会史观察条目 (Entry_template_Root_OID.2), the repeatNumber element should not be
+      used.
+   </assert>
+
+   <assert test='not(cda:interpretationCode)'>
+      Warning: In EHR CDA规范 社会史观察条目 (Entry_template_Root_OID.2), the interpretationCode element should
+      not be used.
+   </assert>
+
+   <assert test='not(cda:methodCode)'>
+      Warning: In EHR CDA规范 社会史观察条目 (Entry_template_Root_OID.2), the methodCode element should not be used.
+   </assert>
+
+   <assert test='not(cda:targetSiteCode)'>
+      Warning: In EHR CDA规范 社会史观察条目 (Entry_template_Root_OID.2), the targetSiteCode element should not be
+      used.
+   </assert>
+
+    </rule>
+
+  </pattern>
+
+

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ENTER_NAME_OF_ROOT_ELEMENT_HERE">
+		<xs:annotation>
+			<xs:documentation>本文档为卫生信息数据标准中的数据类型提供了XML Schema格式</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!--定义基本字母型字符-->
+	<xs:simpleType name="alphabetcharactertype">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--定义基本数字型字符-->
+	<xs:simpleType name="numbercharactertype">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--定义基本字母和/或数字型字符-->
+	<xs:simpleType name="alphabetORANDnumbercharactertype">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(([0-9]+[a-zA-Z]+[0-9]*)|([a-zA-Z]+[0-9]+[a-zA-Z]*)|([0-9]*)|([a-zA-Z]*))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--定义S字符型 通过字符形式表达的值的类型。可包含字母字符A-Z a-z数字字符0-9等。默认为GB2312-->
+	<xs:complexType name="S">			
+	<!--是放在属性里好呢还是放在元素里好呢-->	
+		<xs:sequence>
+			<xs:element name="value" minOccurs="1" maxOccurs="1" type="alphabetORANDnumbercharactertype"/>
+		</xs:sequence>
+		<xs:attribute name="charformat" use="required"/>
+		<xs:attribute name="enumflag"  use="required" type="xs:boolean"/>
+		<xs:attribute name="fixedlengthflag" use="required"/>
+		<xs:attribute name="max"  />
+		<xs:attribute name="min"  />
+    </xs:complexType>	
+   <!--定义数据值N-通过0-9的数字形式表示的值的类型--> 
+  <xs:complexType name="N">		
+		<xs:sequence>
+			<xs:element name="value" minOccurs="1" maxOccurs="1" type="numbercharactertype"/>
+		</xs:sequence>
+		<xs:attribute name="charformat" use="required"/>
+		<xs:attribute name="enumflag"  use="required" type="xs:boolean"/>
+		<xs:attribute name="fixedlengthflag" use="required"/>
+		<xs:attribute name="max"  />
+		<xs:attribute name="min"  />
+  </xs:complexType>	    
+	<!--定义S1字符型 通过字符形式表达的值的类型。可包含字母字符A-Z a-z数字字符0-9等。默认为GB2312-->   
+  <xs:complexType name="S1">		
+		<xs:sequence>
+			<xs:element name="value" minOccurs="1" maxOccurs="1" type="alphabetORANDnumbercharactertype"/>
+		</xs:sequence>
+		<xs:attribute name="totallinenumber" use="required" type="numbercharactertype"/>
+		<xs:attribute name="fixedlengthflag" use="required"/>
+		<xs:attribute name="max"  type="numbercharactertype"/>
+		<xs:attribute name="min"  type="numbercharactertype"/>
+  </xs:complexType>	    	 
+	<!--定义YYYYMMDD格式的日期
+		DateTime值类型表示值范围在公元（基督纪元）0001 年 1 月 1 日午夜 12:00:00 到公元 (C.E.) 9999 年 12 月 31 日晚上 11:59:59 之间的日期和时间。
+		YYYY对应的正则表达式为[0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3} 		   YYYYMMDD对应的正则表达式为(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229)
+		另一种表达方式为(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229)
+		YYYY-MM-DD对应的正则表达式为
+									(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29)
+		
+	-->
+	<xs:simpleType name="datetype">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="		(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229)
+		    "/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--定义hhmmss格式的时间-->
+	<xs:simpleType name="timetype">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="((([1-9])|([0-1][0-9])|([1-2][0-3]))(([0-5][0-9]))(([0-5][0-9])))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--定义格式YYYYMMDDThhmmss的日期时间-->
+	<xs:simpleType name="datetimetype">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="
+((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229))T((([1-9])|([0-1][0-9])|([1-2][0-3]))(([0-5][0-9]))(([0-5][0-9])))
+		    "/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

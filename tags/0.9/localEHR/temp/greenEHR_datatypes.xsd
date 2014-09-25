@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <!--
+   Title: greenEHR Schema Module: Datatypes
+
+   Original Filename: greenEHR_datatypes.xsd
+   Version: 0.3  
+   October 24 2011
+
+   This file is part of the greenEHR package created by
+   edwin_uestc,the Center of E-Health Engineering and Technology,UESTC
+   to stimulate discussion and further experimentation 
+   with approaches to simplifying CDA instance creation.
+
+   With the greenEHR files, you can
+
+     - validate the sample instance with its green schema
+     - convert the sample instance to full CDA.
+	 
+	 
+	 问题1：
+	 是否应该将每一个S2的枚举型都整成一个单独的数据类型
+  -->
+  <xs:simpleType name="relationshipType">
+		<xs:annotation>
+			<xs:documentation>不同字符表达形式的枚举:  1.A-表示字母字符A-Z a-z
+													    2.N-表示数字字符0-9
+														默认为GB2312
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>  
+  <xs:complexType name="S">	
+  		<xs:annotation>
+		<xs:documentation>通过字符形式表达的值的类型。可包含字母字符A-Z a-z数字字符0-9等。默认为GB2312</xs:documentation> 
+		</xs:annotation>		
+	<xs:sequence>
+      <xs:element name="charformat" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="enumflag" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
+      <xs:element name="fixedlengthflag" minOccurs="1" maxOccurs="1" type="xs:boolean"/><!--固定长度的话max=min 不固定长度的话 默认max>=min-->  
+      <xs:element name="max" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+      <xs:element name="min" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+      <xs:element name="value" minOccurs="1" maxOccurs="1"  type="xs:string"/><!--这里value值的类型应该是自己定义的-->
+	</xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="N">			
+  	<xs:annotation>
+		<xs:documentation>通过0-9的数字形式表示的值的类型.</xs:documentation> 
+	</xs:annotation>	  
+	<xs:simpleContent>
+		<xs:extension base="S">
+				<xs:attribute name="charformat"  use="required" fixed="xs:string"/>
+				<xs:attribute name="enumflag" use="required" type="xs:boolean"/>
+				<xs:attribute name="fixedlengthflag"   use="required" type="xs:boolean"/>
+				<xs:attribute name="max"   type="xs:integer"/>
+				<xs:attribute name="min"   type="xs:integer"/>
+		</xs:extension>     
+	</xs:simpleContent>
+  </xs:complexType>	
+  <xs:complexType name="A">			
+	<xs:documentation>通过A-Z a-z的字母字符形式表示的值的类型.</xs:documentation> 
+	<xs:simpleContent>
+		<xs:extension base="S">
+			<xs:sequence>
+				<xs:attribute name="charformat" minOccurs="1" maxOccurs="1" use="required" fixed="xs:string"/>
+				<xs:attribute name="enumflag" minOccurs="1" maxOccurs="1" use="required" type="xs:boolean"/><!--这个属性在这个类中似乎也是用不着的-->
+				<xs:attribute name="fixedlengthflag" minOccurs="1" maxOccurs="1" use="required" type="xs:boolean"/>
+				<xs:attribute name="max" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+				<xs:attribute name="min" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+				<xs:element name="value" minOccurs="1" maxOccurs="1" use="required" type="xs:string">
+					<xs:simpleType>
+					  <xs:restriction base="xs:integer">
+						<xs:pattern value="[a-z][A-Z]" maxOccurs="unbounded"/><!--这里如何让此字符重复无数多次-->
+					  </xs:restriction>
+					</xs:simpleType>
+				</xs:element> 				
+			</xs:sequence>
+		</xs:extension>     
+	</xs:simpleContent>
+	</xs:complexType>	  
+  <xs:complexType name="S1">			
+	<xs:documentation>S1表示不可枚举的,且以字符a-zA-Z描述的形式表示的值的类型.</xs:documentation> 
+	<xs:simpleContent>
+		<xs:extension base="A">
+			<xs:sequence>
+				<xs:attribute name="charformat" minOccurs="1" maxOccurs="1" use="required" fixed="xs:string"/>
+				<xs:attribute name="enumflag" minOccurs="1" maxOccurs="1" use="required" fixed="false"/><!--这个属性在这个类中似乎也是用不着的-->
+				<xs:attribute name="fixedlengthflag" minOccurs="1" maxOccurs="1" use="required" type="xs:boolean"/>
+				<xs:attribute name="max" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+				<xs:attribute name="min" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+				<xs:element name="value" minOccurs="1" maxOccurs="1" use="required" type="xs:string">
+					<xs:simpleType>
+					  <xs:restriction base="xs:integer">
+						<xs:pattern value="[a-zA-Z]{min,max}"/><!--这里如何让此字符的长度-->
+					  </xs:restriction>
+					</xs:simpleType>
+				</xs:element> 				
+			</xs:sequence>
+		</xs:extension>     
+	</xs:simpleContent>
+	</xs:complexType>	  	
+  <xs:complexType name="S2">			
+	<xs:documentation>S2表示枚举型，且列举值不超过3个的形式表示的值的类型.这里的S1其实相当于valueset的code</xs:documentation> 
+	<xs:simpleContent>
+		<xs:extension base="N">
+			<xs:sequence>
+				<xs:element name="charformat" minOccurs="1" maxOccurs="1" use="required" fixed="xs:integer"/>
+				<xs:element name="enumflag" minOccurs="1" maxOccurs="1" use="required" fixed="false"/><!--这个属性在这个类中似乎也是用不着的-->
+				<xs:element name="fixedlengthflag" minOccurs="1" maxOccurs="1" use="required" type="xs:boolean"/>
+				<xs:element name="max" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+				<xs:element name="min" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+				<!--
+						1	家里	CV03.00.102
+						2	工作场所	CV03.00.102
+						3	餐厅	CV03.00.102
+						4	娱乐场所	CV03.00.102
+						5	公共交通工具及其等候室	CV03.00.102
+						9	其他	CV03.00.102	
+				-->
+				<xs:element name="displayname" minOccurs="1" maxOccurs="1" use="required" type="xs:string"/>	<!--家里-->
+				<xs:element name="codesystemname" minOccurs="1" maxOccurs="1" use="required" type="xs:string"/>	<!--形如 被动吸烟场所类别代码表 -->	
+				<xs:element name="codesystemid" minOccurs="1" maxOccurs="1" use="required" type="xs:string"/><!--形如 CV03.00.102 -->						
+				<xs:element name="value" minOccurs="1" maxOccurs="1" use="required" type="xs:integer"><!--形如 1 -->	
+					<xs:simpleType>
+					  <xs:restriction base="xs:integer">
+						<xs:pattern value="[0-9]{min,max}"/><!--这里如何让此字符的长度-->
+					  </xs:restriction>
+					</xs:simpleType>
+				</xs:element> 				
+			</xs:sequence>
+		</xs:extension>     
+	</xs:simpleContent>
+	</xs:complexType>	
+  <xs:complexType name="S3">			
+	<xs:documentation>S3表示代码表的形式表示的值的类型.这里的S3其实相当于codesystem的code</xs:documentation> 
+	<xs:simpleContent>
+		<xs:extension base="N">
+			<xs:sequence>
+				<xs:attribute name="charformat" minOccurs="1" maxOccurs="1" use="required" fixed="xs:integer"/>
+				<xs:attribute name="enumflag" minOccurs="1" maxOccurs="1" use="required" fixed="false"/><!--这个属性在这个类中似乎也是用不着的-->
+				<xs:attribute name="fixedlengthflag" minOccurs="1" maxOccurs="1" use="required" type="xs:boolean"/>
+				<xs:attribute name="max" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+				<xs:attribute name="min" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+				<!--
+						经济状况代码   1.贫困，在当地贫困线标准以下 2.非贫困 3.不详
+				-->
+				<xs:element name="displayname" minOccurs="1" maxOccurs="1" use="required" type="xs:string"/>	<!--贫困，在当地贫困线标准以下-->
+				<xs:element name="valuesetname" minOccurs="1" maxOccurs="1" use="required" type="xs:string"/>	<!--形如 经济状况代码 -->	
+				<xs:element name="valuesetid" minOccurs="1" maxOccurs="1" use="required" type="xs:string"/><!--形如 xxxx此处标准中暂无规定 -->						
+				<xs:element name="value" minOccurs="1" maxOccurs="1" use="required" type="xs:integer"><!--形如 1 -->	
+					<xs:simpleType>
+					  <xs:restriction base="xs:integer">
+						<xs:pattern value="[0-9]{min,max}"/><!--这里如何让此字符的长度-->
+					  </xs:restriction>
+					</xs:simpleType>
+				</xs:element> 				
+			</xs:sequence>
+		</xs:extension>     
+	</xs:simpleContent>
+	</xs:complexType>		
+  <xs:complexType name="BY">
+    <xs:attribute name="value" use="required" type="xs:base64Binary"/>
+	<!--
+		XML SCHEMA二进制数据类型用于表达二进制形式的数据。我们可使用两种二进制数据类型：		
+		base64Binary (Base64 编码的二进制数据)
+		hexBinary (十六进制编码的二进制数据)
+	-->
+  </xs:complexType>
+  <xs:complexType name="D">
+    <xs:attribute name="datevalue" use="required" type="xs:date"/>
+	<!--
+		而XML Schema里提供的date类型的默认格式是YYYY-MM-DD 扩展模式
+		国标中要求采用GB/T 7408中规定的YYYYMMDD格式表示的值的类型
+	-->
+  </xs:complexType>  
+  <xs:complexType name="T">
+    <xs:attribute name="timevalue" use="required" type="xs:time"/>
+	<!--
+		而XML Schema里提供的time类型的默认格式是hh:mm:ss
+		国标中要求采用GB/T 7408中规定的hhmmss格式表示的值的类型
+	-->
+  </xs:complexType>  
+  <xs:simpleType name="国标日期">
+	  <xs:restriction base="xsd:date">
+		<xs:pattern value="^([2-9]\d{3}((0[1-9]|1[012])(0[1-9]|1\d|2[0-8])|(0[13456789]|1[012])(29|30)|(0[13578]|1[02])31)|(([2-9]\d)(0[48]|[2468][048]|[13579][26])|(([2468][048]|[3579][26])00))0229)$" /> 
+		<xs:maxInclusive value="9999-12-31" /> 
+		<xs:minInclusive value="0001-01-01" /> 
+	  </xs:restriction>  
+  </xs:simpleType>	  
+<!--  
+The following code performs powerful Date type validation in XSD. It validates date fields with timestamp (optional) in yyyyMMdd hh:MM:ss.ffffff format.
+If your XML file contains the element ValueDate, the corresponding XSD will be this:
+注意这里基本类型为string
+-->
+<xs:element name="ValueDate" type="dateType"/>
+
+<xs:simpleType name= "timestampType">
+  <xs:restriction base = "xs:string">
+   <xs:pattern value='[1-9][0-9][0-9][0-9](([0][1|3|5|7|8])([0][1-9]|[1-2][0-9]|[3][0-1])|([0][4|6|9])
+([0][1-9]|[1-2][0-9]|[3][0])|([0][2])([0][1-9]|[1-2][0-9])|([1][0|2])([0][1-9]|[1-2][0-9]|[3][0-1])|([1]
+[1])([0][1-9]|[1-2][0-9]|[3][0]))([ ]([2][1-4]|[0][0-9]|[1][0-9])[:]([0-5][0-9]|[6][0])[:]([0-5][0-9]|[6]
+[0])[.][0-9]{6})*'/>
+  </xs:restriction>
+</xs:simpleType>
+</xs:schema>

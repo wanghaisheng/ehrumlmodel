@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    卫生费用
+    ********************************************************
+	描述居民卫生服务/事件卫生费用相关信息，可能包括费用分类、金额以及医疗费用结算支付方式等
+	对应的数据元如下
+	DE07.00.001.00	个人承担费用（元）
+	DE07.00.002.00	门诊费用分类代码
+	DE07.00.003.00	门诊费用分类名称
+	DE07.00.004.00	门诊费用金额（元）
+	DE07.00.005.00	收入与支出金额数（万元）
+	DE07.00.006.00	医疗费用结算方式代码
+	DE07.00.007.00	医疗费用支付方式代码
+	DE07.00.008.00	住院费用分类代码
+	DE07.00.009.00	住院费用分类名称
+	DE07.00.010.00	住院费用金额（元）
+
+    ********************************************************
+-->
+<component typeCode="COMP" contextConductionInd="true">
+    <section classCode="DOCSECT" moodCode="EVN">
+	    <templateId  root="Section_template_Root_OID.3">
+        <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources" />
+        <title>卫生费用</title>
+        <text>
+            <!-- 呈現方式  		1. 文字敘述。 -->
+            <paragraph>医疗费用支付方式代码：03  医疗费用结算方式代码: 01</paragraph>
+            <!--  呈现方式 		2  列表-->    
+            <!--    
+            <list>
+                <item>医疗费用支付方式代码：03</item>
+            </list> 
+            -->         
+            <!-- 呈現方式 		3. 表格 -->          
+          <!--  
+            <table>
+                <thead>
+                <tr>
+                <td>医疗费用支付方式代码</td>			
+                </tr>
+                </thead> 
+                <tbody>
+                <tr>
+                <td>03</td>
+   			    </tr>
+                </tbody>
+          --> 
+        </text>					
+		<entry typeCode="DRIV">
+			<act classCode="ACT" moodCode="DEF">
+				<templateId root="2.16.840.1.113883.10.20.1.20"/>
+				<!-- Coverage activity template -->
+				<id root="1fe2cdd0-7aad-11db-9fe1-0800200c9a66"/>
+				<code code="03" codeSystem="CV07.10.003" displayName="新型农村合作医疗"/>
+				<statusCode code="completed"/>
+				<entryRelationship typeCode="COMP">
+					<act classCode="ACT" moodCode="EVN">
+						<templateId root=""/>
+						<!-- Policy activity template -->
+						<id root="3e676a50-7aac-11db-9fe1-0800200c9a66"/>
+						<code code="01" codeSystem="CV07.10.004" displayName="现金"/>
+						<statusCode code="completed"/>
+						<performer typeCode="PRF">
+							<assignedEntity>
+								<id root="329fcdf0-7ab3-11db-9fe1-0800200c9a66"/>
+								<representedOrganization>
+									<name>Good Health Insurance</name>
+								</representedOrganization>
+							</assignedEntity>
+						</performer>
+						<entryRelationship typeCode="REFR">
+							<observation classCode="OBS" moodCode="EVN">
+								<templateId  root=” Entry_template_Root_OID.2”>
+								<code code="07" codeSystem="CV07.10.002"  codeSystemName="住院费用类别代码表" displayName="化验费" /> 
+								<text><reference value='#xxx'/></text>
+								<statusCode code='completed'/>
+								<effectiveTime value='20091129'/>
+								<value xsi:type='MO' value='250' currency='CNY'/>
+							</observation> 
+						</entryRelationship>
+					</act>
+				</entryRelationship>
+			</act>
+		</entry>
+    </section>
+</component>

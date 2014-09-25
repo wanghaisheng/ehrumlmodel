@@ -1,0 +1,37 @@
+<!--  EHR CDA 规范  既往疾病史章节: Section_template_Root_OID.5 -->
+
+<!-- errors -->
+
+<pattern id='p-Section_template_Root_OID.5-errors' see='#p-Section_template_Root_OID.5-errors'>
+	<title>EHR CDA 规范  既往疾病史章节 - errors validation phase</title>
+ <rule context='*[cda:templateId/@root="Section_template_Root_OID.5"]'>
+    <assert test='../cda:section'> 
+      Error: EHR CDA规范 既往疾病史章节(Section_template_Root_OID.5)只能用在section中。 
+   </assert> 
+    <assert test="cda:text">
+       Error:  EHR CDA 规范  既往疾病史章节必须包含一个叙述性文本.
+    </assert>
+
+    <assert test="cda:code[@code='11348-0']">
+       Error: EHR CDA 规范  既往疾病史章节应该为11348-0 (HISTORY OF PAST ILLNESS).
+    </assert>
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+      Error: EHR CDA 规范  既往疾病史章节(Section_template_Root_OID.5, 既往疾病史章节类型的code必须来自LOINC编码系统(2.16.840.1.113883.6.1). 
+   </assert> 
+      <assert test='.//cda:templateId[@root = "Entry_template_Root_OID.10"]'> 
+     <!-- Verify that all required data elements are present -->
+       Warning: EHR CDA 规范  既往疾病史章节必须包含一个及一个以上的"问题观察条目"
+   </assert> 
+ </rule>
+</pattern>
+
+<!-- warning -->
+
+<pattern id='p-Section_template_Root_OID.5-warning' see='#p-Section_template_Root_OID.5-warning'>
+	<title>EHR CDA 规范  既往疾病史章节 - warning validation phase</title>
+ <rule context='*[cda:templateId/@root="Section_template_Root_OID.5"]'>
+	<assert test=".//cda:entry">
+       Warning: EHR CDA 规范  既往疾病史章节必须包含临床声明
+    </assert>	
+ </rule>
+</pattern>

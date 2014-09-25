@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><procedures>
+				<proc type="create">
+					<context/>
+					<step caseNo="start" class="CDA.ClinicalDocument" specialNode="false" stepNumber="0" stepType="getAllObjects" subset="" tagName="ClinicalDocument"/>
+				</proc>
+				<element name="ClinicalDocument" path="/ClinicalDocument">
+					<procedures>
+						<proc type="create">
+							<context>
+								<ClassSet class="CDA.ClinicalDocument" subset=""/>
+								<ClassSet class="CDA.DocumentationOf" subset=""/>
+								<ClassSet class="CDA.ServiceEvent" subset=""/>
+								<ClassSet class="datatypes.CE" subset="s1"/>
+							</context>
+							<step assocName="code" caseNo="" stepNumber="0" stepType="addToContext" targetEnd="2">
+								<classSet1 class="CDA.ClinicalDocument" subset=""/>
+								<classSet2 class="datatypes.CE" subset="s1"/>
+							</step>
+							<step assocName="documentationOf" caseNo="" stepNumber="1" stepType="addToContext" targetEnd="2">
+								<classSet1 class="CDA.ClinicalDocument" subset=""/>
+								<classSet2 class="CDA.DocumentationOf" subset=""/>
+							</step>
+							<step assocName="serviceEvent" caseNo="" stepNumber="2" stepType="addToContext" targetEnd="2">
+								<classSet1 class="CDA.DocumentationOf" subset=""/>
+								<classSet2 class="CDA.ServiceEvent" subset=""/>
+							</step>
+							<step assocName="recordTarget" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="3" stepType="associationInstance" tagName="PatientInformation">
+								<classSet1 class="CDA.ClinicalDocument" subset=""/>
+								<classSet2 class="CDA.RecordTarget" subset=""/>
+							</step>
+							<step assocName="component_T" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="4" stepType="associationInstance" tagName="ProblemSet">
+								<classSet1 class="CDA.ClinicalDocument" subset=""/>
+								<classSet2 class="CDA.Component2_T" subset=""/>
+							</step>
+						</proc>
+					</procedures>
+					<element name="PatientInformation" path="/ClinicalDocument/PatientInformation">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="CDA.ClinicalDocument" subset=""/>
+									<ClassSet class="CDA.DocumentationOf" subset=""/>
+									<ClassSet class="CDA.ServiceEvent" subset=""/>
+									<ClassSet class="datatypes.CE" subset="s1"/>
+									<ClassSet class="CDA.RecordTarget" subset=""/>
+								</context>
+								<step assocName="patientRole" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="0" stepType="associationInstance" tagName="Patient">
+									<classSet1 class="CDA.RecordTarget" subset=""/>
+									<classSet2 class="CDA.PatientRole" subset=""/>
+								</step>
+							</proc>
+						</procedures>
+						<element name="Patient" path="/ClinicalDocument/PatientInformation/Patient">
+							<procedures>
+								<proc type="create">
+									<context>
+										<ClassSet class="CDA.ClinicalDocument" subset=""/>
+										<ClassSet class="CDA.DocumentationOf" subset=""/>
+										<ClassSet class="CDA.ServiceEvent" subset=""/>
+										<ClassSet class="datatypes.CE" subset="s1"/>
+										<ClassSet class="CDA.RecordTarget" subset=""/>
+										<ClassSet class="CDA.PatientRole" subset=""/>
+										<ClassSet class="CDA.Patient" subset=""/>
+										<ClassSet class="datatypes.CE" subset=""/>
+										<ClassSet class="datatypes.TS" subset=""/>
+										<ClassSet class="datatypes.PPD_TS" subset=""/>
+									</context>
+									<step assocName="patient" caseNo="" stepNumber="0" stepType="addToContext" targetEnd="2">
+										<classSet1 class="CDA.PatientRole" subset=""/>
+										<classSet2 class="CDA.Patient" subset=""/>
+									</step>
+									<step assocName="birthTime" caseNo="" stepNumber="1" stepType="addToContext" targetEnd="2">
+										<classSet1 class="CDA.Patient" subset=""/>
+										<classSet2 class="datatypes.TS" subset=""/>
+									</step>
+									<step assocName="center" caseNo="" stepNumber="2" stepType="addToContext" targetEnd="2">
+										<classSet1 class="datatypes.TS" subset=""/>
+										<classSet2 class="datatypes.PPD_TS" subset=""/>
+									</step>
+									<step assocName="administrativeGenderCode" caseNo="" stepNumber="3" stepType="addToContext" targetEnd="2">
+										<classSet1 class="CDA.Patient" subset=""/>
+										<classSet2 class="datatypes.CE" subset=""/>
+									</step>
+									<step caseNo="C.1" minIs1="false" pName="value" stepNumber="4" stepType="getProperty">
+										<ClassSet class="datatypes.CE" subset=""/>
+									</step>
+									<step appendFlag="false" attName="gender" caseNo="att" stepNumber="5" stepType="addAttribute"/>
+									<step caseNo="C.1" minIs1="false" pName="value" stepNumber="6" stepType="getProperty">
+										<ClassSet class="datatypes.PPD_TS" subset=""/>
+									</step>
+									<step appendFlag="false" attName="birthDate" caseNo="att" stepNumber="7" stepType="addAttribute"/>
+									<step assocName="id" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="8" stepType="associationInstance" tagName="id">
+										<classSet1 class="CDA.PatientRole" subset=""/>
+										<classSet2 class="datatypes.II" subset=""/>
+									</step>
+									<step assocName="name" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="9" stepType="associationInstance" tagName="name">
+										<classSet1 class="CDA.Patient" subset=""/>
+										<classSet2 class="datatypes.PN" subset=""/>
+									</step>
+								</proc>
+							</procedures>
+							<element name="id" path="/ClinicalDocument/PatientInformation/Patient/id">
+								<procedures>
+									<proc type="create">
+										<context>
+											<ClassSet class="CDA.ClinicalDocument" subset=""/>
+											<ClassSet class="CDA.DocumentationOf" subset=""/>
+											<ClassSet class="CDA.ServiceEvent" subset=""/>
+											<ClassSet class="datatypes.CE" subset="s1"/>
+											<ClassSet class="CDA.RecordTarget" subset=""/>
+											<ClassSet class="CDA.PatientRole" subset=""/>
+											<ClassSet class="CDA.Patient" subset=""/>
+											<ClassSet class="datatypes.CE" subset=""/>
+											<ClassSet class="datatypes.TS" subset=""/>
+											<ClassSet class="datatypes.PPD_TS" subset=""/>
+											<ClassSet class="datatypes.II" subset=""/>
+										</context>
+										<step caseNo="C.1" minIs1="false" pName="root" stepNumber="0" stepType="getProperty">
+											<ClassSet class="datatypes.II" subset=""/>
+										</step>
+										<step appendFlag="false" attName="authority" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+										<step caseNo="C.1" minIs1="false" pName="extension" stepNumber="2" stepType="getProperty">
+											<ClassSet class="datatypes.II" subset=""/>
+										</step>
+										<step appendFlag="false" attName="idValue" caseNo="att" stepNumber="3" stepType="addAttribute"/>
+									</proc>
+								</procedures>
+							</element>
+							<element name="name" path="/ClinicalDocument/PatientInformation/Patient/name">
+								<procedures>
+									<proc type="create">
+										<context>
+											<ClassSet class="CDA.ClinicalDocument" subset=""/>
+											<ClassSet class="CDA.DocumentationOf" subset=""/>
+											<ClassSet class="CDA.ServiceEvent" subset=""/>
+											<ClassSet class="datatypes.CE" subset="s1"/>
+											<ClassSet class="CDA.RecordTarget" subset=""/>
+											<ClassSet class="CDA.PatientRole" subset=""/>
+											<ClassSet class="CDA.Patient" subset=""/>
+											<ClassSet class="datatypes.CE" subset=""/>
+											<ClassSet class="datatypes.TS" subset=""/>
+											<ClassSet class="datatypes.PPD_TS" subset=""/>
+											<ClassSet class="datatypes.PN" subset=""/>
+										</context>
+										<step assocName="given" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="0" stepType="associationInstance" tagName="given">
+											<classSet1 class="datatypes.PN" subset=""/>
+											<classSet2 class="datatypes.en.given" subset=""/>
+										</step>
+										<step assocName="family" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="1" stepType="associationInstance" tagName="family">
+											<classSet1 class="datatypes.PN" subset=""/>
+											<classSet2 class="datatypes.en.family" subset=""/>
+										</step>
+										<step assocName="suffix" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="2" stepType="associationInstance" tagName="suffix">
+											<classSet1 class="datatypes.PN" subset=""/>
+											<classSet2 class="datatypes.en.suffix" subset=""/>
+										</step>
+									</proc>
+								</procedures>
+								<element name="given" path="/ClinicalDocument/PatientInformation/Patient/name/given">
+									<procedures>
+										<proc type="create">
+											<context>
+												<ClassSet class="CDA.ClinicalDocument" subset=""/>
+												<ClassSet class="CDA.DocumentationOf" subset=""/>
+												<ClassSet class="CDA.ServiceEvent" subset=""/>
+												<ClassSet class="datatypes.CE" subset="s1"/>
+												<ClassSet class="CDA.RecordTarget" subset=""/>
+												<ClassSet class="CDA.PatientRole" subset=""/>
+												<ClassSet class="CDA.Patient" subset=""/>
+												<ClassSet class="datatypes.CE" subset=""/>
+												<ClassSet class="datatypes.TS" subset=""/>
+												<ClassSet class="datatypes.PPD_TS" subset=""/>
+												<ClassSet class="datatypes.PN" subset=""/>
+												<ClassSet class="datatypes.en.given" subset=""/>
+											</context>
+											<step caseNo="C.1" minIs1="false" pName="textContent" stepNumber="0" stepType="getProperty">
+												<ClassSet class="datatypes.en.given" subset=""/>
+											</step>
+											<step appendFlag="false" attName="given" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+										</proc>
+									</procedures>
+								</element>
+								<element name="family" path="/ClinicalDocument/PatientInformation/Patient/name/family">
+									<procedures>
+										<proc type="create">
+											<context>
+												<ClassSet class="CDA.ClinicalDocument" subset=""/>
+												<ClassSet class="CDA.DocumentationOf" subset=""/>
+												<ClassSet class="CDA.ServiceEvent" subset=""/>
+												<ClassSet class="datatypes.CE" subset="s1"/>
+												<ClassSet class="CDA.RecordTarget" subset=""/>
+												<ClassSet class="CDA.PatientRole" subset=""/>
+												<ClassSet class="CDA.Patient" subset=""/>
+												<ClassSet class="datatypes.CE" subset=""/>
+												<ClassSet class="datatypes.TS" subset=""/>
+												<ClassSet class="datatypes.PPD_TS" subset=""/>
+												<ClassSet class="datatypes.PN" subset=""/>
+												<ClassSet class="datatypes.en.family" subset=""/>
+											</context>
+											<step caseNo="C.1" minIs1="false" pName="textContent" stepNumber="0" stepType="getProperty">
+												<ClassSet class="datatypes.en.family" subset=""/>
+											</step>
+											<step appendFlag="false" attName="family" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+										</proc>
+									</procedures>
+								</element>
+								<element name="suffix" path="/ClinicalDocument/PatientInformation/Patient/name/suffix">
+									<procedures>
+										<proc type="create">
+											<context>
+												<ClassSet class="CDA.ClinicalDocument" subset=""/>
+												<ClassSet class="CDA.DocumentationOf" subset=""/>
+												<ClassSet class="CDA.ServiceEvent" subset=""/>
+												<ClassSet class="datatypes.CE" subset="s1"/>
+												<ClassSet class="CDA.RecordTarget" subset=""/>
+												<ClassSet class="CDA.PatientRole" subset=""/>
+												<ClassSet class="CDA.Patient" subset=""/>
+												<ClassSet class="datatypes.CE" subset=""/>
+												<ClassSet class="datatypes.TS" subset=""/>
+												<ClassSet class="datatypes.PPD_TS" subset=""/>
+												<ClassSet class="datatypes.PN" subset=""/>
+												<ClassSet class="datatypes.en.suffix" subset=""/>
+											</context>
+											<step caseNo="C.1" minIs1="false" pName="textContent" stepNumber="0" stepType="getProperty">
+												<ClassSet class="datatypes.en.suffix" subset=""/>
+											</step>
+											<step appendFlag="false" attName="suffix" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+										</proc>
+									</procedures>
+								</element>
+							</element>
+						</element>
+					</element>
+					<element name="ProblemSet" path="/ClinicalDocument/ProblemSet">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="CDA.ClinicalDocument" subset=""/>
+									<ClassSet class="CDA.DocumentationOf" subset=""/>
+									<ClassSet class="CDA.ServiceEvent" subset=""/>
+									<ClassSet class="datatypes.CE" subset="s1"/>
+									<ClassSet class="CDA.Component2_T" subset=""/>
+									<ClassSet class="CDA.StructuredBody_T" subset=""/>
+									<ClassSet class="CDA.Component3_Problem" subset=""/>
+									<ClassSet class="CDA.Section_Problem" subset=""/>
+									<ClassSet class="datatypes.CE" subset="s2"/>
+								</context>
+								<step assocName="structuredBody_T" caseNo="" stepNumber="0" stepType="addToContext" targetEnd="2">
+									<classSet1 class="CDA.Component2_T" subset=""/>
+									<classSet2 class="CDA.StructuredBody_T" subset=""/>
+								</step>
+								<step assocName="component_Problem" caseNo="" stepNumber="1" stepType="addToContext" targetEnd="2">
+									<classSet1 class="CDA.StructuredBody_T" subset=""/>
+									<classSet2 class="CDA.Component3_Problem" subset=""/>
+								</step>
+								<step assocName="section_Problem" caseNo="" stepNumber="2" stepType="addToContext" targetEnd="2">
+									<classSet1 class="CDA.Component3_Problem" subset=""/>
+									<classSet2 class="CDA.Section_Problem" subset=""/>
+								</step>
+								<step assocName="code" caseNo="" stepNumber="3" stepType="addToContext" targetEnd="2">
+									<classSet1 class="CDA.Section_Problem" subset=""/>
+									<classSet2 class="datatypes.CE" subset="s2"/>
+								</step>
+								<step assocName="entry_ProblemAct" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="4" stepType="associationInstance" tagName="Problem">
+									<classSet1 class="CDA.Section_Problem" subset=""/>
+									<classSet2 class="CDA.Entry_ProblemAct" subset=""/>
+								</step>
+							</proc>
+						</procedures>
+						<element name="Problem" path="/ClinicalDocument/ProblemSet/Problem">
+							<procedures>
+								<proc type="create">
+									<context>
+										<ClassSet class="CDA.ClinicalDocument" subset=""/>
+										<ClassSet class="CDA.DocumentationOf" subset=""/>
+										<ClassSet class="CDA.ServiceEvent" subset=""/>
+										<ClassSet class="datatypes.CE" subset="s1"/>
+										<ClassSet class="CDA.Component2_T" subset=""/>
+										<ClassSet class="CDA.StructuredBody_T" subset=""/>
+										<ClassSet class="CDA.Component3_Problem" subset=""/>
+										<ClassSet class="CDA.Section_Problem" subset=""/>
+										<ClassSet class="datatypes.CE" subset="s2"/>
+										<ClassSet class="CDA.Entry_ProblemAct" subset=""/>
+										<ClassSet class="CDA.Act_ProblemAct" subset=""/>
+										<ClassSet class="datatypes.CS" subset=""/>
+										<ClassSet class="CDA.EntryRelationship_ProblemObservation" subset=""/>
+										<ClassSet class="CDA.Observation_ProblemObservation" subset=""/>
+										<ClassSet class="datatypes.CD" subset=""/>
+										<ClassSet class="datatypes.CS" subset="s1"/>
+									</context>
+									<step assocName="act_ProblemAct" caseNo="" stepNumber="0" stepType="addToContext" targetEnd="2">
+										<classSet1 class="CDA.Entry_ProblemAct" subset=""/>
+										<classSet2 class="CDA.Act_ProblemAct" subset=""/>
+									</step>
+									<step assocName="entryRelationship_ProblemObservation" caseNo="" stepNumber="1" stepType="addToContext" targetEnd="2">
+										<classSet1 class="CDA.Act_ProblemAct" subset=""/>
+										<classSet2 class="CDA.EntryRelationship_ProblemObservation" subset=""/>
+									</step>
+									<step assocName="observation_ProblemObservation" caseNo="" stepNumber="2" stepType="addToContext" targetEnd="2">
+										<classSet1 class="CDA.EntryRelationship_ProblemObservation" subset=""/>
+										<classSet2 class="CDA.Observation_ProblemObservation" subset=""/>
+									</step>
+									<step assocName="statusCode" caseNo="" stepNumber="3" stepType="addToContext" targetEnd="2">
+										<classSet1 class="CDA.Observation_ProblemObservation" subset=""/>
+										<classSet2 class="datatypes.CS" subset="s1"/>
+									</step>
+									<step assocName="code" caseNo="" stepNumber="4" stepType="addToContext" targetEnd="2">
+										<classSet1 class="CDA.Act_ProblemAct" subset=""/>
+										<classSet2 class="datatypes.CD" subset=""/>
+									</step>
+									<step assocName="statusCode" caseNo="" stepNumber="5" stepType="addToContext" targetEnd="2">
+										<classSet1 class="CDA.Act_ProblemAct" subset=""/>
+										<classSet2 class="datatypes.CS" subset=""/>
+									</step>
+									<step caseNo="C.1" minIs1="false" pName="code" stepNumber="6" stepType="getProperty">
+										<ClassSet class="datatypes.CS" subset=""/>
+									</step>
+									<step appendFlag="false" attName="status" caseNo="att" stepNumber="7" stepType="addAttribute"/>
+									<step assocName="effectiveTime" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="8" stepType="associationInstance" tagName="TimeRange">
+										<classSet1 class="CDA.Observation_ProblemObservation" subset=""/>
+										<classSet2 class="datatypes.IVL_TS" subset=""/>
+									</step>
+									<step assocName="value" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="9" stepType="associationInstance" tagName="Topic">
+										<classSet1 class="CDA.Observation_ProblemObservation" subset=""/>
+										<classSet2 class="datatypes.ANY" subset=""/>
+									</step>
+								</proc>
+							</procedures>
+							<element name="TimeRange" path="/ClinicalDocument/ProblemSet/Problem/TimeRange">
+								<procedures>
+									<proc type="create">
+										<context>
+											<ClassSet class="CDA.ClinicalDocument" subset=""/>
+											<ClassSet class="CDA.DocumentationOf" subset=""/>
+											<ClassSet class="CDA.ServiceEvent" subset=""/>
+											<ClassSet class="datatypes.CE" subset="s1"/>
+											<ClassSet class="CDA.Component2_T" subset=""/>
+											<ClassSet class="CDA.StructuredBody_T" subset=""/>
+											<ClassSet class="CDA.Component3_Problem" subset=""/>
+											<ClassSet class="CDA.Section_Problem" subset=""/>
+											<ClassSet class="datatypes.CE" subset="s2"/>
+											<ClassSet class="CDA.Entry_ProblemAct" subset=""/>
+											<ClassSet class="CDA.Act_ProblemAct" subset=""/>
+											<ClassSet class="datatypes.CS" subset=""/>
+											<ClassSet class="CDA.EntryRelationship_ProblemObservation" subset=""/>
+											<ClassSet class="CDA.Observation_ProblemObservation" subset=""/>
+											<ClassSet class="datatypes.CD" subset=""/>
+											<ClassSet class="datatypes.CS" subset="s1"/>
+											<ClassSet class="datatypes.IVL_TS" subset=""/>
+											<ClassSet class="datatypes.IVXB_TS" subset=""/>
+											<ClassSet class="datatypes.IVXB_TS" subset="s1"/>
+										</context>
+										<step assocName="high" caseNo="" stepNumber="0" stepType="addToContext" targetEnd="2">
+											<classSet1 class="datatypes.IVL_TS" subset=""/>
+											<classSet2 class="datatypes.IVXB_TS" subset="s1"/>
+										</step>
+										<step assocName="low" caseNo="" stepNumber="1" stepType="addToContext" targetEnd="2">
+											<classSet1 class="datatypes.IVL_TS" subset=""/>
+											<classSet2 class="datatypes.IVXB_TS" subset=""/>
+										</step>
+										<step caseNo="C.1" minIs1="false" pName="value" stepNumber="2" stepType="getProperty">
+											<ClassSet class="datatypes.IVXB_TS" subset=""/>
+										</step>
+										<step appendFlag="false" attName="start" caseNo="att" stepNumber="3" stepType="addAttribute"/>
+										<step caseNo="C.1" minIs1="false" pName="value" stepNumber="4" stepType="getProperty">
+											<ClassSet class="datatypes.IVXB_TS" subset="s1"/>
+										</step>
+										<step appendFlag="false" attName="end" caseNo="att" stepNumber="5" stepType="addAttribute"/>
+									</proc>
+								</procedures>
+							</element>
+							<element name="Topic" path="/ClinicalDocument/ProblemSet/Problem/Topic">
+								<procedures>
+									<proc type="create">
+										<context>
+											<ClassSet class="CDA.ClinicalDocument" subset=""/>
+											<ClassSet class="CDA.DocumentationOf" subset=""/>
+											<ClassSet class="CDA.ServiceEvent" subset=""/>
+											<ClassSet class="datatypes.CE" subset="s1"/>
+											<ClassSet class="CDA.Component2_T" subset=""/>
+											<ClassSet class="CDA.StructuredBody_T" subset=""/>
+											<ClassSet class="CDA.Component3_Problem" subset=""/>
+											<ClassSet class="CDA.Section_Problem" subset=""/>
+											<ClassSet class="datatypes.CE" subset="s2"/>
+											<ClassSet class="CDA.Entry_ProblemAct" subset=""/>
+											<ClassSet class="CDA.Act_ProblemAct" subset=""/>
+											<ClassSet class="datatypes.CS" subset=""/>
+											<ClassSet class="CDA.EntryRelationship_ProblemObservation" subset=""/>
+											<ClassSet class="CDA.Observation_ProblemObservation" subset=""/>
+											<ClassSet class="datatypes.CD" subset=""/>
+											<ClassSet class="datatypes.CS" subset="s1"/>
+											<ClassSet class="datatypes.ANY" subset=""/>
+										</context>
+										<step caseNo="C.1" minIs1="false" pName="code" stepNumber="0" stepType="getProperty">
+											<ClassSet class="datatypes.ANY" subset=""/>
+										</step>
+										<step appendFlag="false" attName="code" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+										<step caseNo="C.1" minIs1="false" pName="codeSystem" stepNumber="2" stepType="getProperty">
+											<ClassSet class="datatypes.ANY" subset=""/>
+										</step>
+										<step appendFlag="false" attName="codeSystem" caseNo="att" stepNumber="3" stepType="addAttribute"/>
+									</proc>
+								</procedures>
+							</element>
+						</element>
+					</element>
+				</element>
+			</procedures>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>社会史章节 Nom - conformance rules</title>
+<shortdesc id="shortdesc">[Section: templateId <tt>Section_template_Root_OID.2.1</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Section</category></metadata>
+<resourceid id="Section_template_Root_OID.2.1"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>code</b></tt> (0026)<tt><b>/@code</b>="29762-2" </tt><i>社会史</i> (CodeSystem:<tt> 2.16.840.1.113883.6.1 LOINC</tt>)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>text</b></tt> (0029)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>title</b></tt> = "社会史" (CONF-0028)
+</li>
+<li><b>SHALL</b> contain at least one [1..*] <tt><b>entry</b></tt> (CONF-0030)
+<ol>
+<li>Contains exactly one [1..1] <xref href="../社会史观察条目.dita">社会史观察条目</xref> (templateId: <tt>Entry_template_Root_OID.2</tt>)</li></ol></li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>code</b></tt> (0026)<tt><b>/@code</b>="29762-2" </tt><i>社会史</i> (CodeSystem:<tt> 2.16.840.1.113883.6.1 LOINC</tt>)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>title</b></tt> = "社会史" (CONF-0028)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>text</b></tt> (0029)
+</li>
+<li><b>SHALL</b> contain at least one [1..*] <tt><b>entry</b></tt> (CONF-0030)
+<ol>
+<li>Contains exactly one [1..1] <xref href="../社会史观察条目.dita">社会史观察条目</xref> (templateId: <tt>Entry_template_Root_OID.2</tt>)</li></ol></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">社会史章节 Nom</ph></p>
+<p id="shortdesc">[Section: templateId <tt>Section_template_Root_OID.2.1</tt>]</p>
+</body>
+</topic>

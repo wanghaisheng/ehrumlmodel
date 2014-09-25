@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>社会史章节 Nar - conformance rules</title>
+<shortdesc id="shortdesc">[Section: templateId <tt>Section_template_Root_OID.2</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Section</category></metadata>
+<resourceid id="Section_template_Root_OID.2"/>
+</prolog>
+<body>
+<section id="description">
+<p>本章用于描述居民社会史相关信息，可能包括教育/文化程度/学历(如学历代码)、职业(如职业类别代码)、工作(如工作单位名称、参加工作日期)、户籍(如常住地户籍标志)、生活方式(如运动方式、次数)、健康危险因素(如吸烟、饮酒、性行为)、生活环境(如厕所类别、禽畜栏类别、燃料类型)、经济情况(如家庭年人均收入、经济状况代码)、额外的婚姻、宗教、种族、信仰等信息(如结婚日期)、家庭成员间的关系(监护人与本人关系代码)等等对于理解病人情况起重要作用的社会性信息(更多定义请参考WHO2003年发布的《Social Determinants of Health-- the Solid Facts》)</p>
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>code</b></tt><tt><b>/@code</b>="29762-2" </tt><i>社会史</i> (CodeSystem:<tt> 2.16.840.1.113883.6.1 LOINC</tt>) (CONF-0022)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>text</b></tt> (CONF-0024)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>title</b></tt> = "社会史" (CONF-0023)
+</li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>code</b></tt><tt><b>/@code</b>="29762-2" </tt><i>社会史</i> (CodeSystem:<tt> 2.16.840.1.113883.6.1 LOINC</tt>) (CONF-0022)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>title</b></tt> = "社会史" (CONF-0023)
+</li>
+<li><b>SHALL</b> contain exactly one [1..1] <tt><b>text</b></tt> (CONF-0024)
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">社会史章节 Nar</ph></p>
+<p id="shortdesc">[Section: templateId <tt>Section_template_Root_OID.2</tt>]</p>
+</body>
+</topic>

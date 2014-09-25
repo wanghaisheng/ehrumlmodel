@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <!--
+   Title: My greenCDA Schema Module: Problem Set
+
+   Original Filename: myGreenCDA_problemSet.xsd
+   Version: 0.3  
+   December 14 2009
+
+   This file is part of the greenCDA package created by
+   Alschuler Associates, LLC and Semantically Yours, LLC
+   to stimulate discussion and further experimentation 
+   with approaches to simplifying CDA instance creation.
+
+   With the greenCDA files, you can
+
+     - validate the sample instance with its green schema
+     - convert the sample instance to full CDA.
+  -->
+
+<xs:complexType name="ProblemSetType">
+    <xs:sequence>
+      <xs:element name="Id" minOccurs="0">
+        <xs:complexType>
+          <xs:attributeGroup ref="IdSet"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TimeRange" type="TimeRange"/>
+      <xs:element name="Problem" type="ProblemType"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ProblemType">
+  <xs:sequence>
+    <xs:element name="TimeRange" type="TimeRange"/>
+    <xs:element name="Topic" type="Topic"/>
+  </xs:sequence>
+  <xs:attribute name="status"/>
+  <xs:attribute name="healthStatus"/>
+  <xs:attribute name="age"/>
+  <xs:attribute name="ageUnit"/>
+</xs:complexType>
+
+<!-- @age needs a schema constraint: if present, @ageUnit is required -->
+<!-- @ageUnit needs a schema restriction, e.g. "y|m|d" -->
+
+</xs:schema>

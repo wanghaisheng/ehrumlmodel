@@ -1,0 +1,40 @@
+<!--  EHR CDA 规范 家族遗传病史: Section_template_Root_OID.9.1 -->
+
+<!-- errors -->
+
+  <pattern id="p-Section_template_Root_OID.9.1-errors">
+    <title>EHR CDA 规范 家族遗传病史 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Section_template_Root_OID.9.1"]'>
+
+     <!-- Verify that the template id is used on the appropriate type of
+    object --> 
+   <assert test='../cda:section'> 
+      Error: EHR CDA 规范 家族遗传病史 (Section_template_Root_OID.9.1)只能用在sections中. 
+   </assert> 
+   <!-- Verify the section type code --> 
+   <assert test='cda:code[@code = "10157-6"]'> 
+      Error: EHR CDA 规范 家族遗传病史 (Section_template_Root_OID.9.1),章节类型的code值必须为10157-6 
+   </assert> 
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+      Error: In EHR CDA 规范 家族遗传病史 (Section_template_Root_OID.9.1), 章节类型的code必须来自LOINC code system (2.16.840.1.113883.6.1). 
+   </assert> 
+   <assert test='.//cda:templateId[@root = "Entry_template_Root_OID.14"]'> 
+     <!-- Verify that all required data elements are present -->
+      Error: In EHR CDA 规范 家族遗传病史 (Section_template_Root_OID.9.1)必须包含家族遗传病编组条目
+   </assert> 
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Section_template_Root_OID.9.1-warnings">
+    <title>EHR CDA 规范 家族遗传病史 - warning validation phase</title>
+
+<!--
+    <rule context='*[cda:templateId/@root="Section_template_Root_OID.9.1"]'>
+      <report test="."/>
+    </rule>
+-->
+
+  </pattern>

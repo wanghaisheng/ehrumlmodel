@@ -1,0 +1,47 @@
+<!--  EHR CDA规范 医疗服务费用条目:Entry_template_Root_OID.4-->
+
+<!-- errors -->
+
+  <pattern id="p-:Entry_template_Root_OID.4-errors">
+    <title>EHR CDA规范 医疗服务费用条目 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.4"]'>
+    <assert test='cda:templateId[@root="Entry_template_Root_OID.4"]'>
+       Error: In EHR CDA规范 医疗服务费用条目(Entry_template_Root_OID.4)必须包含 ：Entry_template_Root_OID.4
+    </assert>
+    <assert test='cda:code'>
+       Error: In EHR CDA规范 医疗服务费用条目(Entry_template_Root_OID.4),医疗服务费用条目必须包含一个它所要描述费用分类代码
+    </assert>
+
+    <assert test='cda:text/cda:reference'>
+       Error: In EHR CDA规范 医疗服务费用条目(Entry_template_Root_OID.4), 每个医疗服务费用条目可以包含一个text元素，它包含一个reference
+	   指向对应的section下的text元素中的自由文本所表示的自由文本信息
+    </assert>
+
+    <assert test='cda:statusCode[@code = "completed"]'>
+       Error: In EHR CDA规范 医疗服务费用条目(Entry_template_Root_OID.4), statuscode必须是completed.
+    </assert>
+    <assert test='cda:value@xsi:type="MO"'>
+       Error: In EHR CDA规范 医疗服务费用条目(Entry_template_Root_OID.4),医疗服务费用条目的value值应该使用数据类型MO来记录。
+	</assert>
+	
+    </rule>
+  </pattern>
+
+
+  <!-- warning -->
+
+  <pattern id="p-:Entry_template_Root_OID.4-warnings">
+    <title>EHR CDA规范 医疗服务费用条目 - warning validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.4"]'>
+    <assert test='cda:code[@codeSystem = "CV07.10.002" or
+                           @codeSystem = "CV07.10.001"'>
+       Warning: In EHR CDA规范 医疗服务费用条目 (Entry_template_Root_OID.4)中code必须使用来自城乡居民健康档案基本数据集中规定的值域。
+    </assert>
+    <assert test='cda:value[@currency="CNY"'>
+       Warning: In EHR CDA规范 医疗服务费用条目(Entry_template_Root_OID.4),value的单位只能是人民币CNY 
+    </assert>
+    
+    </rule>
+
+
+  </pattern>

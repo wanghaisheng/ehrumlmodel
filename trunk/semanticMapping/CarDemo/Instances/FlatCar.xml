@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<region country = "England">
+	<drivers>
+		<driver license = "L12778" age = "46">Black</driver>
+		<driver license = "L4314" age = "28">Jones</driver>
+	</drivers>
+	<cars>
+		<car make = "Ford" type = "saloon" registration = "KLL788" driverLicence = "L12778"/>
+		<car make = "Ferrari" type = "sports" registration = "PEW445"  driverLicence = "L12778"/>
+		<car make = "Alfa Romeo" type = "sports" registration = "VBG998"  driverLicence = "L4314"/>
+	</cars>
+</region>

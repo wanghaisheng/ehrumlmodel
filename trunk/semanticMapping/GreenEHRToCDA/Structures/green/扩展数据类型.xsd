@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="基本数据类型.xsd"/>
+	<xs:simpleType name="城乡居民健康档案编号type">
+		<xs:restriction base="S1">
+			<xs:pattern value="[0-9]{17}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="姓名type">
+		<xs:annotation>
+			<xs:documentation>姓名的数据类型为S1 表示格式为A..50，即用字母字符表示，不多于50个字符。        
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S1">
+			<xs:pattern value="[\w\u4e00-\u9fa5]{0,50}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="身份证件号码type">
+		<xs:restriction base="S1">
+			<xs:pattern value="(\d{6})(18|19|20)?(\d{2})([01]\d)([0123]\d)(\d{3})(\d|X)?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="本人电话号码type">
+		<xs:restriction base="S1">
+			<xs:pattern value="(\d{3}\d{8}|\d{4}\d{7})|((\([0]\d{2}|\d{4}\))(\d{6,7}))|((13[0-9]|15[0|3|6|7|8|9]|18[8|9])\d{8})"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="工作单位名称type">
+		<xs:restriction base="S1">
+			<xs:pattern value="\w{0,35}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="S1_AN100">
+		<xs:restriction base="S1">
+			<xs:pattern value="[\w\u4e00-\u9fa5]{0,100}"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

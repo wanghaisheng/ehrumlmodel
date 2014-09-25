@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ClinicalDocument>
+	<PatientInformation>
+		<Patient birthDate="19410506" gender="M">
+			<id authority="12345678" idValue="110094"/>
+			<name>
+				<given given="Elmer"/>
+				<family family="Fudd"/>
+				<suffix suffix="Jnr"/>
+			</name>
+		</Patient>
+	</PatientInformation>
+	<ProblemSet>
+		<Problem status="55561003">
+			<TimeRange end="20100106" start="20090718"/>
+			<Topic code="233604007" codeSystem="2.16.840.1.115885.7.97"></Topic>
+		</Problem>
+	</ProblemSet>
+</ClinicalDocument>

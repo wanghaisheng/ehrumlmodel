@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><procedures>
+				<proc type="create">
+					<context/>
+					<step caseNo="start" class="car" specialNode="false" stepNumber="0" stepType="getAllObjects" subset="" tagName="Dummy"/>
+				</proc>
+				<element name="Dummy">
+					<procedures>
+						<proc type="create">
+							<context>
+								<ClassSet class="car" subset=""/>
+							</context>
+							<step caseNo="C.1" minIs1="false" pName="registration" stepNumber="0" stepType="getProperty">
+								<ClassSet class="car" subset=""/>
+							</step>
+							<step appendFlag="false" attName="reg" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+							<step caseNo="3.5.3" ifString="false" stepNumber="2" stepType="addElement" tagName="carDetails"/>
+						</proc>
+					</procedures>
+					<element name="carDetails">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="car" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="make" stepNumber="0" stepType="getProperty">
+									<ClassSet class="car" subset=""/>
+								</step>
+								<step appendFlag="false" attName="make" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+								<step caseNo="C.1" minIs1="false" pName="type" stepNumber="2" stepType="getProperty">
+									<ClassSet class="car" subset=""/>
+								</step>
+								<step appendFlag="false" attName="type" caseNo="att" stepNumber="3" stepType="addAttribute"/>
+							</proc>
+						</procedures>
+					</element>
+				</element>
+			</procedures>

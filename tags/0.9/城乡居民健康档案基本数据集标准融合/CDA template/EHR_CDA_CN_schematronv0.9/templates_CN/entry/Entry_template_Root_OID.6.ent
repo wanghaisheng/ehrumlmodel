@@ -1,0 +1,50 @@
+<!--  EHR CDA 规范 过敏与不良反应观察条目: Entry_template_Root_OID.6 -->
+
+<!-- errors -->
+
+  <pattern id="p-Entry_template_Root_OID.6-errors">
+    <title>EHR CDA 规范 过敏与不良反应观察条目 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.6"]'>
+       <assert test='../cda:observation[@classCode="OBS" and @moodCode="EVN"]'>
+          Error: In EHR CDA 规范 过敏与不良反应观察条目 (Entry_template_Root_OID.6), 
+		  过敏与不良反应观察条目 必须记录在CDA &lt;observation&gt; element,classCode='OBS'moodCode="EVN".
+       </assert>
+
+       <assert test='cda:code[@code="ASSERTION" and @codeSystem="2.16.840.1.113883.5.4"]'>
+          Error: In EHR CDA 规范 过敏与不良反应观察条目 (Entry_template_Root_OID.6), the &lt;code&gt; element of Allergies 
+          and Intolerances represents the kind of allergy observation made, to a drug, food or environmental agent, and whether 
+          it is an allergy, non-allergy intolerance, or unknown class of intolerance (not known to be allergy or intolerance). 
+          The &lt;code&gt; element of an allergy entry shall be provided, and a code and codeSystem attribute shall be present.
+       </assert>
+    <assert test='cda:statusCode[@code = "completed"]'>
+       Error: In EHR CDA规范 过敏与不良反应观察条目 (Entry_template_Root_OID.6), statuscode必须是completed.
+    </assert>
+       <assert test='(cda:value[@xsi:type="CD"]) and 
+                     (cda:value[@code and @codeSystem] or cda:value[not(@code) and not(@codeSystem)])'>
+          Error: In EHR CDA 规范 过敏与不良反应观察条目 (Entry_template_Root_OID.6), the &lt;value&gt; is a description of 
+          the allergy or adverse reaction. While the value may be a coded or an uncoded string, the type is always a coded 
+          value (xsi:type='CD'). If coded, the code and codeSystem attributes must be present. The codingSystem should 
+          reference a controlled vocabulary describing allergies and adverse reactions. If uncoded, all attributes other than 
+          xsi:type='CD' must be absent. 
+       </assert>
+
+
+
+
+  </rule>
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Entry_template_Root_OID.6-warnings">
+    <title>EHR CDA 规范 过敏与不良反应观察条目 - warning validation phase</title>
+
+
+    <rule context="*[cda:templateId/@root=&quot;Entry_template_Root_OID.6&quot;]">
+       <assert test='cda:value[@codeSystem="CV05.01.038" ]'>
+          Warning: In EHR CDA 规范 过敏与不良反应观察条目 (Entry_template_Root_OID.6), code必须取自CV05.01.038值域。
+       </assert>
+    </rule>
+
+
+  </pattern>

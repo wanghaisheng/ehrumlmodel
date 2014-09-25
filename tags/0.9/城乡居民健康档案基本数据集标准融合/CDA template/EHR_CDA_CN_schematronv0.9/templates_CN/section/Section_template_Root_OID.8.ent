@@ -1,0 +1,33 @@
+<!--  EHR CDA 规范  外伤史章节: Section_template_Root_OID.8 -->
+
+<!-- errors -->
+
+<pattern id='p-Section_template_Root_OID.8-errors' see='#p-Section_template_Root_OID.8-errors'>
+	<title>EHR CDA 规范  外伤史章节 - 错误验证阶段</title>
+ <rule context='*[cda:templateId/@root="Section_template_Root_OID.8"]'>
+	<!-- Verify that the template id is used on the appropriate type of object --> 
+   <assert test='../cda:section'> 
+      Error: EHR CDA规范 外伤史章节(Section_template_Root_OID.8)只能用在section中。 
+   </assert> 
+    <assert test="cda:text">
+       Error:  EHR CDA 规范  外伤史章节必须包含一个叙述性文本.
+    </assert>
+
+    <assert test="cda:code[@code='xx_traumahistory']">
+       Error: EHR CDA 规范  外伤史章节应该为xx_traumahistory (trauma history).
+    </assert>
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+      Error: EHR CDA 规范  外伤史章节(Section_template_Root_OID.8, 外伤史章节的code必须来自LOINC编码系统(2.16.840.1.113883.6.1). 
+   </assert> 
+ </rule>
+</pattern>
+
+<!-- warning -->
+
+<pattern id='p-Section_template_Root_OID.8-warning' see='#p-Section_template_Root_OID.8-warning'>
+	<title>EHR CDA 规范  外伤史章节 - warning validation phase</title>
+ <rule context='*[cda:templateId/@root="Section_template_Root_OID.8"]'>
+
+ </rule>
+</pattern>
+

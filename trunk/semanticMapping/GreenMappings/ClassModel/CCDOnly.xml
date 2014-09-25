@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templateCollection name = "CCDOnly">
+	<templateSet name = "CCD" location="ccd.sch" rootId="2.16.840.1.113883.10.20.1">
+
+		<templateLevel level="CDA">
+			<template id="root"/>
+		</templateLevel>
+
+		<templateLevel level="section">
+			<template id="1" name = "Advance directives">
+				<in>root</in>
+			</template>
+			<template id="2" name = "Alerts">
+				<in>root</in>
+			</template>
+			<template id="3" name = "Encounters">
+				<in>root</in>
+			</template>
+			<template id="4" name = "Family History">
+				<in>root</in>
+			</template>
+			<template id="5" name = "Functional status">
+				<in>root</in>
+			</template>
+			<template id="6" name = "Immunizations">
+				<in>root</in>
+			</template>
+			<template id="7" name = "Medical equipment">
+				<in>root</in>
+			</template>
+			<template id="8" name = "Medications">
+				<in>root</in>
+			</template>
+			<template id="9" name = "Payers">
+				<in>root</in>
+			</template>
+			<template id="10" name = "Plan of care">
+				<in>root</in>
+			</template>
+			<template id="11" name = "Problem">
+				<in>root</in>
+			</template>
+			<template id="12" name = "Procedures">
+				<in>root</in>
+			</template>
+			<template id="13" name = "Purpose">
+				<in>root</in>
+			</template>
+			<template id="14" name = "Results">
+				<in>root</in>
+			</template>
+			<template id="15" name = "Social history">
+				<in>root</in>
+			</template>
+			<template id="16" name = "Vital signs">
+				<in>root</in>
+			</template>
+		</templateLevel>
+
+		<templateLevel level="entry">
+			<template id="17" name = "Advance directive observation">
+				<in>1</in>
+			</template>
+			<template id="20" name = "Coverage activity">
+				<in>9</in>
+			</template>
+			<template id="21" name = "Encounter activity">
+				<in>3</in>
+			</template>
+			<template id="23" name = "Family history organizer">
+				<in>4</in>
+			</template>
+			<template id="24" name = "Medication activity">
+				<in>6</in>
+				<in>8</in>
+			</template>
+			<template id="25" name = "Plan of care activity">
+				<in>10</in>
+			</template>
+			<template id="27" name = "Problem act">
+				<in>2</in>
+				<in>5</in>
+				<in>11</in>
+			</template>
+			<template id="29" name = "Procedure activity">
+				<in>12</in>
+			</template>
+			<template id="30" name = "Purpose activity">
+				<in>13</in>
+			</template>
+			<template id="32" name = "Result organizer">
+				<in>5</in>
+				<in>14</in>
+			</template>
+			<template id="33" name = "Social history observation">
+				<in>15</in>
+			</template>
+			<template id="34" name = "Supply">
+				<in>6</in>
+				<in>7</in>
+				<in>8</in>
+			</template>
+			<template id="35" name = "Vital signs organizer" nodeNames="organizer">
+				<in>16</in>
+			</template>
+		</templateLevel>
+
+		<templateLevel level="subEntry">
+			<template id="18" name = "Alert observation">
+				<in>27</in>
+			</template>
+			<template id="19" name = "Authorization activity">
+				<in>26</in>
+			</template>
+			<template id="22" name = "Family history observation">
+				<in nodePaths="component/observation">23</in>
+			</template>
+			<template id="26" name = "Policy  activity">
+				<in>20</in>
+			</template>
+			<template id="28" name = "Problem observation">
+				<in>27</in>
+				<in>24</in>
+			</template>
+			<template id="31" name = "Result observation">
+				<in>32</in>
+				<in>35</in>
+			</template>
+			<template id="36" name = "Advance directive reference">
+				<in>17</in>
+			</template>
+			<template id="37" name = "Advance directive status observation"  nodeNames="observation" >
+				<in>17</in>
+			</template>
+			<template id="38" name = "Age observation">
+				<in>22</in>
+				<in>42</in>
+			</template>
+			<template id="39" name = "Alert status observation" nodeNames="observation" >
+				<in>18</in>
+			</template>
+			<template id="41" name = "Episode observation">
+				<in>27</in>
+				<in>33</in>
+			</template>
+			<template id="42" name = "Family history cause of death observation"  nodeNames="observation" >
+				<in nodePaths="component/observation">23</in>
+			</template>
+			<template id="44" name = "Status of functional status observation"  nodeNames="observation" >
+				<in>28</in>
+			</template>
+			<template id="45" name = "Location participation">
+				<in>21</in>
+			</template>
+			<template id="48" name = "Patient awareness">
+				<in>27</in>
+			</template>
+			<template id="50" name = "Problem status observation" nodeNames="observation" >
+				<in>28</in>
+			</template>
+			<template id="52" name = "Product instance">
+				<in>34</in>
+				<in>29</in>
+			</template>
+			<template id="53" name = "Product"  nodeNames="manufacturedProduct" >
+				<in>24</in>
+			</template>
+			<template id="54" name = "Reaction" nodeNames="observation" >
+				<in>24</in>
+				<in>18</in>
+			</template>
+			<template id="58" name = "Verification of an advance directive observation">
+				<in>17</in>
+			</template>
+		</templateLevel>
+
+	</templateSet>
+</templateCollection>

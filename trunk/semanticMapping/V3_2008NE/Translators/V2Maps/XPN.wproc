@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><procedures>
+				<proc type="create">
+					<context/>
+					<step caseNo="start" class="datatypes.PN" specialNode="false" stepNumber="0" stepType="getAllObjects" subset="" tagName="top"/>
+				</proc>
+				<element name="top" path="/top">
+					<procedures>
+						<proc type="create">
+							<context>
+								<ClassSet class="datatypes.PN" subset=""/>
+							</context>
+							<step assocName="family" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="0" stepType="associationInstance" tagName="XPN.1">
+								<classSet1 class="datatypes.PN" subset=""/>
+								<classSet2 class="datatypes.en.family" subset=""/>
+							</step>
+							<step assocName="given" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="1" stepType="associationInstance" tagName="XPN.2">
+								<classSet1 class="datatypes.PN" subset=""/>
+								<classSet2 class="datatypes.en.given" subset=""/>
+							</step>
+							<step caseNo="3.5.2" minIs1="false" pName="use" stepNumber="2" stepType="getProperty">
+								<ClassSet class="datatypes.PN" subset=""/>
+							</step>
+							<step caseNo="3.5.2" ifString="true" stepNumber="3" stepType="addElement" tagName="XPN.7"/>
+						</proc>
+					</procedures>
+					<element name="XPN.1" path="/top/XPN.1">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="datatypes.PN" subset=""/>
+									<ClassSet class="datatypes.en.family" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="textContent" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.en.family" subset=""/>
+								</step>
+								<step appendFlag="false" caseNo="content" stepNumber="1" stepType="setText"/>
+							</proc>
+						</procedures>
+					</element>
+					<element name="XPN.2" path="/top/XPN.2">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="datatypes.PN" subset=""/>
+									<ClassSet class="datatypes.en.given" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="textContent" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.en.given" subset=""/>
+								</step>
+								<step appendFlag="false" caseNo="content" stepNumber="1" stepType="setText"/>
+							</proc>
+						</procedures>
+					</element>
+					<element name="XPN.7" path="/top/XPN.7">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="datatypes.PN" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="use" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.PN" subset=""/>
+								</step>
+								<step appendFlag="false" caseNo="content" stepNumber="1" stepType="setText"/>
+							</proc>
+						</procedures>
+					</element>
+				</element>
+			</procedures>

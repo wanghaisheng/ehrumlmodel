@@ -1,0 +1,101 @@
+<!--  EHR CDA 规范 手术操作Procedure条目: Entry_template_Root_OID.13 -->
+
+<!-- errors -->
+
+  <pattern id="p-Entry_template_Root_OID.13-errors">
+    <title>EHR CDA 规范 手术操作Procedure条目 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.13"]'>
+   <!-- Verify that templateId is used on the appropriate type of object -->
+   <assert test='self::cda:procedure[cda:templateId/@root="Entry_template_Root_OID.13"]'>
+      Error: EHR CDA 规范 手术操作Procedure条目 is in the wrong location.  
+   </assert> 	
+    <assert test='self::cda:procedure[@classCode="PROC"]'>
+       Error: In EHR CDA 规范 手术操作Procedure条目 (Entry_template_Root_OID.13), the classCode for 手术操作Procedure条目 shall be "PROC" 
+       and the element is procedure.
+    </assert>
+    <assert test='cda:code'>
+       Error: In EHR CDA 规范 手术操作Procedure条目 (Entry_template_Root_OID.13), a 手术操作Procedure条目 shall contain a code element.
+    </assert>
+   <assert test='count(cda:code/cda:originalText/cda:reference/@value) = 1'>
+      Error: EHR CDA 规范 手术操作Procedure条目, 手术史描述 is a required, non-repeating data element.
+   </assert>
+    <assert test='cda:text/cda:reference'>
+       Error: In EHR CDA 规范 手术操作Procedure条目 (Entry_template_Root_OID.13), a 手术操作Procedure条目 text element shall contain a 
+       reference to the narrative text describing the procedure.
+    </assert>
+
+    <assert test='cda:statusCode[@code = "completed" or
+                                 @code = "active" or
+                                 @code = "aborted" or
+                                 @code = "cancelled"]'>
+       Error: In EHR CDA 规范 手术操作Procedure条目 (Entry_template_Root_OID.13), the &lt;statusCode&gt; element shall be present 
+       when used to describe a Procedure Event. It shall have the value 'completed' for procedures that have been completed, 
+       and 'active' for procedures that are still in progress. Procedures that were stopped prior to completion shall use the 
+       value 'aborted', and procedures that were cancelled before being started shall use the value 'cancelled'.
+    </assert>
+
+    <assert test='not(./@moodCode="INT") or 
+                  (cda:effectiveTime or cda:priorityCode)'>
+       Error: In EHR CDA 规范 手术操作Procedure条目 (Entry_template_Root_OID.13), in 手术操作Procedure条目 the priorityCode element shall 
+       be present in INT mood when effectiveTime is not provided, it may be present in other moods. It indicates the priority 
+       of the procedure.
+    </assert>
+
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Entry_template_Root_OID.13-warnings">
+    <title>EHR CDA 规范 手术操作Procedure条目 - warning validation phase</title>
+
+
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.13"]'>
+
+    <assert test='cda:code[@code]'>
+       Warning: In EHR CDA 规范 手术操作Procedure条目 (Entry_template_Root_OID.13), a 手术操作Procedure条目 should contain a code describing 
+       the type of procedure.
+    </assert>
+   <assert test='count(cda:code/@code) = 1'>
+      Warning:EHR CDA 规范 手术操作Procedure条目, Procedure Type is a required if known, non-repeating data element.
+   </assert>
+    <assert test='cda:effectiveTime'>
+       Warning: In EHR CDA 规范 手术操作Procedure条目 (Entry_template_Root_OID.13), the effectiveTime element should be present and 
+       records the time at which the procedure occurred (in EVN mood), or the desired time of the procedure in INT mood.
+    </assert>
+<!--
+   <assert test='count(cda:effectiveTime) = 1'>
+      Warning: HITSP/C83 Procedure, Procedure Date / Time is a required if known, non-repeating data element. 
+      See HITSP/C83 Table 2-22, Data Element 17.04.
+   </assert>
+
+   <assert test='cda:performer/cda:assignedEntity'>
+      Warning: HITSP/C83 Procedure, Procedure Provider (cda:performer/cda:assignedEntity) is a required if known,
+      repeatable data element.
+      See HITSP/C83 Table 2-22, Data Element 17.05.
+   </assert>
+
+   <assert test='count(cda:targetSiteCode) = 1'>
+      Warning: HITSP/C83 Procedure, Body Site is a required if known, non-repeating data element.
+      See HITSP/C83 Table 2-22, Data Element 17.02.
+   </assert>   
+-->
+    </rule>
+
+
+  </pattern>
+
+  <!-- notes -->
+
+  <pattern id="p-Entry_template_Root_OID.13-notes">
+    <title>EHR CDA 规范 手术操作Procedure条目 - notes validation phase</title>
+
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.13"]'>
+    <assert test='./@moodCode = "INT" or ./@moodCode = "EVN"'>
+       Note: In EHR CDA 规范 手术操作Procedure条目 (Entry_template_Root_OID.13), the moodCode of 手术操作Procedure条目 may be INT to 
+       indicate a planned procedure or EVN, to describe a procedure that has already occurred.
+    </assert>
+    </rule>
+  </pattern>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ViewContents view="Data Sources">
+	<HeaderInformation/>
+	<TableColumns>
+		<column>Code</column>
+		<column>Type</column>
+		<column>Source</column>
+		<column>Mappings</column>
+		<column>ClassModel</column>
+	</TableColumns>
+	<TableContent>
+		<row>
+			<Code>A</Code>
+			<Type>XSD</Type>
+			<Source>/CarDemo/Instances/NestedCar.xml</Source>
+			<Mappings>/CarDemo/MappingSets/NestedCar.mapper</Mappings>
+			<ClassModel>/CarDemo/ClassModel/car.ecore</ClassModel>
+		</row>
+		<row>
+			<Code>B</Code>
+			<Type>XSD</Type>
+			<Source>/CarDemo/Instances/FlatCar.xml</Source>
+			<Mappings>/CarDemo/MappingSets/FlatCar.mapper</Mappings>
+			<ClassModel>/CarDemo/ClassModel/car.ecore</ClassModel>
+		</row>
+		<row>
+			<Code>C</Code>
+			<Type>XSD</Type>
+			<Source>/CarDemo/Instances/GroupedCar.xml</Source>
+			<Mappings>/CarDemo/MappingSets/GroupedCar.mapper</Mappings>
+			<ClassModel>/CarDemo/ClassModel/car.ecore</ClassModel>
+		</row>
+	</TableContent>
+</ViewContents>

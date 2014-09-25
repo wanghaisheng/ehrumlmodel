@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templateCollection name = "CCDOnly">
+	<templateSet name = "CCD" location="ccd.sch" rootId="2.16.840.1.113883.10.20.1">
+
+		<templateLevel level="CDA">
+			<template id="root"/>
+		</templateLevel>
+
+		<templateLevel level="section">
+			<template id="1" name = "Advance directives">
+				<in>root</in>
+			</template>
+		</templateLevel>
+
+		<templateLevel level="entry">
+			<template id="17" name = "Advance directive observation">
+				<in>1</in>
+			</template>
+		</templateLevel>
+
+	</templateSet>
+</templateCollection>

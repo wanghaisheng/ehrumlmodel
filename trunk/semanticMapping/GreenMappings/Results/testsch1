@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="ClinicalDocument">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="recordTarget" type="recordTarget_type"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="recordTarget_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="id" type="id_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="name" type="name_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="id_type">
+		<xs:attribute name="身份证号码" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="name_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="given" type="given_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="family" type="family_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="given_type">
+		<xs:attribute name="名" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="family_type">
+		<xs:attribute name="姓" type="xs:string"/>
+	</xs:complexType>
+</xs:schema>

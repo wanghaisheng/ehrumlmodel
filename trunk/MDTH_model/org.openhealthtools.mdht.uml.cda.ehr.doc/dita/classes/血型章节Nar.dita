@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>血型章节 Nar</title>
+<shortdesc conref="generated/_血型章节Nar.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_血型章节Nar.dita#classId/prolog"></prolog>
+<body>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_血型章节Nar.dita#classId/description">
+</section>
+<!-- TODO: insert UML class diagram here -->
+
+<ol audience="standards" conref="generated/_血型章节Nar.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_血型章节Nar.dita#classId/aggregate">
+<li></li>
+</ol>
+<p> </p>
+<section conref="generated/_血型章节Nar.dita#classId/tableconformance">
+</section>
+<p> </p>
+<p> </p>
+<p><b>血型章节 Nar example</b></p>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
+<codeblock conref="generated/_血型章节Nar.dita#classId/example">
+</codeblock>
+</body>
+</topic>

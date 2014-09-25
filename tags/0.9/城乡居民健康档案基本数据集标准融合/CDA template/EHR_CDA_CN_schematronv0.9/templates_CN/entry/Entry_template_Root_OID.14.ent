@@ -1,0 +1,46 @@
+<!--  EHR CDA 规范 家族遗传病史编组: Entry_template_Root_OID.14 -->
+
+<!-- errors -->
+
+  <pattern id="p-Entry_template_Root_OID.14-errors">
+    <title>EHR CDA 规范 家族遗传病史编组 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.14"]'>
+    <assert test='../cda:organizer [@classCode="CLUSTER"] and
+                      ../cda:organizer [@moodCode="EVN"]'>
+	   Error: EHR CDA 规范 家族遗传病史编组,classCode="CLUSTER" moodCode="EVN"所表示的是一组与病人血亲相关的观察。
+	</assert>
+    <assert test='cda:statusCode[@code = "completed"]'>
+       Error: In EHR CDA规范 家族遗传病史编组 (Entry_template_Root_OID.14), statuscode必须是completed.
+    </assert>	
+    <assert test='cda:subject/cda:relatedSubject[@classCode="PRS"]'>
+       Error: In EHR CDA 规范 家族遗传病史编组 (Entry_template_Root_OID.14),subject 元素必须出现
+    </assert>   
+    <assert test='cda:subject/cda:relatedSubject[@classCode="PRS"]/cda:code[@code and @codeSystem="GB/T4761"]'>
+       Error:EHR CDA 规范 家族遗传病史编组 (Entry_template_Root_OID.14),relatedSubject的code元素必须出现 用以表示本人近亲中患病成员与本人关系类别的代码
+		其值必须从GB/T4761选取。
+    </assert>
+
+
+
+
+    <assert test='.//cda:templateId[@root="Entry_template_Root_OID.15"]'>
+       Error: In EHR CDA 规范 家族遗传病史编组 (Entry_template_Root_OID.14), 必须包含一到多个components.这些components必须符合家族遗传病观察条目
+    </assert>
+
+    </rule>
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Entry_template_Root_OID.14-warnings">
+    <title>EHR CDA 规范 家族遗传病史编组 - warning validation phase</title>
+
+
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.14"]'>
+
+
+    </rule>
+
+
+  </pattern>
+

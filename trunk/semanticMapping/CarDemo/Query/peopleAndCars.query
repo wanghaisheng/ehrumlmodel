@@ -1,0 +1,1 @@
+select person.surname  person.(drives)car.registration car.make

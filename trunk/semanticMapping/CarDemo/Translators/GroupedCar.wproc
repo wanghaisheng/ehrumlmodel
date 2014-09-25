@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><procedures>
+				<proc type="create">
+					<context/>
+					<step caseNo="start" class="region" specialNode="false" stepNumber="0" stepType="getAllObjects" subset="" tagName="region"/>
+				</proc>
+				<element name="region">
+					<procedures>
+						<proc type="create">
+							<context>
+								<ClassSet class="region" subset=""/>
+							</context>
+							<step caseNo="C.1" minIs1="false" pName="country" stepNumber="0" stepType="getProperty">
+								<ClassSet class="region" subset=""/>
+							</step>
+							<step appendFlag="false" attName="country" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+							<step caseNo="3.5.6.1" ifString="false" stepNumber="2" stepType="addElement" tagName="drivers"/>
+							<step caseNo="3.5.6.1" ifString="false" stepNumber="3" stepType="addElement" tagName="cars"/>
+						</proc>
+					</procedures>
+					<element name="drivers">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="region" subset=""/>
+								</context>
+								<step assocName="containsPerson|pContainedBy" caseNo="2.1" endsNotInContext="1" maxIs1="false" minIs1="false" stepNumber="0" stepType="associationInstance" tagName="driver">
+									<classSet1 class="person" subset=""/>
+									<classSet2 class="region" subset=""/>
+								</step>
+							</proc>
+						</procedures>
+						<element name="driver">
+							<procedures>
+								<proc type="create">
+									<context>
+										<ClassSet class="region" subset=""/>
+										<ClassSet class="person" subset=""/>
+									</context>
+									<step caseNo="C.1" minIs1="false" pName="licence" stepNumber="0" stepType="getProperty">
+										<ClassSet class="person" subset=""/>
+									</step>
+									<step appendFlag="false" attName="license" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+									<step caseNo="C.1" minIs1="false" pName="age" stepNumber="2" stepType="getProperty">
+										<ClassSet class="person" subset=""/>
+									</step>
+									<step appendFlag="false" attName="age" caseNo="att" stepNumber="3" stepType="addAttribute"/>
+									<step caseNo="C.1" minIs1="false" pName="surname" stepNumber="4" stepType="getProperty">
+										<ClassSet class="person" subset=""/>
+									</step>
+									<step appendFlag="false" caseNo="content" stepNumber="5" stepType="setText"/>
+								</proc>
+							</procedures>
+						</element>
+					</element>
+					<element name="cars">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="region" subset=""/>
+								</context>
+								<step caseNo="3.5.4" class="car" pName="type" stepNumber="0" stepType="groupingProperty" subset=""/>
+								<step assocName="cContainedBy|containsCar" caseNo="3.5.4" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="1" stepType="associationInstance" tagName="category">
+									<classSet1 class="region" subset=""/>
+									<classSet2 class="car" subset=""/>
+								</step>
+								<step caseNo="3.5.4" stepNumber="2" stepType="unPrime"/>
+							</proc>
+						</procedures>
+						<element name="category">
+							<procedures>
+								<proc type="create">
+									<context>
+										<ClassSet class="region" subset=""/>
+										<ClassSet class="car" subset=""/>
+									</context>
+									<step caseNo="C.1" minIs1="false" pName="type" stepNumber="0" stepType="getProperty">
+										<ClassSet class="car" subset=""/>
+									</step>
+									<step appendFlag="false" attName="carType" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+									<step caseNo="1.2" ifString="false" stepNumber="2" stepType="addElement" tagName="car"/>
+								</proc>
+								<proc type="revisit">
+									<context>
+										<ClassSet class="region" subset=""/>
+										<ClassSet class="car" subset=""/>
+									</context>
+									<step caseNo="1.2" ifString="false" stepNumber="0" stepType="addElement" tagName="car"/>
+								</proc>
+							</procedures>
+							<element name="car">
+								<procedures>
+									<proc type="create">
+										<context>
+											<ClassSet class="region" subset=""/>
+											<ClassSet class="car" subset=""/>
+										</context>
+										<step caseNo="C.1" minIs1="false" pName="make" stepNumber="0" stepType="getProperty">
+											<ClassSet class="car" subset=""/>
+										</step>
+										<step appendFlag="false" attName="make" caseNo="att" stepNumber="1" stepType="addAttribute"/>
+										<step caseNo="C.1" minIs1="false" pName="registration" stepNumber="2" stepType="getProperty">
+											<ClassSet class="car" subset=""/>
+										</step>
+										<step appendFlag="false" attName="regNo" caseNo="att" stepNumber="3" stepType="addAttribute"/>
+										<step caseNo="D.6" propName="licence" stepNumber="4" stepType="relatedProperty">
+											<refClass class="car" subset=""/>
+											<assoc name="drivenBy|drives" targetClass="person" targetEnd="1" targetSubset=""/>
+										</step>
+										<step appendFlag="false" caseNo="content" stepNumber="5" stepType="setText"/>
+									</proc>
+								</procedures>
+							</element>
+						</element>
+					</element>
+				</element>
+			</procedures>

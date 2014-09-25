@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gen:region xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gen="http://www.com.charteris.mapper/test" country="England">
+  <containsPerson surname="Jones" age="28" licence="L4314" drives="//@containsCar.1"/>
+  <containsPerson surname="Black" age="45" licence="L12778" drives="//@containsCar.0 //@containsCar.2"/>
+  <containsCar make="Ford" type="saloon" registration="KLL788" drivenBy="//@containsPerson.1"/>
+  <containsCar make="Alfa Romeo" type="sports" registration="VBG999" drivenBy="//@containsPerson.0"/>
+  <containsCar make="Ferrari" type="sports" registration="PEW445" drivenBy="//@containsPerson.1"/>
+</gen:region>

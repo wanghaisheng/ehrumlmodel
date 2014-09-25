@@ -1,0 +1,30 @@
+<!--  EHR CDA 规范 过敏与其他不良反应条目: Entry_template_Root_OID.5 -->
+
+<!-- errors -->
+
+  <pattern id="p-Entry_template_Root_OID.5-errors">
+    <title>EHR CDA 规范 过敏与其他不良反应条目 - errors validation phase</title>
+    <rule context="*[cda:templateId/@root=&quot;Entry_template_Root_OID.5&quot;]">
+
+    <assert test='(cda:entryRelationship[@typeCode="SUBJ" and @inversionInd="false"]//cda:templateId[@root="Entry_template_Root_OID.6"]) or
+                  (cda:sourceOf[@typeCode="SUBJ" and @inversionInd="false"]//cda:templateId[@root="Entry_template_Root_OID.6"])'>
+
+       Error: EHR CDA 规范 过敏与其他不良反应条目(Entry_template_Root_OID.5)必须包含一个过敏与不良反应观察条目
+    </assert>
+
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Entry_template_Root_OID.5-warnings">
+    <title>EHR CDA 规范 过敏与其他不良反应条目 - warning validation phase</title>
+
+<!--
+    <rule context="*[cda:templateId/@root=&quot;Entry_template_Root_OID.5&quot;]">
+      <report test="."/>
+    </rule>
+-->
+
+  </pattern>

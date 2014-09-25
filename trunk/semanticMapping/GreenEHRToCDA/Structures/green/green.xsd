@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="ClinicalDocument">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="PatientInformation" type="PatientInformation_type"/>
+				<xs:element name="ProblemSet" type="ProblemSet_type"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="PatientInformation_type">
+		<xs:sequence>
+			<xs:element name="Patient" type="Patient_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Patient_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="id" type="id_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="name" type="name_type"/>
+		</xs:sequence>
+		<xs:attribute name="gender" type="xs:string"/>
+		<xs:attribute name="birthDate" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="id_type">
+		<xs:attribute name="authority" type="xs:string"/>
+		<xs:attribute name="idValue" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="name_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="given" type="given_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="family" type="family_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="suffix" type="suffix_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="given_type">
+		<xs:attribute name="given" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="family_type">
+		<xs:attribute name="family" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="suffix_type">
+		<xs:attribute name="suffix" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="ProblemSet_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="Problem" type="Problem_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Problem_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="TimeRange" type="TimeRange_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="Topic" type="Topic_type"/>
+		</xs:sequence>
+		<xs:attribute name="status" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="TimeRange_type">
+		<xs:attribute name="start" type="xs:string"/>
+		<xs:attribute name="end" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="Topic_type">
+		<xs:attribute name="code" type="xs:string"/>
+		<xs:attribute name="codeSystem" type="xs:string"/>
+	</xs:complexType>
+</xs:schema>

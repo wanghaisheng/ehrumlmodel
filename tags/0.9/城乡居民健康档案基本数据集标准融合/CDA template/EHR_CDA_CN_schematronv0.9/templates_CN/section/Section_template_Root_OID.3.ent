@@ -1,0 +1,37 @@
+<!--  EHR CDA规范  财务与卫生费用章节: Section_template_Root_OID.3 -->
+
+<!-- errors -->
+
+  <pattern id="p-Section_template_Root_OID.3-errors">
+    <title>EHR CDA规范  财务与卫生费用章节 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Section_template_Root_OID.3"]'>
+
+     <!-- Verify that the template id is used on the appropriate type of
+     object --> 
+   <assert test='../cda:section'> 
+      Error: In EHR CDA规范  财务与卫生费用章节 (Section_template_Root_OID.3)只能用在sections. 
+   </assert> 
+
+   <!-- Verify the section type code --> 
+   <assert test='cda:code[@code = "35525-4"]'> 
+     Error: In EHR CDA规范  财务与卫生费用章节 (Section_template_Root_OID.3), 财务与卫生费用章节的code必须是 35525-4
+   </assert> 
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+     Error: In EHR CDA规范  财务与卫生费用章节 (Section_template_Root_OID.3), 财务与卫生费用章节的code必须来自LOINC code  system (2.16.840.1.113883.6.1). 
+   </assert> 
+
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Section_template_Root_OID.3-warnings">
+    <title>EHR CDA规范  财务与卫生费用章节 - warning validation phase</title>
+
+    <rule context='*[cda:templateId/@root="Section_template_Root_OID.3"]'>
+
+    </rule>
+
+
+  </pattern>

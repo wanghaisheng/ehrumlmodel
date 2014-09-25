@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/V3_2008NE/ClassModel/PRPA_MT101301UV02.ecore" structureType="V2" structureURL="platform:/resource/V3_2008NE/Structures/V2Structures/ADT_A28Def.xml" topElementType="ADT_A05_Type" topElementName="ADT_A05">
+  <rootElement name="ADT_A05" type="ADT_A05_Type" minMultiplicity="1">
+    <annotations>
+      <notes key="HL7Version" value="2.3.1"/>
+    </annotations>
+    <childElements name="MSH" type="MSH_Type" description="message header segment" minMultiplicity="1">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+      <importMappingSet mappingSetURI="platform:/resource/V3_2008NE/MappingSets/V2Maps/MSH.mapper"/>
+    </childElements>
+    <childElements name="EVN" type="EVN_Type" description="event type segment" minMultiplicity="1">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+      <importMappingSet mappingSetURI="platform:/resource/V3_2008NE/MappingSets/V2Maps/EVN.mapper"/>
+    </childElements>
+    <childElements name="PID" type="PID_Type" description="patient identification segment" minMultiplicity="1">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+      <importMappingSet mappingSetURI="platform:/resource/V3_2008NE/MappingSets/V2Maps/PID.mapper"/>
+    </childElements>
+    <childElements name="PD1" type="PD1_Type" description="patient additional demographic segment">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="NK1" type="NK1_Type" description="next of kin / associated parties segment-" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1" type="PV1_Type" description="patient visit segment-" minMultiplicity="1">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+      <importMappingSet mappingSetURI="platform:/resource/V3_2008NE/MappingSets/V2Maps/PV1.mapper"/>
+    </childElements>
+    <childElements name="PV2" type="PV2_Type" description="patient visit - additional information segment">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="DB1" type="DB1_Type" description="Disability segment" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX" type="OBX_Type" description="observation/result segment" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="AL1" type="AL1_Type" description="patient allergy information segment" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="DG1" type="DG1_Type" description="diagnosis segment" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="DRG" type="DRG_Type" description="diagnosis related group segment">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="ADT_A05.PROCEDURE" type="ADT_A05.PROCEDURE_Type" description="PROCEDURE" fixedValue="" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="SegGroup"/>
+      </annotations>
+      <childElements name="ADT_A05.G2R" type="ADT_A05.G2R_Type" description="PROCEDURE.G2R" minMultiplicity="1" expanded="true" maxMultiplicity="-1">
+        <annotations>
+          <notes key="V2NodeType" value="SegGroup"/>
+        </annotations>
+        <childElements name="PR1" type="PR1_Type" description="procedures segment" minMultiplicity="1">
+          <annotations>
+            <notes key="V2NodeType" value="Segment"/>
+          </annotations>
+        </childElements>
+        <childElements name="ROL" type="ROL_Type" description="Role" maxMultiplicity="-1">
+          <annotations>
+            <notes key="V2NodeType" value="Segment"/>
+          </annotations>
+        </childElements>
+      </childElements>
+    </childElements>
+    <childElements name="GT1" type="GT1_Type" description="guarantor segment" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="ADT_A05.INSURANCE" type="ADT_A05.INSURANCE_Type" description="INSURANCE" fixedValue="" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="SegGroup"/>
+      </annotations>
+      <childElements name="ADT_A05.G4R" type="ADT_A05.G4R_Type" description="INSURANCE.G4R" minMultiplicity="1" expanded="true" maxMultiplicity="-1">
+        <annotations>
+          <notes key="V2NodeType" value="SegGroup"/>
+        </annotations>
+        <childElements name="IN1" type="IN1_Type" description="insurance segment" minMultiplicity="1">
+          <annotations>
+            <notes key="V2NodeType" value="Segment"/>
+          </annotations>
+        </childElements>
+        <childElements name="IN2" type="IN2_Type" description="insurance additional information segment">
+          <annotations>
+            <notes key="V2NodeType" value="Segment"/>
+          </annotations>
+        </childElements>
+        <childElements name="IN3" type="IN3_Type" description="insurance additional information, certification segment" maxMultiplicity="-1">
+          <annotations>
+            <notes key="V2NodeType" value="Segment"/>
+          </annotations>
+        </childElements>
+      </childElements>
+    </childElements>
+    <childElements name="ACC" type="ACC_Type" description="accident segment">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="UB1" type="UB1_Type" description="UB82 data segment">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+    <childElements name="UB2" type="UB2_Type" description="UB92 data segment">
+      <annotations>
+        <notes key="V2NodeType" value="Segment"/>
+      </annotations>
+    </childElements>
+  </rootElement>
+  <mappingParameters wrapperClass="com.charteris.mapper.converters.V2Converter">
+    <nameSpaces uRL="urn:hl7-org:v2xml" prefix=""/>
+  </mappingParameters>
+</com.charteris.mapper:MappedStructure>

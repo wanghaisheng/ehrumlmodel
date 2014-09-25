@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Package xmi:id="_9x52AHzhEeGoerzCtd9i1A" name="ehr">
+    <packageImport xmi:id="_96P5sHzhEeGoerzCtd9i1A">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg"/>
+    </packageImport>
+    <packageImport xmi:id="_96P5sXzhEeGoerzCtd9i1A">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ec-lEHziEeGoerzCtd9i1A" name="血型章节Nar">
+      <ownedRule xmi:id="_igWRcYTFEeG78eqkrGrSKw" name="血型章节NarTemplateId" constrainedElement="_ec-lEHziEeGoerzCtd9i1A">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_igWRcoTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.templateId->exists(id : datatypes::II | id.root = 'Section_template_Root_OID.1')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ig8uYITFEeG78eqkrGrSKw" name="血型章节NarCode" constrainedElement="_ec-lEHziEeGoerzCtd9i1A">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ig8uYYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in &#xD;&#xA;value.code = '882-1' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ihF4UITFEeG78eqkrGrSKw" name="血型章节NarText" constrainedElement="_ec-lEHziEeGoerzCtd9i1A">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ihF4UYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>not self.text.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ihikQITFEeG78eqkrGrSKw" name="血型章节NarTitle" constrainedElement="_ec-lEHziEeGoerzCtd9i1A">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ihikQYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.title.oclIsUndefined() or self.title.isNullFlavorUndefined()) implies (not self.title.oclIsUndefined() and self.title.getText() = '血型')</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_edSHEHziEeGoerzCtd9i1A">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1FUxQH2uEeGfK4t8PAy6mA" name="血型观察条目">
+      <ownedComment xmi:id="_-bnLMH2uEeGfK4t8PAy6mA">
+        <body>血型观察条目表示血型鉴定的结果，用于表示已知的或者实验室中血型鉴定的ABO血型代码或Rh血型代码相关信息。</body>
+      </ownedComment>
+      <ownedRule xmi:id="_ihikQoTFEeG78eqkrGrSKw" name="血型观察条目TemplateId" constrainedElement="_1FUxQH2uEeGfK4t8PAy6mA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ihikQ4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.templateId->exists(id : datatypes::II | id.root = 'Entry_template_Root_OID.1')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ihsVQITFEeG78eqkrGrSKw" name="血型观察条目ClassCode" constrainedElement="_1FUxQH2uEeGfK4t8PAy6mA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ihsVQYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.classCode=vocab::ActClassObservation::OBS</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ih1fMITFEeG78eqkrGrSKw" name="血型观察条目Code" constrainedElement="_1FUxQH2uEeGfK4t8PAy6mA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ih1fMYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in &#xD;&#xA;value.codeSystem = 'EHRDATASET_OID')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ih1fMoTFEeG78eqkrGrSKw" name="血型观察条目CodeP" constrainedElement="_1FUxQH2uEeGfK4t8PAy6mA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ih1fM4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ih_QMITFEeG78eqkrGrSKw" name="血型观察条目MoodCode" constrainedElement="_1FUxQH2uEeGfK4t8PAy6mA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ih_QMYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.moodCode=vocab::x_ActMoodDocumentObservation::EVN</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_iiJBMITFEeG78eqkrGrSKw" name="血型观察条目Text" constrainedElement="_1FUxQH2uEeGfK4t8PAy6mA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iiJBMYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.text.oclIsUndefined() or self.text.isNullFlavorUndefined()) implies (not self.text.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_iiSLIITFEeG78eqkrGrSKw" name="血型观察条目Value" constrainedElement="_1FUxQH2uEeGfK4t8PAy6mA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iiSLIYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.value->size() = 1 and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = 'EHRVALUESET_OID')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_iiSLIoTFEeG78eqkrGrSKw" name="血型观察条目ValueP" constrainedElement="_1FUxQH2uEeGfK4t8PAy6mA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iiSLI4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_iib8IITFEeG78eqkrGrSKw" name="血型观察条目StatusCode" constrainedElement="_1FUxQH2uEeGfK4t8PAy6mA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iib8IYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.statusCode.oclIsUndefined() or self.statusCode.isNullFlavorUndefined()) implies (not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in &#xD;&#xA;value.code = 'completed')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_iilGEITFEeG78eqkrGrSKw" name="血型观察条目StatusCodeP" constrainedElement="_1FUxQH2uEeGfK4t8PAy6mA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iilGEYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.statusCode.oclIsUndefined() or self.statusCode.isNullFlavorUndefined()) implies (not self.statusCode.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_1FeiQH2uEeGfK4t8PAy6mA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GbtJwIGKEeGpiPpjNWkxlg" name="血型章节Nom">
+      <ownedComment xmi:id="_NRpG0IGKEeGpiPpjNWkxlg">
+        <body>包含计算机可理解的ABO血型 RH血型编码信息</body>
+      </ownedComment>
+      <ownedRule xmi:id="_iiu3EITFEeG78eqkrGrSKw" name="血型章节NomTemplateId" constrainedElement="_GbtJwIGKEeGpiPpjNWkxlg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iiu3EYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.templateId->exists(id : datatypes::II | id.root = 'Section_template_Root_OID.1.1')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_iiu3E4TFEeG78eqkrGrSKw" name="血型章节NomCode" constrainedElement="_GbtJwIGKEeGpiPpjNWkxlg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iiu3FITFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in &#xD;&#xA;value.code = '882-1' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ii4oEITFEeG78eqkrGrSKw" name="血型章节NomCodeP" constrainedElement="_GbtJwIGKEeGpiPpjNWkxlg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ii4oEYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ii4oEoTFEeG78eqkrGrSKw" name="血型章节NomText" constrainedElement="_GbtJwIGKEeGpiPpjNWkxlg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ii4oE4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>not self.text.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ijByAITFEeG78eqkrGrSKw" name="血型章节NomTitle" constrainedElement="_GbtJwIGKEeGpiPpjNWkxlg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ijByAYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.title.oclIsUndefined() or self.title.isNullFlavorUndefined()) implies (not self.title.oclIsUndefined() and self.title.getText() = '血型')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ik0hwITFEeG78eqkrGrSKw" name="血型章节NomABO血型观察条目" constrainedElement="_GbtJwIGKEeGpiPpjNWkxlg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ik0hwYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.entry->one(entry : cda::Entry | not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ehr::ABO血型观察条目) and entry.typeCode = vocab::x_ActRelationshipEntry::COMP)</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ilHctYTFEeG78eqkrGrSKw" name="血型章节NomRH血型观察条目" constrainedElement="_GbtJwIGKEeGpiPpjNWkxlg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilHctoTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.entry->one(entry : cda::Entry | not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ehr::RH血型观察条目) and entry.typeCode = vocab::x_ActRelationshipEntry::COMP)</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_GbtJwYGKEeGpiPpjNWkxlg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedOperation xmi:id="_ilHcsITFEeG78eqkrGrSKw" name="getABO血型观察条目" isQuery="true" bodyCondition="_ilHcs4TFEeG78eqkrGrSKw">
+        <ownedRule xmi:id="_ilHcs4TFEeG78eqkrGrSKw" name="body" constrainedElement="_ilHcsITFEeG78eqkrGrSKw">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilHctITFEeG78eqkrGrSKw">
+            <language>OCL</language>
+            <body>self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ehr::ABO血型观察条目))->asSequence()->first().oclAsType(ehr::ABO血型观察条目)</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_ilHcsYTFEeG78eqkrGrSKw" type="_0RIR4IGYEeGVhK3gGtqaGg" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ilHcsoTFEeG78eqkrGrSKw" value="1"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ilHct4TFEeG78eqkrGrSKw" name="getRH血型观察条目" isQuery="true" bodyCondition="_ilHcuoTFEeG78eqkrGrSKw">
+        <ownedRule xmi:id="_ilHcuoTFEeG78eqkrGrSKw" name="body" constrainedElement="_ilHct4TFEeG78eqkrGrSKw">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilHcu4TFEeG78eqkrGrSKw">
+            <language>OCL</language>
+            <body>self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ehr::RH血型观察条目))->asSequence()->first().oclAsType(ehr::RH血型观察条目)</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_ilHcuITFEeG78eqkrGrSKw" type="_O4fLAIGZEeGVhK3gGtqaGg" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ilHcuYTFEeG78eqkrGrSKw" value="1"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0RIR4IGYEeGVhK3gGtqaGg" name="ABO血型观察条目">
+      <ownedRule xmi:id="_ijLjAYTFEeG78eqkrGrSKw" name="ABO血型观察条目ClassCode" constrainedElement="_0RIR4IGYEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ijLjAoTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.classCode=vocab::ActClassObservation::OBS</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ijVUAITFEeG78eqkrGrSKw" name="血型观察条目Code" constrainedElement="_0RIR4IGYEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ijVUAYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in &#xD;&#xA;value.code = 'HDSD00.01.013' and value.codeSystem = 'EHRDATASET_OID')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ijVUAoTFEeG78eqkrGrSKw" name="ABO血型观察条目Code" constrainedElement="_0RIR4IGYEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ijVUA4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ijed8ITFEeG78eqkrGrSKw" name="ABO血型观察条目MoodCode" constrainedElement="_0RIR4IGYEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ijed8YTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.moodCode=vocab::x_ActMoodDocumentObservation::EVN</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ijoO8ITFEeG78eqkrGrSKw" name="血型观察条目StatusCode" constrainedElement="_0RIR4IGYEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ijoO8YTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.statusCode.oclIsUndefined() or self.statusCode.isNullFlavorUndefined()) implies (not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in &#xD;&#xA;value.code = 'completed')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ijoO8oTFEeG78eqkrGrSKw" name="ABO血型观察条目StatusCode" constrainedElement="_0RIR4IGYEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ijoO84TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.statusCode.oclIsUndefined() or self.statusCode.isNullFlavorUndefined()) implies (not self.statusCode.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ijxY4ITFEeG78eqkrGrSKw" name="ABO血型观察条目Text" constrainedElement="_0RIR4IGYEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ijxY4YTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.text.oclIsUndefined() or self.text.isNullFlavorUndefined()) implies (self.text.getText() = 'ABO血型代码')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ij7J4ITFEeG78eqkrGrSKw" name="ABO血型观察条目Value" constrainedElement="_0RIR4IGYEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ij7J4YTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.value->isEmpty() or self.value->exists(element | element.isNullFlavorUndefined())) implies (self.value->size() = 1 and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = 'EHRVALUESET_OID' and (value.code = '1' or value.code = '2' or value.code = '3')))</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_0RIR4YGYEeGVhK3gGtqaGg" general="_1FUxQH2uEeGfK4t8PAy6mA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_O4fLAIGZEeGVhK3gGtqaGg" name="RH血型观察条目">
+      <ownedRule xmi:id="_ikE64YTFEeG78eqkrGrSKw" name="RH血型观察条目ClassCode" constrainedElement="_O4fLAIGZEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ikE64oTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.classCode=vocab::ActClassObservation::OBS</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ikE644TFEeG78eqkrGrSKw" name="血型观察条目Code" constrainedElement="_O4fLAIGZEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ikE65ITFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in &#xD;&#xA;value.code = 'HDSD00.01.014' and value.codeSystem = 'EHRDATASET_OID')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ikOE0ITFEeG78eqkrGrSKw" name="RH血型观察条目Code" constrainedElement="_O4fLAIGZEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ikOE0YTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ikX10ITFEeG78eqkrGrSKw" name="RH血型观察条目MoodCode" constrainedElement="_O4fLAIGZEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ikX10YTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.moodCode=vocab::x_ActMoodDocumentObservation::EVN</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ikX10oTFEeG78eqkrGrSKw" name="血型观察条目StatusCode" constrainedElement="_O4fLAIGZEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ikX104TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.statusCode.oclIsUndefined() or self.statusCode.isNullFlavorUndefined()) implies (not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in &#xD;&#xA;value.code = 'completed')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ikhm0ITFEeG78eqkrGrSKw" name="RH血型观察条目StatusCode" constrainedElement="_O4fLAIGZEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ikhm0YTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.statusCode.oclIsUndefined() or self.statusCode.isNullFlavorUndefined()) implies (not self.statusCode.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ikqwwITFEeG78eqkrGrSKw" name="RH血型观察条目Text" constrainedElement="_O4fLAIGZEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ikqwwYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.text.oclIsUndefined() or self.text.isNullFlavorUndefined()) implies (self.text.getText() = 'Rh血型代码')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ikqwwoTFEeG78eqkrGrSKw" name="RH血型观察条目Value" constrainedElement="_O4fLAIGZEeGVhK3gGtqaGg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ikqww4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.value->isEmpty() or self.value->exists(element | element.isNullFlavorUndefined())) implies (self.value->size() = 1 and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = 'EHRVALUESET_OID' and (value.code = '1' or value.code = '2')))</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_O4fLAYGZEeGVhK3gGtqaGg" general="_1FUxQH2uEeGfK4t8PAy6mA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ON7-oIS5EeGejc1Jrk9-tw" name="社会史章节Nar">
+      <ownedComment xmi:id="_rMYq8IS5EeGejc1Jrk9-tw">
+        <body>本章用于描述居民社会史相关信息，可能包括教育/文化程度/学历(如学历代码)、职业(如职业类别代码)、工作(如工作单位名称、参加工作日期)、户籍(如常住地户籍标志)、生活方式(如运动方式、次数)、健康危险因素(如吸烟、饮酒、性行为)、生活环境(如厕所类别、禽畜栏类别、燃料类型)、经济情况(如家庭年人均收入、经济状况代码)、额外的婚姻、宗教、种族、信仰等信息(如结婚日期)、家庭成员间的关系(监护人与本人关系代码)等等对于理解病人情况起重要作用的社会性信息(更多定义请参考WHO2003年发布的《Social Determinants of Health-- the Solid Facts》)</body>
+      </ownedComment>
+      <ownedRule xmi:id="_ilHcvITFEeG78eqkrGrSKw" name="社会史章节NarTemplateId" constrainedElement="_ON7-oIS5EeGejc1Jrk9-tw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilHcvYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.templateId->exists(id : datatypes::II | id.root = 'Section_template_Root_OID.2')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ilRNsITFEeG78eqkrGrSKw" name="社会史章节NarCode" constrainedElement="_ON7-oIS5EeGejc1Jrk9-tw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilRNsYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in &#xD;&#xA;value.code = '29762-2' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ilRNsoTFEeG78eqkrGrSKw" name="社会史章节NarText" constrainedElement="_ON7-oIS5EeGejc1Jrk9-tw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilRNs4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>not self.text.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ilaXoITFEeG78eqkrGrSKw" name="社会史章节NarTitle" constrainedElement="_ON7-oIS5EeGejc1Jrk9-tw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilaXoYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.title.oclIsUndefined() or self.title.isNullFlavorUndefined()) implies (not self.title.oclIsUndefined() and self.title.getText() = '社会史')</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_ON7-oYS5EeGejc1Jrk9-tw">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BsRCQITDEeG78eqkrGrSKw" name="社会史章节Nom">
+      <ownedRule xmi:id="_ilkIoITFEeG78eqkrGrSKw" name="社会史章节NomTemplateId" constrainedElement="_BsRCQITDEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilkIoYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.templateId->exists(id : datatypes::II | id.root = 'Section_template_Root_OID.2.1')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ilkIo4TFEeG78eqkrGrSKw" name="社会史章节NomCode" constrainedElement="_BsRCQITDEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilkIpITFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in &#xD;&#xA;value.code = '29762-2' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ilt5oITFEeG78eqkrGrSKw" name="社会史章节NomCodeP" constrainedElement="_BsRCQITDEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilt5oYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ilt5ooTFEeG78eqkrGrSKw" name="社会史章节NomText" constrainedElement="_BsRCQITDEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ilt5o4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>not self.text.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_il3DkITFEeG78eqkrGrSKw" name="社会史章节NomTitle" constrainedElement="_BsRCQITDEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_il3DkYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.title.oclIsUndefined() or self.title.isNullFlavorUndefined()) implies (not self.title.oclIsUndefined() and self.title.getText() = '社会史')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_imdggoTFEeG78eqkrGrSKw" name="社会史章节Nom社会史观察条目" constrainedElement="_BsRCQITDEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_imdgg4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.entry->exists(entry : cda::Entry | not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ehr::社会史观察条目) and entry.typeCode = vocab::x_ActRelationshipEntry::COMP)</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_BsazQITDEeG78eqkrGrSKw">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedOperation xmi:id="_imdghITFEeG78eqkrGrSKw" name="get社会史观察条目s" isQuery="true" bodyCondition="_immqcoTFEeG78eqkrGrSKw">
+        <ownedRule xmi:id="_immqcoTFEeG78eqkrGrSKw" name="body" constrainedElement="_imdghITFEeG78eqkrGrSKw">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_immqc4TFEeG78eqkrGrSKw">
+            <language>OCL</language>
+            <body>self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ehr::社会史观察条目)).oclAsType(ehr::社会史观察条目)</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_immqcITFEeG78eqkrGrSKw" type="_P-yQMITEEeG78eqkrGrSKw" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_immqcYTFEeG78eqkrGrSKw" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_P-yQMITEEeG78eqkrGrSKw" name="社会史观察条目">
+      <ownedRule xmi:id="_il3DkoTFEeG78eqkrGrSKw" name="社会史观察条目TemplateId" constrainedElement="_P-yQMITEEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_il3Dk4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.templateId->exists(id : datatypes::II | id.root = 'Entry_template_Root_OID.2')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_imA0kYTFEeG78eqkrGrSKw" name="社会史观察条目ClassCode" constrainedElement="_P-yQMITEEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_imA0koTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.classCode=vocab::ActClassObservation::OBS</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_imA0k4TFEeG78eqkrGrSKw" name="社会史观察条目Code" constrainedElement="_P-yQMITEEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_imA0lITFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in &#xD;&#xA;value.codeSystem = 'EHRDATASET_OID')</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_imJ-gITFEeG78eqkrGrSKw" name="社会史观察条目CodeP" constrainedElement="_P-yQMITEEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_imJ-gYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.code.oclIsUndefined() or self.code.isNullFlavorUndefined()) implies (not self.code.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_imTvgITFEeG78eqkrGrSKw" name="社会史观察条目MoodCode" constrainedElement="_P-yQMITEEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_imTvgYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>self.moodCode=vocab::x_ActMoodDocumentObservation::EVN</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_imTvgoTFEeG78eqkrGrSKw" name="社会史观察条目StatusCode" constrainedElement="_P-yQMITEEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_imTvg4TFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.statusCode.oclIsUndefined() or self.statusCode.isNullFlavorUndefined()) implies (not self.statusCode.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_imdggITFEeG78eqkrGrSKw" name="社会史观察条目Value" constrainedElement="_P-yQMITEEeG78eqkrGrSKw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_imdggYTFEeG78eqkrGrSKw">
+          <language>OCL</language>
+          <body>(self.value->isEmpty() or self.value->exists(element | element.isNullFlavorUndefined())) implies (self.value->size() = 1)</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_P-yQMYTEEeG78eqkrGrSKw">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg"/>
+      </generalization>
+    </packagedElement>
+    <profileApplication xmi:id="_9x52CXzhEeGoerzCtd9i1A">
+      <eAnnotations xmi:id="_9x52CnzhEeGoerzCtd9i1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_9x52C3zhEeGoerzCtd9i1A">
+      <eAnnotations xmi:id="_9x52DHzhEeGoerzCtd9i1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/cda/4#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+    <profileApplication xmi:id="_igMgcITFEeG78eqkrGrSKw">
+      <eAnnotations xmi:id="_igMgcYTFEeG78eqkrGrSKw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Package>
+  <CDA:CodegenSupport xmi:id="_92hQQHzhEeGoerzCtd9i1A" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ehr" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ehr" packageName="ehr" prefix="ehr" base_Namespace="_9x52AHzhEeGoerzCtd9i1A"/>
+  <CDA:CDATemplate xmi:id="_92hQQnzhEeGoerzCtd9i1A" templateId="" assigningAuthorityName=""/>
+  <CDA:CDATemplate xmi:id="_eMAXgH2rEeGfK4t8PAy6mA" message="不能包含子章节和条目模板" base_Class="_ec-lEHziEeGoerzCtd9i1A" templateId="Section_template_Root_OID.1" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0001</ruleId>
+    <ruleId>CONF-0002</ruleId>
+  </CDA:CDATemplate>
+  <CDA:CDATemplate xmi:id="_vgoNwIGMEeGed_ywkm7JWw" base_Class="_GbtJwIGKEeGpiPpjNWkxlg" templateId="Section_template_Root_OID.1.1" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0006</ruleId>
+    <ruleId>CONF-0007</ruleId>
+  </CDA:CDATemplate>
+  <CDA:CDATemplate xmi:id="_Z_4sUIGQEeGdntgx2LWeLQ" base_Class="_1FUxQH2uEeGfK4t8PAy6mA" templateId="Entry_template_Root_OID.1" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0014</ruleId>
+  </CDA:CDATemplate>
+  <CDA:CDATemplate xmi:id="_lqehkIS5EeGejc1Jrk9-tw" base_Class="_ON7-oIS5EeGejc1Jrk9-tw" templateId="Section_template_Root_OID.2" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0020</ruleId>
+    <ruleId>CONF-0021</ruleId>
+  </CDA:CDATemplate>
+  <CDA:CDATemplate xmi:id="_KYE70ITDEeG78eqkrGrSKw" base_Class="_BsRCQITDEeG78eqkrGrSKw" templateId="Section_template_Root_OID.2.1" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0025</ruleId>
+  </CDA:CDATemplate>
+  <CDA:CDATemplate xmi:id="_suCC4ITEEeG78eqkrGrSKw" base_Class="_P-yQMITEEeG78eqkrGrSKw" templateId="Entry_template_Root_OID.2" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0033</ruleId>
+  </CDA:CDATemplate>
+  <Ecore:EPackage xmi:id="_igWRcITFEeG78eqkrGrSKw" base_Package="_9x52AHzhEeGoerzCtd9i1A" packageName="ehr" nsPrefix="ehr" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ehr" basePackage="org.openhealthtools.mdht.uml.cda" prefix="ehr"/>
+  <Ecore:EClass xmi:id="_igpMYITFEeG78eqkrGrSKw" base_Class="_ec-lEHziEeGoerzCtd9i1A">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='血型' code.codeSystem='2.16.840.1.113883.6.1' code.displayName='ABO+RH血型代码' templateId.root='Section_template_Root_OID.1' constraints.validation.error='血型章节NarTemplateId 血型章节NarCode 血型章节NarText 血型章节NarTitle' code.codeSystemName='LOINC' code.code='882-1'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_ihikRITFEeG78eqkrGrSKw" base_Class="_1FUxQH2uEeGfK4t8PAy6mA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' value.codeSystemName='卫生部卫生信息数据元值域代码' code.codeSystem='EHRDATASET_OID' templateId.root='Entry_template_Root_OID.1' constraints.validation.error='血型观察条目TemplateId 血型观察条目ClassCode 血型观察条目Code 血型观察条目CodeP 血型观察条目MoodCode 血型观察条目Value 血型观察条目ValueP 血型观察条目StatusCode 血型观察条目StatusCodeP' code.codeSystemName='城乡居民健康档案基本数据集' constraints.validation.warning='血型观察条目Text' classCode='OBS' moodCode='EVN' value.codeSystem='EHRVALUESET_OID'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_iiu3EoTFEeG78eqkrGrSKw" base_Class="_GbtJwIGKEeGpiPpjNWkxlg">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='血型' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='Section_template_Root_OID.1.1' code.displayName='ABO+RH血型代码' constraints.validation.error='血型章节NomTemplateId 血型章节NomCode 血型章节NomCodeP 血型章节NomText 血型章节NomTitle 血型章节NomABO血型观察条目 血型章节NomRH血型观察条目' code.codeSystemName='LOINC' code.code='882-1'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_ijLjAITFEeG78eqkrGrSKw" base_Class="_0RIR4IGYEeGVhK3gGtqaGg">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' value.codeSystemName='卫生部卫生信息数据元值域代码' code.codeSystem='EHRDATASET_OID' code.displayName='ABO血型代码' constraints.validation.error='ABO血型观察条目ClassCode 血型观察条目Code ABO血型观察条目Code ABO血型观察条目MoodCode 血型观察条目StatusCode ABO血型观察条目StatusCode ABO血型观察条目Value' code.codeSystemName='城乡居民健康档案基本数据集' text.mixed='ABO血型代码' constraints.validation.warning='ABO血型观察条目Text' classCode='OBS' code.code='HDSD00.01.013' moodCode='EVN' value.codeSystem='EHRVALUESET_OID'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_ikE64ITFEeG78eqkrGrSKw" base_Class="_O4fLAIGZEeGVhK3gGtqaGg">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' value.codeSystemName='卫生部卫生信息数据元值域代码' code.codeSystem='EHRDATASET_OID' code.displayName='Rh血型代码' constraints.validation.error='RH血型观察条目ClassCode 血型观察条目Code RH血型观察条目Code RH血型观察条目MoodCode 血型观察条目StatusCode RH血型观察条目StatusCode RH血型观察条目Value' code.codeSystemName='城乡居民健康档案基本数据集' text.mixed='Rh血型代码' constraints.validation.warning='RH血型观察条目Text' classCode='OBS' code.code='HDSD00.01.014' moodCode='EVN' value.codeSystem='EHRVALUESET_OID'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_ilHcvoTFEeG78eqkrGrSKw" base_Class="_ON7-oIS5EeGejc1Jrk9-tw">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='社会史' code.codeSystem='2.16.840.1.113883.6.1' code.displayName='社会史' templateId.root='Section_template_Root_OID.2' constraints.validation.error='社会史章节NarTemplateId 社会史章节NarCode 社会史章节NarText 社会史章节NarTitle' code.codeSystemName='LOINC' code.code='29762-2'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_ilkIooTFEeG78eqkrGrSKw" base_Class="_BsRCQITDEeG78eqkrGrSKw">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='社会史' code.codeSystem='2.16.840.1.113883.6.1' code.displayName='社会史' templateId.root='Section_template_Root_OID.2.1' constraints.validation.error='社会史章节NomTemplateId 社会史章节NomCode 社会史章节NomCodeP 社会史章节NomText 社会史章节NomTitle 社会史章节Nom社会史观察条目' code.codeSystemName='LOINC' code.code='29762-2'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_imA0kITFEeG78eqkrGrSKw" base_Class="_P-yQMITEEeG78eqkrGrSKw">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='EHRDATASET_OID' templateId.root='Entry_template_Root_OID.2' constraints.validation.error='社会史观察条目TemplateId 社会史观察条目ClassCode 社会史观察条目Code 社会史观察条目CodeP 社会史观察条目MoodCode 社会史观察条目StatusCode 社会史观察条目Value' code.codeSystemName='城乡居民健康档案基本数据集' classCode='OBS' moodCode='EVN'</annotation>
+  </Ecore:EClass>
+</xmi:XMI>

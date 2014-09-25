@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/CarDemo/ClassModel/car.ecore" structureType="RDBMS" structureURL="jdbc:odbc:carDemo" topElementType="databaseType" topElementName="database">
+  <rootElement name="database" type="databaseType" minMultiplicity="1" expanded="true">
+    <nodeMappingSet>
+      <objectMappings mappedClass="region"/>
+    </nodeMappingSet>
+    <childElements name="PERSON" type="PERSONType" minMultiplicity="1" expanded="true">
+      <childElements name="record" expanded="true" maxMultiplicity="-1">
+        <nodeMappingSet>
+          <objectMappings mappedClass="person"/>
+          <associationMappings>
+            <mappedEnd1 mappedClass="person" mappedRole="containsPerson" requiredForObject="true"/>
+            <mappedEnd2 mappedClass="region" mappedRole="pContainedBy"/>
+          </associationMappings>
+        </nodeMappingSet>
+        <childElements name="FAMILY_NAME" type="VARCHAR" expanded="true">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="person" mappedProperty="surname"/>
+          </nodeMappingSet>
+        </childElements>
+        <childElements name="AGE" type="NUMBER" expanded="true">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="person" mappedProperty="age"/>
+          </nodeMappingSet>
+        </childElements>
+        <childElements name="LICENSE_NO" type="VARCHAR" expanded="true">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="person" mappedProperty="licence"/>
+          </nodeMappingSet>
+        </childElements>
+      </childElements>
+    </childElements>
+    <childElements name="CAR" type="CARType" minMultiplicity="1" expanded="true">
+      <childElements name="record" expanded="true" maxMultiplicity="-1">
+        <nodeMappingSet>
+          <objectMappings mappedClass="car"/>
+          <associationMappings>
+            <mappedEnd1 mappedClass="region" mappedRole="cContainedBy"/>
+            <mappedEnd2 mappedClass="car" mappedRole="containsCar" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings>
+            <mappedEnd1 mappedClass="person" mappedRole="drivenBy">
+              <mappingConditions xsi:type="com.charteris.mapper:CrossCondition" leftPath="DRIVER_LICENCE" description="" rightPath="LICENSE_NO" rightFunction=""/>
+            </mappedEnd1>
+            <mappedEnd2 mappedClass="car" mappedRole="drives"/>
+          </associationMappings>
+        </nodeMappingSet>
+        <childElements name="MAKE" type="VARCHAR" expanded="true">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="car" mappedProperty="make"/>
+          </nodeMappingSet>
+        </childElements>
+        <childElements name="TYPE" type="VARCHAR" expanded="true">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="car" mappedProperty="type"/>
+          </nodeMappingSet>
+        </childElements>
+        <childElements name="REG_NUMBER" type="VARCHAR" expanded="true">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="car" mappedProperty="registration"/>
+          </nodeMappingSet>
+        </childElements>
+        <childElements name="DRIVER_LICENCE" type="VARCHAR" expanded="true"/>
+      </childElements>
+    </childElements>
+  </rootElement>
+  <mappingParameters/>
+</com.charteris.mapper:MappedStructure>

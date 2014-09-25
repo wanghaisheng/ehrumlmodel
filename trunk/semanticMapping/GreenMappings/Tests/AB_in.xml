@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1"/>
+	<documentationOf>
+		<serviceEvent classCode="PCPR"/>
+	</documentationOf>
+	<recordTarget>
+		<patientRole>
+			<id extension="110094" root="12345678"/>
+			<patient>
+				<name>
+					<given mediaType="text/plain" partType="GIV" representation="TXT">Elmer</given>
+					<family mediaType="text/plain" partType="FAM" representation="TXT">Fudd</family>
+					<suffix mediaType="text/plain" partType="SFX" representation="TXT">Jnr</suffix>
+				</name>
+				<administrativeGenderCode value="M"/>
+				<birthTime>
+					<center value="19410506"/>
+				</birthTime>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<component_T>
+		<structuredBody_T>
+			<component_Problem>
+				<section_Problem>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1"/>
+					<entry_ProblemAct>
+						<act_ProblemAct>
+							<code nullFlavor="NA"/>
+							<statusCode code="55561003"/>
+							<entryRelationship_ProblemObservation>
+								<observation_ProblemObservation>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20090718"/>
+										<high value="20100106"/>
+									</effectiveTime>
+									<value code="233604007" codeSystem="2.16.840.1.115885.7.97"/>
+								</observation_ProblemObservation>
+							</entryRelationship_ProblemObservation>
+						</act_ProblemAct>
+					</entry_ProblemAct>
+				</section_Problem>
+			</component_Problem>
+		</structuredBody_T>
+	</component_T>
+</ClinicalDocument>

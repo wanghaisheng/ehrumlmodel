@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://com.charteris.example"
+	xmlns:ex="http://com.charteris.example"
+	xmlns:imp="http://com.charteris.import"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+	<xs:import namespace = "http://com.charteris.import" schemaLocation="carSchema.xsd" />
+	<xs:element name="drivers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="person" type="ex:personType" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="country" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="personType">
+		<xs:sequence>
+			<xs:element name="drivesCar" type="imp:drivesCarType" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="license" type="xs:string" use="required"/>
+		<xs:attribute name="age" type="xs:byte" use="required"/>
+	</xs:complexType>
+</xs:schema>

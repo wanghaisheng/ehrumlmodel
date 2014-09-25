@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/V3_2008NE/ClassModel/PRPA_MT101301UV02.ecore" structureType="V2" structureURL="platform:/resource/V3_2008NE/Structures/V2Structures/ADT_A28Def.xml" topElementType="PV1_Type">
+  <rootElement name="PV1" type="PV1_Type" description="patient visit segment-" minMultiplicity="1" expanded="true">
+    <annotations>
+      <notes key="V2NodeType" value="Segment"/>
+    </annotations>
+    <childElements name="PV1.1" type="SI" description="Set ID - PV1" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="4"/>
+        <notes key="V2DataType" value="SI"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.2" type="IS" description="Patient Class" minMultiplicity="1" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0004"/>
+        <notes key="Length" value="1"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.3" type="PL" description="Assigned Patient Location">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="PL"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.4" type="IS" description="Admission Type" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0007"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.5" type="CX" description="Preadmit Number">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="36"/>
+        <notes key="V2DataType" value="CX"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.6" type="PL" description="Prior Patient Location">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="PL"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.7" type="XCN" description="Attending Doctor" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0010"/>
+        <notes key="Length" value="75"/>
+        <notes key="V2DataType" value="XCN"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.8" type="XCN" description="Referring Doctor" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0010"/>
+        <notes key="Length" value="75"/>
+        <notes key="V2DataType" value="XCN"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.9" type="XCN" description="Consulting Doctor" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0010"/>
+        <notes key="Length" value="75"/>
+        <notes key="V2DataType" value="XCN"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.10" type="IS" description="Hospital Service" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0069"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.11" type="PL" description="Temporary Location">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="PL"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.12" type="IS" description="Preadmit Test Indicator" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0087"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.13" type="IS" description="Re-admission Indicator" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0092"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.14" type="IS" description="Admit Source" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0023"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.15" type="IS" description="Ambulatory Status" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0009"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.16" type="IS" description="VIP Indicator" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0099"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.17" type="XCN" description="Admitting Doctor" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0010"/>
+        <notes key="Length" value="75"/>
+        <notes key="V2DataType" value="XCN"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.18" type="IS" description="Patient Type" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0018"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.19" type="CX" description="Visit Number">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="36"/>
+        <notes key="V2DataType" value="CX"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.20" type="FC" description="Financial Class" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0064"/>
+        <notes key="Length" value="50"/>
+        <notes key="V2DataType" value="FC"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.21" type="IS" description="Charge Price Indicator" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0032"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.22" type="IS" description="Courtesy Code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0045"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.23" type="IS" description="Credit Rating" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0046"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.24" type="IS" description="Contract Code" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0044"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.25" type="DT" description="Contract Effective Date" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="8"/>
+        <notes key="V2DataType" value="DT"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.26" type="NM" description="Contract Amount" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="12"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.27" type="NM" description="Contract Period" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.28" type="IS" description="Interest Code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0073"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.29" type="IS" description="Transfer to Bad Debt Code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0110"/>
+        <notes key="Length" value="1"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.30" type="DT" description="Transfer to Bad Debt Date" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="8"/>
+        <notes key="V2DataType" value="DT"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.31" type="IS" description="Bad Debt Agency Code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0021"/>
+        <notes key="Length" value="10"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.32" type="NM" description="Bad Debt Transfer Amount" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="12"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.33" type="NM" description="Bad Debt Recovery Amount" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="12"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.34" type="IS" description="Delete Account Indicator" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0111"/>
+        <notes key="Length" value="1"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.35" type="DT" description="Delete Account Date" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="8"/>
+        <notes key="V2DataType" value="DT"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.36" type="IS" description="Discharge Disposition" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0112"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.37" type="CM_DLD" description="Discharged to Location">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0113"/>
+        <notes key="Length" value="30"/>
+        <notes key="V2DataType" value="CM_DLD"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.38" type="CE" description="Diet Type">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0114"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.39" type="IS" description="Servicing Facility" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0115"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.40" type="IS" description="Bed Status" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0116"/>
+        <notes key="Length" value="1"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.41" type="IS" description="Account Status" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0117"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.42" type="PL" description="Pending Location">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="PL"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.43" type="PL" description="Prior Temporary Location">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="PL"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.44" type="TS" description="Admit Date/Time">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="26"/>
+        <notes key="V2DataType" value="TS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.45" type="TS" description="Discharge Date/Time">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="26"/>
+        <notes key="V2DataType" value="TS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.46" type="NM" description="Current Patient Balance" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="12"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.47" type="NM" description="Total Charges" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="12"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.48" type="NM" description="Total Adjustments" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="12"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.49" type="NM" description="Total Payments" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="12"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.50" type="CX" description="Alternate Visit ID">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0203"/>
+        <notes key="Length" value="36"/>
+        <notes key="V2DataType" value="CX"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.51" type="IS" description="Visit Indicator" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0326"/>
+        <notes key="Length" value="1"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="PV1.52" type="XCN" description="Other Healthcare Provider" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0010"/>
+        <notes key="Length" value="75"/>
+        <notes key="V2DataType" value="XCN"/>
+      </annotations>
+    </childElements>
+  </rootElement>
+</com.charteris.mapper:MappedStructure>

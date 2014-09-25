@@ -1,0 +1,70 @@
+Welcome to Grails 1.3.7 - http://grails.org/
+Licensed under Apache Standard License 2.0
+Grails home is set to: D:\ProjectLib\grails-1.3.7
+
+Base Directory: D:\workspace1\siframework-toc-demo
+Resolving dependencies...
+Dependencies resolved in 656ms.
+Running script D:\ProjectLib\grails-1.3.7\scripts\RunApp.groovy
+Environment set to development
+   [delete] Deleting directory C:\Documents and Settings\edwin\.grails\1.3.7\projects\siframework-toc-demo\tomcat
+Running Grails application..
+2011-12-21 14:46:24,781 [main] ERROR spring.GrailsRuntimeConfigurator  - [RuntimeConfiguration] Unable to load beans from resources.groovy
+groovy.lang.MissingPropertyException: No such property: ConnectionFactory for class: resources
+	at resources$_run_closure1.doCall(resources.groovy:7)
+	at resources$_run_closure1.doCall(resources.groovy)
+	at grails.spring.BeanBuilder.invokeBeanDefiningClosure(BeanBuilder.java:723)
+	at grails.spring.BeanBuilder.beans(BeanBuilder.java:573)
+	at grails.spring.BeanBuilder.invokeBeanDefiningClosure(BeanBuilder.java:723)
+	at grails.spring.BeanBuilder.beans(BeanBuilder.java:573)
+	at grails.spring.BeanBuilder.invokeMethod(BeanBuilder.java:519)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+2011-12-21 14:46:28,968 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'clinicalDocumentListenerJmsListenerContainer': Cannot resolve reference to bean 'jmsConnectionFactory' while setting bean property 'connectionFactory'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'jmsConnectionFactory' is defined
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clinicalDocumentListenerJmsListenerContainer': Cannot resolve reference to bean 'jmsConnectionFactory' while setting bean property 'connectionFactory'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'jmsConnectionFactory' is defined
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'jmsConnectionFactory' is defined
+	... 23 more

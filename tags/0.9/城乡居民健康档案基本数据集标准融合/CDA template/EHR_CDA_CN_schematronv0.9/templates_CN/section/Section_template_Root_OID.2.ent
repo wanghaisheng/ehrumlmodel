@@ -1,0 +1,38 @@
+<!--  EHR CDA规范 社会史章节: Section_template_Root_OID.2 -->
+
+<!-- errors -->
+
+  <pattern id="p-Section_template_Root_OID.2-errors">
+    <title>EHR CDA规范 社会史章节 - errors validation phase</title>
+
+ <rule context='*[cda:templateId/@root="Section_template_Root_OID.2"]'> 
+     <!-- Verify that the template id is used on the appropriate type of
+     object --> 
+   <assert test='../cda:section'> 
+      Error: In EHR CDA规范 社会史章节 (Section_template_Root_OID.2), the Social History can only be used 
+      on sections. 
+   </assert> 
+   <!-- Verify the section type code --> 
+   <assert test='cda:code[@code = "29762-2"]'> 
+      Error: In EHR CDA规范 社会史章节 (Section_template_Root_OID.2), the section type code of a Social 
+      History must be 29762-2 
+   </assert> 
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+      Error: In EHR CDA规范 社会史章节 (Section_template_Root_OID.2), the section type code must come from 
+      the LOINC code system (2.16.840.1.113883.6.1). 
+   </assert> 
+ </rule> 
+
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Section_template_Root_OID.2-warnings">
+    <title>EHR CDA规范 社会史章节 - warning validation phase</title>
+<!--
+    <rule context="*[cda:templateId/@root=&quot;Section_template_Root_OID.2&quot;]">
+      <report test="."/>
+    </rule>
+-->
+  </pattern>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" structureType="V2" structureURL="platform:/resource/V3_2008NE/Structures/V2Structures/ADT_A28Def.xml" topElementType="OBX_Type">
+  <rootElement name="OBX" type="OBX_Type" description="observation/result segment" expanded="true">
+    <annotations>
+      <notes key="V2NodeType" value="Segment"/>
+    </annotations>
+    <childElements name="OBX.1" type="SI" description="Set ID - OBX" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="4"/>
+        <notes key="V2DataType" value="SI"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.2" type="ID" description="Value Type" minMultiplicity="1" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0125"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.3" type="CE" description="Observation Identifier" minMultiplicity="1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.4" type="ST" description="Observation Sub-ID" minMultiplicity="1" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="20"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.5" type="*" description="Observation Value" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="65536"/>
+        <notes key="V2DataType" value="*"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.6" type="CE" description="Units">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="60"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.7" type="ST" description="References Range" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="60"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.8" type="ID" description="Abnormal Flags" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0078"/>
+        <notes key="Length" value="5"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.9" type="NM" description="Probability" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="5"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.10" type="ID" description="Nature of Abnormal Test" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0080"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.11" type="ID" description="Observation Result Status" minMultiplicity="1" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0085"/>
+        <notes key="Length" value="1"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.12" type="TS" description="Date Last Obs Normal Values">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="26"/>
+        <notes key="V2DataType" value="TS"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.13" type="ST" description="User Defined Access Checks" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="20"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.14" type="TS" description="Date/Time of the Observation">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="26"/>
+        <notes key="V2DataType" value="TS"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.15" type="CE" description="Producer's ID">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="60"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.16" type="XCN" description="Responsible Observer" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="80"/>
+        <notes key="V2DataType" value="XCN"/>
+      </annotations>
+    </childElements>
+    <childElements name="OBX.17" type="CE" description="Observation Method" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="60"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+  </rootElement>
+  <mappingParameters>
+    <nameSpaces uRL="urn:hl7-org:v2xml" prefix=""/>
+  </mappingParameters>
+</com.charteris.mapper:MappedStructure>

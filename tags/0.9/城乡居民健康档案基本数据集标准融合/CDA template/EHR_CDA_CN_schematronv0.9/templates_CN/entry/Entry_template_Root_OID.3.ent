@@ -1,0 +1,72 @@
+<!-- EHR CDA规范 医疗支付条目:Entry_template_Root_OID.3 -->
+
+
+<!-- Errors Pattern -->
+
+<pattern id='p-Entry_template_Root_OID.3-errors'>
+
+ <rule context='*[cda:templateId/@root="Entry_template_Root_OID.3"]'>
+
+   <!-- Verify that templateId is used on the appropriate type of object -->
+<!--
+   <assert test='self::cda:act[cda:templateId/@root="2.16.840.1.113883.10.20.1.26"]'>
+      Error: The HITSP/C83 templateId for Insurance Payment Provider (Entry_template_Root_OID.3)
+      is in the wrong location. A C83 Insurance Payment Providers data element shall be represented as
+      a CCD Policy Activity act (2.16.840.1.113883.10.20.1.26).
+      See HITSP/C83 Section 2.2.2.5, Table 2-9 and Section 2.2.2.5.1, rule C83-[DE-5-CDA-1].
+   </assert>
+-->
+   <assert test='not(cda:code[@code and @codeSystem]) or cda:code[@code and @codeSystem="CV07.10.003"]'>
+      Error: 支付方式代码code值必须取自WS364.13 卫生信息数据元值域代码 第13部分：卫生费用  CV07.10.003医疗费用来源类别代码表
+   </assert>
+   <assert test='cda:statusCode[@code = "completed"]'>
+       Error: In EHR CDA规范 医疗支付条目(Entry_template_Root_OID.3), statuscode必须是completed.
+   </assert>	
+   <assert test='.//cda:templateId[@root = "Entry_template_Root_OID.4"]'> 
+     <!-- Alert on any missing required if known elements -->
+     Warning: In EHR CDA规范  医疗支付条目 (Section_template_Root_OID.3)必须包含一个医疗服务费用条目(Entry_template_Root_OID.4).
+   </assert>    
+ </rule>
+
+
+ <!-- 结算方式 -->
+
+ <rule context='*[cda:templateId/@root="Entry_template_Root_OID.3"]/cda:entryRelationship[@typeCode="COMP"]/cda:act'>
+   <assert test='cda:statusCode[@code = "completed"]'>
+       Error: In EHR CDA规范 医疗支付条目(Entry_template_Root_OID.3), statuscode必须是completed.
+   </assert>
+   <assert test='cda:code[@code and @codeSystem="CV07.10.004"]'>
+      Error: 结算方式代码code值必须取自WS364.13 卫生信息数据元值域代码 第13部分：卫生费用  CV07.10.004医疗费用结算方式代码表
+   </assert>
+ </rule>
+
+</pattern>
+
+
+<!-- Warnings Pattern -->
+
+<pattern id='p-Entry_template_Root_OID.3-warning'>
+
+
+ <rule context='*[cda:templateId/@root="Entry_template_Root_OID.3"]'>
+
+
+   <!-- 支付方式 -->
+   <assert test='count(cda:code/@code) = 1'>
+      Warning: 支付方式代码只能有一个
+   </assert>
+
+ </rule>
+
+
+   
+
+<!-- Notes Pattern -->
+
+<pattern id='p-Entry_template_Root_OID.3-note'>
+
+
+
+</pattern>
+
+

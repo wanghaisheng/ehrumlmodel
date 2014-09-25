@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="org.openhealthtools.mdht.uml.cda.ehr/src"
+    modelPluginID="org.openhealthtools.mdht.uml.cda.ehr" templateDirectory="/org.openhealthtools.mdht.uml.cda/templates"
+    dynamicTemplates="true" modelName="ehr_Ecore" modelPluginClass="EhrPlugin" importerID="org.eclipse.uml2.uml.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" runtimeVersion="2.5" usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes ../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.genmodel#//rim ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab ../../org.openhealthtools.mdht.uml.cda/model/cda.genmodel#//cda platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    pluralizedGetters="true" invariantPrefix="validate">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURES" value="PROCESS"/>
+    <details key="SUBSETTING_PROPERTIES" value="PROCESS"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="PROCESS"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
+    <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="IGNORE"/>
+    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+  </genAnnotations>
+  <foreignModel>ehr_Ecore.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Ehr" basePackage="org.openhealthtools.mdht.uml.cda"
+      disposableProviderFactory="true" ecorePackage="ehr.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.ehr.operations">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ehr.ecore#//血型章节Nar">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nar/血型章节NarTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nar/血型章节NarTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nar/血型章节NarTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nar/血型章节NarCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nar/血型章节NarCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nar/血型章节NarCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nar/血型章节NarText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nar/血型章节NarText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nar/血型章节NarText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nar/血型章节NarTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nar/血型章节NarTitle/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nar/血型章节NarTitle/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ehr.ecore#//血型观察条目">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型观察条目/血型观察条目TemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目TemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目TemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型观察条目/血型观察条目ClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目ClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目ClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型观察条目/血型观察条目Code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目Code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目Code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型观察条目/血型观察条目CodeP">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目CodeP/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目CodeP/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型观察条目/血型观察条目MoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目MoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目MoodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型观察条目/血型观察条目Text">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目Text/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目Text/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型观察条目/血型观察条目Value">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目Value/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目Value/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型观察条目/血型观察条目ValueP">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目ValueP/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目ValueP/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型观察条目/血型观察条目StatusCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目StatusCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目StatusCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型观察条目/血型观察条目StatusCodeP">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目StatusCodeP/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型观察条目/血型观察条目StatusCodeP/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ehr.ecore#//血型章节Nom">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nom/血型章节NomTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nom/血型章节NomCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nom/血型章节NomCodeP">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomCodeP/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomCodeP/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nom/血型章节NomText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nom/血型章节NomTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomTitle/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomTitle/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nom/血型章节NomABO血型观察条目">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomABO血型观察条目/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomABO血型观察条目/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nom/血型章节NomRH血型观察条目">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomRH血型观察条目/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//血型章节Nom/血型章节NomRH血型观察条目/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nom/getABO血型观察条目"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//血型章节Nom/getRH血型观察条目"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ehr.ecore#//ABO血型观察条目">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//ABO血型观察条目/ABO血型观察条目ClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目ClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目ClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//ABO血型观察条目/ABO血型观察条目Code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目Code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目Code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//ABO血型观察条目/ABO血型观察条目MoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目MoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目MoodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//ABO血型观察条目/ABO血型观察条目StatusCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目StatusCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目StatusCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//ABO血型观察条目/ABO血型观察条目Text">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目Text/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目Text/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//ABO血型观察条目/ABO血型观察条目Value">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目Value/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//ABO血型观察条目/ABO血型观察条目Value/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ehr.ecore#//RH血型观察条目">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//RH血型观察条目/RH血型观察条目ClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目ClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目ClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//RH血型观察条目/RH血型观察条目Code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目Code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目Code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//RH血型观察条目/RH血型观察条目MoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目MoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目MoodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//RH血型观察条目/RH血型观察条目StatusCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目StatusCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目StatusCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//RH血型观察条目/RH血型观察条目Text">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目Text/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目Text/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//RH血型观察条目/RH血型观察条目Value">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目Value/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//RH血型观察条目/RH血型观察条目Value/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ehr.ecore#//社会史章节Nar">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nar/社会史章节NarTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nar/社会史章节NarTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nar/社会史章节NarTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nar/社会史章节NarCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nar/社会史章节NarCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nar/社会史章节NarCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nar/社会史章节NarText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nar/社会史章节NarText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nar/社会史章节NarText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nar/社会史章节NarTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nar/社会史章节NarTitle/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nar/社会史章节NarTitle/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ehr.ecore#//社会史章节Nom">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nom/社会史章节NomTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节NomTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节NomTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nom/社会史章节NomCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节NomCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节NomCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nom/社会史章节NomCodeP">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节NomCodeP/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节NomCodeP/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nom/社会史章节NomText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节NomText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节NomText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nom/社会史章节NomTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节NomTitle/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节NomTitle/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nom/社会史章节Nom社会史观察条目">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节Nom社会史观察条目/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史章节Nom/社会史章节Nom社会史观察条目/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史章节Nom/get社会史观察条目s"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ehr.ecore#//社会史观察条目">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史观察条目/社会史观察条目TemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目TemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目TemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史观察条目/社会史观察条目ClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目ClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目ClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史观察条目/社会史观察条目Code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目Code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目Code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史观察条目/社会史观察条目CodeP">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目CodeP/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目CodeP/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史观察条目/社会史观察条目MoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目MoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目MoodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史观察条目/社会史观察条目StatusCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目StatusCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目StatusCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ehr.ecore#//社会史观察条目/社会史观察条目Value">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目Value/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ehr.ecore#//社会史观察条目/社会史观察条目Value/context"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

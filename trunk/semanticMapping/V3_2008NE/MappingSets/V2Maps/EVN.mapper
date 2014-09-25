@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/V3_2008NE/ClassModel/PRPA_MT101301UV02.ecore" structureType="V2" structureURL="platform:/resource/V3_2008NE/Structures/V2Structures/ADT_A28Def.xml" topElementType="EVN_Type">
+  <rootElement name="EVN" type="EVN_Type" description="event type segment" minMultiplicity="1" expanded="true">
+    <annotations>
+      <notes key="V2NodeType" value="Segment"/>
+    </annotations>
+    <childElements name="EVN.1" type="ID" description="Event Type Code" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0003"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="EVN.2" type="TS" description="Recorded Date/Time" minMultiplicity="1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="26"/>
+        <notes key="V2DataType" value="TS"/>
+      </annotations>
+    </childElements>
+    <childElements name="EVN.3" type="TS" description="Date/Time Planned Event">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="26"/>
+        <notes key="V2DataType" value="TS"/>
+      </annotations>
+    </childElements>
+    <childElements name="EVN.4" type="IS" description="Event Reason Code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0062"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+    </childElements>
+    <childElements name="EVN.5" type="XCN" description="Operator ID" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0188"/>
+        <notes key="Length" value="75"/>
+        <notes key="V2DataType" value="XCN"/>
+      </annotations>
+    </childElements>
+    <childElements name="EVN.6" type="TS" description="Event Occurred">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="26"/>
+        <notes key="V2DataType" value="TS"/>
+      </annotations>
+    </childElements>
+  </rootElement>
+  <mappingParameters>
+    <nameSpaces uRL="urn:hl7-org:v2xml" prefix=""/>
+  </mappingParameters>
+</com.charteris.mapper:MappedStructure>

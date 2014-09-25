@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <!--
+   Title: greenCDA Schema Module: Datatypes
+
+   Original Filename: greenCDA_datatypes.xsd
+   Version: 0.3  
+   December 14 2009
+
+   This file is part of the greenCDA package created by
+   Alschuler Associates, LLC and Semantically Yours, LLC
+   to stimulate discussion and further experimentation 
+   with approaches to simplifying CDA instance creation.
+
+   With the greenCDA files, you can
+
+     - validate the sample instance with its green schema
+     - convert the sample instance to full CDA.
+  -->
+  <xs:complexType name="Organization">
+    <xs:attributeGroup ref="IdSet"/>
+    <xs:attribute name="name" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="PersonName">
+    <xs:sequence>
+      <xs:element name="Prefix" minOccurs="0"/>
+      <xs:element name="Given"/>
+      <xs:element name="Middle" minOccurs="0"/>
+      <xs:element name="Family"/>
+      <xs:element name="Suffix" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TimeRange">
+    <xs:attribute name="start" use="required"/>
+    <xs:attribute name="end" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="TimeValue">
+    <xs:attribute name="value" use="required"/>
+  </xs:complexType>
+
+  <!-- Hourly, Daily, Weekly, Monthly, Yearly -->
+  <xs:complexType name="TimeInterval">
+    <xs:attribute name="interval"/>
+  </xs:complexType>
+
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="Street"/>
+      <xs:element name="City" minOccurs="0"/>
+      <xs:element name="State" minOccurs="0"/>
+      <xs:element name="PostalCode"/>
+      <xs:element name="Country" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Phone" mixed="true">
+    <xs:attribute name="use"/>
+  </xs:complexType>
+
+  <xs:complexType name="Topic">
+    <xs:attribute name="code" use="required"/>
+    <xs:attribute name="displayName"/>
+    <xs:attribute name="codeSystem" use="required"/>
+    <xs:attribute name="codeSystemName"/>
+  </xs:complexType>
+
+  <xs:attributeGroup name="IdSet">
+    <xs:attribute name="idAuthority"/>
+    <xs:attribute name="idValue"/>
+  </xs:attributeGroup>
+
+</xs:schema>

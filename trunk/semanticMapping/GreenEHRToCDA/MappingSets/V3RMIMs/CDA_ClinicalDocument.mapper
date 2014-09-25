@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/GreenEHRToCDA/ClassModel/POCD_RM000040.ecore" structureURL="" topElementType="CDA_ClinicalDocument">
+  <rootElement name="ClinicalDocument" type="CDA_ClinicalDocument" expanded="true">
+    <childElements name="id" type="II" minMultiplicity="1"/>
+    <childElements name="code" type="CE" minMultiplicity="1"/>
+    <childElements name="title" type="ST"/>
+    <childElements name="effectiveTime" type="TS" minMultiplicity="1"/>
+    <childElements name="confidentialityCode" type="CE" minMultiplicity="1"/>
+    <childElements name="languageCode" type="CS"/>
+    <childElements name="setId" type="II"/>
+    <childElements name="versionNumber" type="INT"/>
+    <childElements name="copyTime" type="TS"/>
+    <childElements name="documentationOf" type="" expanded="true" maxMultiplicity="-1">
+      <childElements name="serviceEvent" type="CDA_ServiceEvent" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="componentOf" type="" expanded="true">
+      <childElements name="encompassingEncounter" type="CDA_EncompassingEncounter" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="relatedDocument" type="" expanded="true" maxMultiplicity="-1">
+      <childElements name="parentDocument" type="CDA_ParentDocument" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="participant" type="" expanded="true" maxMultiplicity="-1">
+      <childElements name="functionCode" type="CE"/>
+      <childElements name="time" type="IVL_TS"/>
+      <childElements name="associatedEntity" type="CDA_AssociatedEntity" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="contextControlCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="custodian" type="" minMultiplicity="1" expanded="true">
+      <childElements name="assignedCustodian" type="CDA_AssignedCustodian" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="informationRecipient" type="" expanded="true" maxMultiplicity="-1">
+      <childElements name="intendedRecipient" type="CDA_IntendedRecipient" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="legalAuthenticator" type="" expanded="true">
+      <childElements name="time" type="TS" minMultiplicity="1"/>
+      <childElements name="signatureCode" type="CS" minMultiplicity="1"/>
+      <childElements name="assignedEntity" type="CDA_AssignedEntity" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="contextControlCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="authenticator" type="" expanded="true" maxMultiplicity="-1">
+      <childElements name="time" type="TS" minMultiplicity="1"/>
+      <childElements name="signatureCode" type="CS" minMultiplicity="1"/>
+      <childElements name="assignedEntity" type="CDA_AssignedEntity" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="author" type="" minMultiplicity="1" expanded="true" maxMultiplicity="-1">
+      <childElements name="functionCode" type="CE"/>
+      <childElements name="time" type="TS" minMultiplicity="1"/>
+      <childElements name="assignedAuthor" type="CDA_AssignedAuthor" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="contextControlCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="recordTarget" type="" minMultiplicity="1" expanded="true" maxMultiplicity="-1">
+      <childElements name="patientRole" type="CDA_PatientRole" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="contextControlCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="dataEnterer" type="" expanded="true">
+      <childElements name="time" type="TS"/>
+      <childElements name="assignedEntity" type="CDA_AssignedEntity" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="contextControlCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="authorization" type="" expanded="true" maxMultiplicity="-1">
+      <childElements name="consent" type="CDA_Consent" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="inFulfillmentOf" type="" expanded="true" maxMultiplicity="-1">
+      <childElements name="order" type="CDA_Order" minMultiplicity="1"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+    <childElements name="typeID" type="II"/>
+    <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+    <childElements name="component_T" type="" minMultiplicity="1" expanded="true">
+      <childElements name="nonXMLBody" type="CDA_NonXMLBody"/>
+      <childElements name="realmCode" type="CS" maxMultiplicity="-1"/>
+      <childElements name="typeID" type="II"/>
+      <childElements name="templateId" type="II" maxMultiplicity="-1"/>
+      <childElements name="structuredBody_T" type="CDA_StructuredBody_T"/>
+      <attributeDefs name="typeCode" minMultiplicity="1"/>
+      <attributeDefs name="contextConductionInd" minMultiplicity="1"/>
+      <attributeDefs name="nullFlavor"/>
+    </childElements>
+    <attributeDefs name="classCode" minMultiplicity="1"/>
+    <attributeDefs name="moodCode" minMultiplicity="1"/>
+    <attributeDefs name="nullFlavor"/>
+  </rootElement>
+  <mappingParameters mappingClass="com.charteris.mapper.converters.V3_XML_ITS" wrapperClass="com.charteris.mapper.converters.CDAConverter">
+    <nameSpaces uRL="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+    <nameSpaces uRL="urn:hl7-org:v3" prefix=""/>
+    <nameSpaces uRL="urn:hl7-org:v3/voc" prefix="voc"/>
+  </mappingParameters>
+</com.charteris.mapper:MappedStructure>

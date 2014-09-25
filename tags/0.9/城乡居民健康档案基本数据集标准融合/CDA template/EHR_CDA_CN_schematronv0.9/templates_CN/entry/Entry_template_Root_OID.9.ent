@@ -1,0 +1,65 @@
+<!--  EHR CDA 规范 问题关注/病情条目: Entry_template_Root_OID.9 -->
+
+<!-- errors -->
+
+  <pattern id="p-Entry_template_Root_OID.9-errors">
+    <title>EHR CDA 规范 问题关注/病情条目 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.9"]'>
+
+        <assert test='../cda:act'>
+           Error: EHR CDA 规范 问题关注/病情条目,只能用在acts中.
+        </assert>
+        <assert test='../cda:act[@classCode="ACT"] and
+                      ../cda:act[@moodCode="EVN"]'>
+	   Error: EHR CDA 规范 问题关注/病情条目,classCode="ACT" moodCode="EVN"所表示的是对病人的病情如问题(problem)、过敏、其他的关心。
+	</assert>
+<!--
+	<assert test='cda:id'>
+	   Error: EHR CDA 规范 问题关注/病情条目必须有一个id元素
+	</assert>
+-->	
+	<assert test='cda:code[@code="CONC"]'>
+	   Error: EHR CDA 规范 问题关注/病情条目,code元素的属性@code必须为"CONC"
+	</assert>
+	<assert test='cda:statusCode[@code="active" or 
+                                     @code="suspended" or
+                                     @code="aborted" or
+                                     @code="completed"]'>
+	   Error: EHR CDA 规范 问题关注/病情条目，statusCode必须是如下四个值其中之一：active, suspended, aborted or completed.
+	</assert>
+<!--
+	<assert test='cda:effectiveTime/cda:low'>
+	   Error: In IHE PCC Concern Entry (1.3.6.1.4.1.19376.1.5.3.1.4.5.1), the &lt;effectiveTime&gt; element records the 
+           starting and ending times during which the concern (Concern Entry) was active. The &lt;low&gt; element shall be 
+           present.
+	</assert>
+
+
+        <assert test='(cda:statusCode[@code="completed" or @code="aborted"] and cda:effectiveTime/cda:high) or
+                      (cda:statusCode[@code="active" or @code="suspended"] and not(cda:effectiveTime/cda:high))'>
+           Error: In IHE PCC Concern Entry (1.3.6.1.4.1.19376.1.5.3.1.4.5.1), the &lt;effectiveTime&gt; element records the 
+           starting and ending times during the concern (Concern Entry).  The &lt;high&gt; element shall be present for concerns 
+           in the completed or aborted state, and shall not be present otherwise.
+        </assert>
+-->
+   <assert test='(cda:entryRelationship[@typeCode = "SUBJ"] and
+                 cda:entryRelationship/*/cda:templateId[@root="Entry_template_Root_OID.10"] and
+                 cda:entryRelationship[@inversionInd="false"]) or
+                 (cda:subjectOf[@typeCode = "SUBJ"] and
+                 cda:subjectOf/*/cda:templateId[@root="Entry_template_Root_OID.10"] and
+                 cda:subjectOf[@inversionInd="false"])'>
+      Error: In EHR CDA 规范 问题关注/病情条目 (Entry_template_Root_OID.9)应包含一个或者一个以上的问题观察条目(Entry_template_Root_OID.10)
+   </assert>
+   </rule>
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Entry_template_Root_OID.9-warnings">
+    <title>EHR CDA 规范 问题关注/病情条目 - warning validation phase</title>
+<!--
+    <rule context="*[cda:templateId/@root=&quot;Entry_template_Root_OID.9&quot;]">
+      <report test="."/>
+    </rule>
+-->
+  </pattern>

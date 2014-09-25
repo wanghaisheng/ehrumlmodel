@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><procedures>
+				<proc type="create">
+					<context/>
+					<step caseNo="start" class="PRPA_MT101301UV02.IdentifiedPerson" specialNode="false" stepNumber="0" stepType="getAllObjects" subset="" tagName="PID"/>
+				</proc>
+				<element name="PID" path="/PID">
+					<procedures>
+						<proc type="create">
+							<context>
+								<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+								<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+							</context>
+							<step assocName="identifiedPerson" caseNo="" stepNumber="0" stepType="addToContext" targetEnd="2">
+								<classSet1 class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+								<classSet2 class="PRPA_MT101301UV02.Person" subset=""/>
+							</step>
+							<step assocName="id" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="1" stepType="associationInstance" tagName="PID.3">
+								<classSet1 class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+								<classSet2 class="datatypes.II" subset=""/>
+							</step>
+							<step assocName="name" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="2" stepType="associationInstance" tagName="PID.5">
+								<classSet1 class="PRPA_MT101301UV02.Person" subset=""/>
+								<classSet2 class="datatypes.PN" subset=""/>
+							</step>
+							<step assocName="birthTime" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="3" stepType="associationInstance" tagName="PID.7">
+								<classSet1 class="PRPA_MT101301UV02.Person" subset=""/>
+								<classSet2 class="datatypes.TS" subset=""/>
+							</step>
+							<step assocName="administrativeGenderCode" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="4" stepType="associationInstance" tagName="PID.8">
+								<classSet1 class="PRPA_MT101301UV02.Person" subset=""/>
+								<classSet2 class="datatypes.CE" subset=""/>
+							</step>
+							<step assocName="addr" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="5" stepType="associationInstance" tagName="PID.11">
+								<classSet1 class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+								<classSet2 class="datatypes.AD" subset=""/>
+							</step>
+							<step assocName="telecom" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="6" stepType="associationInstance" tagName="PID.13">
+								<classSet1 class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+								<classSet2 class="datatypes.TEL" subset=""/>
+							</step>
+							<step assocName="telecom" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="7" stepType="associationInstance" tagName="PID.14">
+								<classSet1 class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+								<classSet2 class="datatypes.TEL" subset="s1"/>
+							</step>
+							<step assocName="maritalStatusCode" caseNo="2.1" endsNotInContext="2" maxIs1="false" minIs1="false" stepNumber="8" stepType="associationInstance" tagName="PID.16">
+								<classSet1 class="PRPA_MT101301UV02.Person" subset=""/>
+								<classSet2 class="datatypes.CE" subset="s1"/>
+							</step>
+						</proc>
+					</procedures>
+					<element name="PID.3" path="/PID/PID.3">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+									<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+									<ClassSet class="datatypes.II" subset=""/>
+								</context>
+								<step caseNo="3.5.2" minIs1="false" pName="extension" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.II" subset=""/>
+								</step>
+								<step caseNo="3.5.2" ifString="true" stepNumber="1" stepType="addElement" tagName="CX.1"/>
+								<step caseNo="3.5.6.1" ifString="false" stepNumber="2" stepType="addElement" tagName="CX.4"/>
+							</proc>
+						</procedures>
+						<element name="CX.1" path="/PID/PID.3/CX.1">
+							<procedures>
+								<proc type="create">
+									<context>
+										<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+										<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+										<ClassSet class="datatypes.II" subset=""/>
+									</context>
+									<step caseNo="C.1" minIs1="false" pName="extension" stepNumber="0" stepType="getProperty">
+										<ClassSet class="datatypes.II" subset=""/>
+									</step>
+									<step appendFlag="false" caseNo="content" stepNumber="1" stepType="setText"/>
+								</proc>
+							</procedures>
+						</element>
+						<element name="CX.4" path="/PID/PID.3/CX.4">
+							<procedures>
+								<proc type="create">
+									<context>
+										<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+										<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+										<ClassSet class="datatypes.II" subset=""/>
+									</context>
+									<step caseNo="3.5.2" minIs1="false" pName="root" stepNumber="0" stepType="getProperty">
+										<ClassSet class="datatypes.II" subset=""/>
+									</step>
+									<step caseNo="3.5.2" ifString="true" stepNumber="1" stepType="addElement" tagName="HD.2"/>
+								</proc>
+							</procedures>
+							<element name="HD.2" path="/PID/PID.3/CX.4/HD.2">
+								<procedures>
+									<proc type="create">
+										<context>
+											<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+											<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+											<ClassSet class="datatypes.II" subset=""/>
+										</context>
+										<step caseNo="C.1" minIs1="false" pName="root" stepNumber="0" stepType="getProperty">
+											<ClassSet class="datatypes.II" subset=""/>
+										</step>
+										<step appendFlag="false" caseNo="content" stepNumber="1" stepType="setText"/>
+									</proc>
+								</procedures>
+							</element>
+						</element>
+					</element>
+					<element name="PID.5" path="/PID/PID.5">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+									<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+									<ClassSet class="datatypes.PN" subset=""/>
+								</context>
+								<step caseNo="5" className="datatypes.PN" mapperPath="platform:/resource/V3_2008NE/MappingSets/V2Maps/XPN.mapper" stepNumber="0" stepType="fillElement" subset=""/>
+							</proc>
+						</procedures>
+					</element>
+					<element name="PID.7" path="/PID/PID.7">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+									<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+									<ClassSet class="datatypes.TS" subset=""/>
+								</context>
+								<step caseNo="3.5.2" minIs1="false" pName="value" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.TS" subset=""/>
+								</step>
+								<step caseNo="3.5.2" ifString="true" stepNumber="1" stepType="addElement" tagName="TS.1"/>
+							</proc>
+						</procedures>
+						<element name="TS.1" path="/PID/PID.7/TS.1">
+							<procedures>
+								<proc type="create">
+									<context>
+										<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+										<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+										<ClassSet class="datatypes.TS" subset=""/>
+									</context>
+									<step caseNo="C.1" minIs1="false" pName="value" stepNumber="0" stepType="getProperty">
+										<ClassSet class="datatypes.TS" subset=""/>
+									</step>
+									<step appendFlag="false" caseNo="content" stepNumber="1" stepType="setText"/>
+								</proc>
+							</procedures>
+						</element>
+					</element>
+					<element name="PID.8" path="/PID/PID.8">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+									<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+									<ClassSet class="datatypes.CE" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="code" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.CE" subset=""/>
+								</step>
+								<step appendFlag="false" caseNo="content" stepNumber="1" stepType="setText"/>
+							</proc>
+						</procedures>
+					</element>
+					<element name="PID.11" path="/PID/PID.11">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+									<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+									<ClassSet class="datatypes.AD" subset=""/>
+								</context>
+								<step caseNo="5" className="datatypes.AD" mapperPath="platform:/resource/V3_2008NE/MappingSets/V2Maps/XAD.mapper" stepNumber="0" stepType="fillElement" subset=""/>
+							</proc>
+						</procedures>
+					</element>
+					<element name="PID.13" path="/PID/PID.13">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+									<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+									<ClassSet class="datatypes.TEL" subset=""/>
+								</context>
+								<step caseNo="5" className="datatypes.TEL" mapperPath="platform:/resource/V3_2008NE/MappingSets/V2Maps/XTN.mapper" stepNumber="0" stepType="fillElement" subset=""/>
+							</proc>
+						</procedures>
+					</element>
+					<element name="PID.14" path="/PID/PID.14">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+									<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+									<ClassSet class="datatypes.TEL" subset="s1"/>
+								</context>
+								<step caseNo="5" className="datatypes.TEL" mapperPath="platform:/resource/V3_2008NE/MappingSets/V2Maps/XTN.mapper" stepNumber="0" stepType="fillElement" subset="s1"/>
+							</proc>
+						</procedures>
+					</element>
+					<element name="PID.16" path="/PID/PID.16">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="PRPA_MT101301UV02.IdentifiedPerson" subset=""/>
+									<ClassSet class="PRPA_MT101301UV02.Person" subset=""/>
+									<ClassSet class="datatypes.CE" subset="s1"/>
+								</context>
+							</proc>
+						</procedures>
+					</element>
+				</element>
+			</procedures>

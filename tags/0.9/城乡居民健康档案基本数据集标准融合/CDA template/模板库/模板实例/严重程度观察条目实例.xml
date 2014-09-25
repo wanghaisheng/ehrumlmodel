@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<observation classCode="OBS" moodCode="EVN">
+  <!-- Severity observation template -->
+  <templateId root=" 2.16.840.1.113883.10.20.22.4.8"/>
+  <code code="SEV" 
+        displayName="Severity Observation" 
+        codeSystem="2.16.840.1.113883.5.4" 
+        codeSystemName="ActCode"/>  
+  <text>
+    <reference value="#severity"/>
+  </text> 
+  <statusCode code="completed"/>
+  <value xsi:type="CD" code="371924009" displayName="Moderate to severe" 
+         codeSystem="2.16.840.1.113883.6.96" 
+         codeSystemName="SNOMED CT" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+</observation>

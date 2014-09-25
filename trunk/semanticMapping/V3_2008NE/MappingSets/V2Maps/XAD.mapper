@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/V3_2008NE/ClassModel/PRPA_MT101301UV02.ecore" structureType="V2" structureURL="platform:/resource/V3_2008NE/Structures/V2Structures/ADT_A28Def.xml" topElementType="XAD">
+  <rootElement name="top" type="XAD" description="" expanded="true" maxMultiplicity="-1">
+    <nodeMappingSet>
+      <objectMappings mappedClass="AD" mappedPackage="datatypes"/>
+    </nodeMappingSet>
+    <annotations>
+      <notes key="V2NodeType" value="Field"/>
+      <notes key="Length" value="106"/>
+      <notes key="V2DataType" value="XAD"/>
+    </annotations>
+    <childElements name="XAD.1" type="ST" description="street address" expanded="true">
+      <nodeMappingSet>
+        <objectMappings mappedClass="adxp.streetAddressLine" mappedPackage="datatypes">
+          <fixedPropertyValues mappedProperty="representation" fixedValue="TXT" valueType="string"/>
+          <fixedPropertyValues mappedProperty="mediaType" fixedValue="text/plain" valueType="string"/>
+          <fixedPropertyValues mappedProperty="partType" fixedValue="SAL" valueType="string"/>
+        </objectMappings>
+        <propertyMappings mappedClass="adxp.streetAddressLine" mappedPackage="datatypes" mappedProperty="textContent"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="AD" mappedPackage="datatypes" mappedRole=""/>
+          <mappedEnd2 mappedClass="adxp.streetAddressLine" mappedPackage="datatypes" mappedRole="streetAddressLine" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att">
+        <nodeMappingSet>
+          <propertyMappings mappedClass="adxp.streetAddressLine" mappedPackage="datatypes" mappedProperty="element_position"/>
+        </nodeMappingSet>
+      </attributeDefs>
+    </childElements>
+    <childElements name="XAD.2" type="ST" description="other designation" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att"/>
+    </childElements>
+    <childElements name="XAD.3" type="ST" description="city" expanded="true">
+      <nodeMappingSet>
+        <objectMappings mappedClass="adxp.city" mappedPackage="datatypes">
+          <fixedPropertyValues mappedProperty="representation" fixedValue="TXT" valueType="string"/>
+          <fixedPropertyValues mappedProperty="mediaType" fixedValue="text/plain" valueType="string"/>
+          <fixedPropertyValues mappedProperty="partType" fixedValue="CTY" valueType="string"/>
+        </objectMappings>
+        <propertyMappings mappedClass="adxp.city" mappedPackage="datatypes" mappedProperty="textContent"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="AD" mappedPackage="datatypes" mappedRole=""/>
+          <mappedEnd2 mappedClass="adxp.city" mappedPackage="datatypes" mappedRole="city" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att">
+        <nodeMappingSet>
+          <propertyMappings mappedClass="adxp.city" mappedPackage="datatypes" mappedProperty="element_position"/>
+        </nodeMappingSet>
+      </attributeDefs>
+    </childElements>
+    <childElements name="XAD.4" type="ST" description="state or province" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att"/>
+    </childElements>
+    <childElements name="XAD.5" type="ST" description="zip or postal code" expanded="true">
+      <nodeMappingSet>
+        <objectMappings mappedClass="adxp.postalCode" mappedPackage="datatypes">
+          <fixedPropertyValues mappedProperty="representation" fixedValue="TXT" valueType="string"/>
+          <fixedPropertyValues mappedProperty="mediaType" fixedValue="text/plain" valueType="string"/>
+          <fixedPropertyValues mappedProperty="partType" fixedValue="ZIP" valueType="string"/>
+        </objectMappings>
+        <propertyMappings mappedClass="adxp.postalCode" mappedPackage="datatypes" mappedProperty="textContent"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="AD" mappedPackage="datatypes" mappedRole=""/>
+          <mappedEnd2 mappedClass="adxp.postalCode" mappedPackage="datatypes" mappedRole="postalCode" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att">
+        <nodeMappingSet>
+          <propertyMappings mappedClass="adxp.postalCode" mappedPackage="datatypes" mappedProperty="element_position"/>
+        </nodeMappingSet>
+      </attributeDefs>
+    </childElements>
+    <childElements name="XAD.6" type="ID" description="country" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att"/>
+    </childElements>
+    <childElements name="XAD.7" type="ID" description="address type" expanded="true">
+      <nodeMappingSet>
+        <propertyMappings mappedClass="AD" mappedPackage="datatypes" mappedProperty="use"/>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att"/>
+    </childElements>
+    <childElements name="XAD.8" type="ST" description="other geographic designation" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att"/>
+    </childElements>
+    <childElements name="XAD.9" type="IS" description="county/parish code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att"/>
+    </childElements>
+    <childElements name="XAD.10" type="IS" description="census tract" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="IS"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att"/>
+    </childElements>
+    <childElements name="XAD.11" type="ID" description="address representation code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+      <attributeDefs name="element_position_virtual_att"/>
+    </childElements>
+  </rootElement>
+  <mappingParameters>
+    <nameSpaces uRL="urn:hl7-org:v2xml" prefix=""/>
+  </mappingParameters>
+  <parameterClasses className="AD" packageName="datatypes"/>
+</com.charteris.mapper:MappedStructure>

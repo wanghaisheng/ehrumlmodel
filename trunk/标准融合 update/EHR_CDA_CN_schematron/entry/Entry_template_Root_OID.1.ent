@@ -1,0 +1,64 @@
+<!--  EHR CDA规范 血型观察条目:Entry_template_Root_OID.1 -->
+
+<!-- errors -->
+
+  <pattern id="p-:Entry_template_Root_OID.1-errors">
+    <title>EHR CDA规范 血型观察条目 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.1"]'>
+    <assert test='cda:templateId[@root="Entry_template_Root_OID.1"]'>
+       Error: In EHR CDA规范 血型观察条目(Entry_template_Root_OID.1)必须包含 ：Entry_template_Root_OID.1
+    </assert>
+<!--    
+	<assert test='cda:id'>
+       Error: In EHR CDA规范 血型观察条目(Entry_template_Root_OID.1), 每个血型观察条目必须包含一个"id" 标识符
+    </assert>
+-->
+    <assert test='cda:code'>
+       Error: In EHR CDA规范 血型观察条目(Entry_template_Root_OID.1),血型观察条目必须包含一个它所要描述的数据元
+    </assert>
+
+    <assert test='cda:text/cda:reference'>
+       Error: In EHR CDA规范 血型观察条目(Entry_template_Root_OID.1), 每个血型观察条目可以包含一个text元素，它包含一个reference
+	   指向对应的section下的text元素中的自由文本所表示的自由文本信息
+    </assert>
+
+    <assert test='cda:statusCode[@code = "completed"]'>
+       Error: In EHR CDA规范 血型观察条目(Entry_template_Root_OID.1), statuscode必须是completed.
+    </assert>
+<!--
+    <assert test='cda:effectiveTime[@value or @nullFlavor]'>
+       Error: In EHR CDA规范 血型观察条目(Entry_template_Root_OID.1), &lt;effectiveTime&gt;元素应该出现，用以记录观察所进行的日期时间，精确到日。
+	   如果日期时间是未知的，则使用nullFlavor
+    </assert>
+-->
+    <assert test='cda:value@xsi:type="CE"'>
+       Error: In EHR CDA规范 血型观察条目(Entry_template_Root_OID.1),血型观察条目的value值应该使用数据类型CE来记录。
+	</assert>
+	
+    </rule>
+  </pattern>
+
+
+  <!-- warning -->
+
+  <pattern id="p-:Entry_template_Root_OID.1-warnings">
+    <title>EHR CDA规范 血型观察条目 - warning validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.1"]'>
+    <assert test='cda:code[@code = "HDSD00.01.013" or
+                           @code = "HDSD00.01.014" or
+                           @code = "883-9" or
+                           @code = "10331-7"'>
+       Warning: In EHR CDA规范 血型观察条目 (Entry_template_Root_OID.1)中code必须使用来自城乡居民健康档案基本数据集或者LOINC或者SNOMED中对应代码。
+    </assert>
+    <assert test='cda:value[@codeSystem="CV04.50.005" or
+                            @codeSystem="CV04.50.Rh血型" or 
+							@codeSystem="2.16.840.1.113883.6.18" or
+							@codeSystem="2.16.840.1.113883.6.26"]'>
+       Warning: In EHR CDA规范 血型观察条目 (:Entry_template_Root_OID.1),推荐的value的编码系统有 血型代码表CV04.50.005 CV04.50.Rh血型  
+	   ISBT 128	2.16.840.1.113883.6.18 SNOMED CT	2.16.840.1.113883.6.96
+    </assert>
+    
+    </rule>
+
+
+  </pattern>

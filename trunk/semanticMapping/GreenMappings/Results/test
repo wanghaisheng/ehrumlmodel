@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ClinicalDocument>
+	<recordTarget>
+		<patientRole>
+			<patient>
+				<id 身份证号码="a"/>
+				<name>
+					<given 名="a"/>
+					<family 姓=�"a"/>
+				</name>
+			</patient>
+		</patientRole>
+	</recordTarget>
+</ClinicalDocument>

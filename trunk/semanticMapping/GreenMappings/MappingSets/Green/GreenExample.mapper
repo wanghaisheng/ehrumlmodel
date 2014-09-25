@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/GreenMappings/ClassModel/POCD_Green.ecore" structureURL="platform:/resource/GreenMappings/Structures/green/green.xsd">
+  <rootElement name="ClinicalDocument" description="Made from ITS" minMultiplicity="1" expanded="true">
+    <nodeMappingSet>
+      <objectMappings mappedClass="ClinicalDocument" mappedPackage="CDA"/>
+      <objectMappings mappedClass="DocumentationOf" mappedPackage="CDA" description="from template 2.16.840.1.113883.10.20.1"/>
+      <objectMappings mappedClass="ServiceEvent" mappedPackage="CDA" description="from template 2.16.840.1.113883.10.20.1">
+        <fixedPropertyValues mappedProperty="classCode" fixedValue="PCPR" valueType="string"/>
+      </objectMappings>
+      <objectMappings mappedClass="CE" mappedPackage="datatypes" subset="s1" description="from template 2.16.840.1.113883.10.20.1">
+        <fixedPropertyValues mappedProperty="codeSystem" fixedValue="2.16.840.1.113883.6.1" valueType="string"/>
+        <fixedPropertyValues mappedProperty="code" fixedValue="34133-9" valueType="string"/>
+      </objectMappings>
+      <associationMappings description="from template 2.16.840.1.113883.10.20.1">
+        <mappedEnd1 mappedClass="ClinicalDocument" mappedPackage="CDA" mappedRole=""/>
+        <mappedEnd2 mappedClass="DocumentationOf" mappedPackage="CDA" mappedRole="documentationOf" requiredForObject="true"/>
+      </associationMappings>
+      <associationMappings description="from template 2.16.840.1.113883.10.20.1">
+        <mappedEnd1 mappedClass="DocumentationOf" mappedPackage="CDA" mappedRole=""/>
+        <mappedEnd2 mappedClass="ServiceEvent" mappedPackage="CDA" mappedRole="serviceEvent" requiredForObject="true"/>
+      </associationMappings>
+      <associationMappings description="from template 2.16.840.1.113883.10.20.1">
+        <mappedEnd1 mappedClass="ClinicalDocument" mappedPackage="CDA" mappedRole=""/>
+        <mappedEnd2 mappedClass="CE" mappedPackage="datatypes" subset="s1" mappedRole="code" requiredForObject="true"/>
+      </associationMappings>
+    </nodeMappingSet>
+    <childElements name="PatientInformation" minMultiplicity="1" expanded="true" maxMultiplicity="-1">
+      <nodeMappingSet>
+        <objectMappings mappedClass="RecordTarget" mappedPackage="CDA"/>
+        <associationMappings>
+          <mappedEnd1 mappedClass="ClinicalDocument" mappedPackage="CDA" mappedRole=""/>
+          <mappedEnd2 mappedClass="RecordTarget" mappedPackage="CDA" mappedRole="recordTarget" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <childElements name="Patient" minMultiplicity="1" expanded="true">
+        <nodeMappingSet>
+          <objectMappings mappedClass="PatientRole" mappedPackage="CDA"/>
+          <objectMappings mappedClass="Patient" mappedPackage="CDA"/>
+          <objectMappings mappedClass="CE" mappedPackage="datatypes"/>
+          <objectMappings mappedClass="TS" mappedPackage="datatypes"/>
+          <objectMappings mappedClass="PPD_TS" mappedPackage="datatypes"/>
+          <associationMappings>
+            <mappedEnd1 mappedClass="RecordTarget" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="PatientRole" mappedPackage="CDA" mappedRole="patientRole" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings>
+            <mappedEnd1 mappedClass="PatientRole" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="Patient" mappedPackage="CDA" mappedRole="patient" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings>
+            <mappedEnd1 mappedClass="Patient" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="CE" mappedPackage="datatypes" mappedRole="administrativeGenderCode" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings>
+            <mappedEnd1 mappedClass="Patient" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="TS" mappedPackage="datatypes" mappedRole="birthTime" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings>
+            <mappedEnd1 mappedClass="TS" mappedPackage="datatypes" mappedRole=""/>
+            <mappedEnd2 mappedClass="PPD_TS" mappedPackage="datatypes" mappedRole="center" requiredForObject="true"/>
+          </associationMappings>
+        </nodeMappingSet>
+        <childElements name="id" minMultiplicity="1" expanded="true" maxMultiplicity="-1">
+          <nodeMappingSet>
+            <objectMappings mappedClass="II" mappedPackage="datatypes"/>
+            <associationMappings>
+              <mappedEnd1 mappedClass="PatientRole" mappedPackage="CDA" mappedRole=""/>
+              <mappedEnd2 mappedClass="II" mappedPackage="datatypes" mappedRole="id" requiredForObject="true"/>
+            </associationMappings>
+          </nodeMappingSet>
+          <attributeDefs name="authority">
+            <nodeMappingSet>
+              <propertyMappings mappedClass="II" mappedPackage="datatypes" mappedProperty="root"/>
+            </nodeMappingSet>
+          </attributeDefs>
+          <attributeDefs name="idValue">
+            <nodeMappingSet>
+              <propertyMappings mappedClass="II" mappedPackage="datatypes" mappedProperty="extension"/>
+            </nodeMappingSet>
+          </attributeDefs>
+        </childElements>
+        <childElements name="name" expanded="true" maxMultiplicity="-1">
+          <nodeMappingSet>
+            <objectMappings mappedClass="PN" mappedPackage="datatypes"/>
+            <associationMappings>
+              <mappedEnd1 mappedClass="Patient" mappedPackage="CDA" mappedRole=""/>
+              <mappedEnd2 mappedClass="PN" mappedPackage="datatypes" mappedRole="name" requiredForObject="true"/>
+            </associationMappings>
+          </nodeMappingSet>
+          <childElements name="given" expanded="true" maxMultiplicity="-1">
+            <nodeMappingSet>
+              <objectMappings mappedClass="en.given" mappedPackage="datatypes">
+                <fixedPropertyValues mappedProperty="representation" fixedValue="TXT" valueType="string"/>
+                <fixedPropertyValues mappedProperty="mediaType" fixedValue="text/plain" valueType="string"/>
+                <fixedPropertyValues mappedProperty="partType" fixedValue="GIV" valueType="string"/>
+              </objectMappings>
+              <associationMappings>
+                <mappedEnd1 mappedClass="PN" mappedPackage="datatypes" mappedRole=""/>
+                <mappedEnd2 mappedClass="en.given" mappedPackage="datatypes" mappedRole="given" requiredForObject="true"/>
+              </associationMappings>
+            </nodeMappingSet>
+            <attributeDefs name="given">
+              <nodeMappingSet>
+                <propertyMappings mappedClass="en.given" mappedPackage="datatypes" mappedProperty="textContent"/>
+              </nodeMappingSet>
+            </attributeDefs>
+          </childElements>
+          <childElements name="family" expanded="true" maxMultiplicity="-1">
+            <nodeMappingSet>
+              <objectMappings mappedClass="en.family" mappedPackage="datatypes">
+                <fixedPropertyValues mappedProperty="representation" fixedValue="TXT" valueType="string"/>
+                <fixedPropertyValues mappedProperty="mediaType" fixedValue="text/plain" valueType="string"/>
+                <fixedPropertyValues mappedProperty="partType" fixedValue="FAM" valueType="string"/>
+              </objectMappings>
+              <associationMappings>
+                <mappedEnd1 mappedClass="PN" mappedPackage="datatypes" mappedRole=""/>
+                <mappedEnd2 mappedClass="en.family" mappedPackage="datatypes" mappedRole="family" requiredForObject="true"/>
+              </associationMappings>
+            </nodeMappingSet>
+            <attributeDefs name="family">
+              <nodeMappingSet>
+                <propertyMappings mappedClass="en.family" mappedPackage="datatypes" mappedProperty="textContent"/>
+              </nodeMappingSet>
+            </attributeDefs>
+          </childElements>
+          <childElements name="suffix" expanded="true" maxMultiplicity="-1">
+            <nodeMappingSet>
+              <objectMappings mappedClass="en.suffix" mappedPackage="datatypes">
+                <fixedPropertyValues mappedProperty="representation" fixedValue="TXT" valueType="string"/>
+                <fixedPropertyValues mappedProperty="mediaType" fixedValue="text/plain" valueType="string"/>
+                <fixedPropertyValues mappedProperty="partType" fixedValue="SFX" valueType="string"/>
+              </objectMappings>
+              <associationMappings>
+                <mappedEnd1 mappedClass="PN" mappedPackage="datatypes" mappedRole=""/>
+                <mappedEnd2 mappedClass="en.suffix" mappedPackage="datatypes" mappedRole="suffix" requiredForObject="true"/>
+              </associationMappings>
+            </nodeMappingSet>
+            <attributeDefs name="suffix">
+              <nodeMappingSet>
+                <propertyMappings mappedClass="en.suffix" mappedPackage="datatypes" mappedProperty="textContent"/>
+              </nodeMappingSet>
+            </attributeDefs>
+          </childElements>
+        </childElements>
+        <attributeDefs name="gender">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="CE" mappedPackage="datatypes" mappedProperty="value"/>
+          </nodeMappingSet>
+        </attributeDefs>
+        <attributeDefs name="birthDate">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="PPD_TS" mappedPackage="datatypes" mappedProperty="value"/>
+          </nodeMappingSet>
+        </attributeDefs>
+      </childElements>
+    </childElements>
+    <childElements name="ProblemSet" minMultiplicity="1" expanded="true">
+      <nodeMappingSet>
+        <objectMappings mappedClass="Component2_T" mappedPackage="CDA"/>
+        <objectMappings mappedClass="StructuredBody_T" mappedPackage="CDA"/>
+        <objectMappings mappedClass="Component3_Problem" mappedPackage="CDA"/>
+        <objectMappings mappedClass="Section_Problem" mappedPackage="CDA"/>
+        <objectMappings mappedClass="CE" mappedPackage="datatypes" subset="s2" description="from template 2.16.840.1.113883.10.20.1.11">
+          <fixedPropertyValues mappedProperty="code" fixedValue="11450-4" valueType="string"/>
+          <fixedPropertyValues mappedProperty="codeSystem" fixedValue="2.16.840.1.113883.6.1" valueType="string"/>
+        </objectMappings>
+        <associationMappings>
+          <mappedEnd1 mappedClass="ClinicalDocument" mappedPackage="CDA" mappedRole=""/>
+          <mappedEnd2 mappedClass="Component2_T" mappedPackage="CDA" mappedRole="component_T" requiredForObject="true"/>
+        </associationMappings>
+        <associationMappings>
+          <mappedEnd1 mappedClass="Component2_T" mappedPackage="CDA" mappedRole=""/>
+          <mappedEnd2 mappedClass="StructuredBody_T" mappedPackage="CDA" mappedRole="structuredBody_T" requiredForObject="true"/>
+        </associationMappings>
+        <associationMappings>
+          <mappedEnd1 mappedClass="StructuredBody_T" mappedPackage="CDA" mappedRole=""/>
+          <mappedEnd2 mappedClass="Component3_Problem" mappedPackage="CDA" mappedRole="component_Problem" requiredForObject="true"/>
+        </associationMappings>
+        <associationMappings>
+          <mappedEnd1 mappedClass="Component3_Problem" mappedPackage="CDA" mappedRole=""/>
+          <mappedEnd2 mappedClass="Section_Problem" mappedPackage="CDA" mappedRole="section_Problem" requiredForObject="true"/>
+        </associationMappings>
+        <associationMappings description="from template 2.16.840.1.113883.10.20.1.11">
+          <mappedEnd1 mappedClass="Section_Problem" mappedPackage="CDA" mappedRole=""/>
+          <mappedEnd2 mappedClass="CE" mappedPackage="datatypes" subset="s2" mappedRole="code" requiredForObject="true"/>
+        </associationMappings>
+      </nodeMappingSet>
+      <childElements name="Problem" expanded="true" maxMultiplicity="-1">
+        <nodeMappingSet>
+          <objectMappings mappedClass="Entry_ProblemAct" mappedPackage="CDA"/>
+          <objectMappings mappedClass="Act_ProblemAct" mappedPackage="CDA"/>
+          <objectMappings mappedClass="CS" mappedPackage="datatypes"/>
+          <objectMappings mappedClass="EntryRelationship_ProblemObservation" mappedPackage="CDA"/>
+          <objectMappings mappedClass="Observation_ProblemObservation" mappedPackage="CDA"/>
+          <objectMappings mappedClass="CD" mappedPackage="datatypes" description="from template 2.16.840.1.113883.10.20.1.27">
+            <fixedPropertyValues mappedProperty="nullFlavor" fixedValue="NA" valueType="string"/>
+          </objectMappings>
+          <objectMappings mappedClass="CS" mappedPackage="datatypes" subset="s1" description="from template 2.16.840.1.113883.10.20.1.28">
+            <fixedPropertyValues mappedProperty="code" fixedValue="completed" valueType="string"/>
+          </objectMappings>
+          <associationMappings>
+            <mappedEnd1 mappedClass="Section_Problem" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="Entry_ProblemAct" mappedPackage="CDA" mappedRole="entry_ProblemAct" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings>
+            <mappedEnd1 mappedClass="Entry_ProblemAct" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="Act_ProblemAct" mappedPackage="CDA" mappedRole="act_ProblemAct" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings>
+            <mappedEnd1 mappedClass="Act_ProblemAct" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="CS" mappedPackage="datatypes" mappedRole="statusCode" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings>
+            <mappedEnd1 mappedClass="Act_ProblemAct" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="EntryRelationship_ProblemObservation" mappedPackage="CDA" mappedRole="entryRelationship_ProblemObservation" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings>
+            <mappedEnd1 mappedClass="EntryRelationship_ProblemObservation" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="Observation_ProblemObservation" mappedPackage="CDA" mappedRole="observation_ProblemObservation" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings description="from template 2.16.840.1.113883.10.20.1.27">
+            <mappedEnd1 mappedClass="Act_ProblemAct" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="CD" mappedPackage="datatypes" mappedRole="code" requiredForObject="true"/>
+          </associationMappings>
+          <associationMappings description="from template 2.16.840.1.113883.10.20.1.28">
+            <mappedEnd1 mappedClass="Observation_ProblemObservation" mappedPackage="CDA" mappedRole=""/>
+            <mappedEnd2 mappedClass="CS" mappedPackage="datatypes" subset="s1" mappedRole="statusCode" requiredForObject="true"/>
+          </associationMappings>
+        </nodeMappingSet>
+        <childElements name="TimeRange" expanded="true">
+          <nodeMappingSet>
+            <objectMappings mappedClass="IVL_TS" mappedPackage="datatypes"/>
+            <objectMappings mappedClass="IVXB_TS" mappedPackage="datatypes"/>
+            <objectMappings mappedClass="IVXB_TS" mappedPackage="datatypes" subset="s1"/>
+            <associationMappings>
+              <mappedEnd1 mappedClass="Observation_ProblemObservation" mappedPackage="CDA" mappedRole=""/>
+              <mappedEnd2 mappedClass="IVL_TS" mappedPackage="datatypes" mappedRole="effectiveTime" requiredForObject="true"/>
+            </associationMappings>
+            <associationMappings>
+              <mappedEnd1 mappedClass="IVL_TS" mappedPackage="datatypes" mappedRole=""/>
+              <mappedEnd2 mappedClass="IVXB_TS" mappedPackage="datatypes" mappedRole="low" requiredForObject="true"/>
+            </associationMappings>
+            <associationMappings>
+              <mappedEnd1 mappedClass="IVL_TS" mappedPackage="datatypes" mappedRole=""/>
+              <mappedEnd2 mappedClass="IVXB_TS" mappedPackage="datatypes" subset="s1" mappedRole="high" requiredForObject="true"/>
+            </associationMappings>
+          </nodeMappingSet>
+          <attributeDefs name="start">
+            <nodeMappingSet>
+              <propertyMappings mappedClass="IVXB_TS" mappedPackage="datatypes" mappedProperty="value"/>
+            </nodeMappingSet>
+          </attributeDefs>
+          <attributeDefs name="end">
+            <nodeMappingSet>
+              <propertyMappings mappedClass="IVXB_TS" mappedPackage="datatypes" subset="s1" mappedProperty="value"/>
+            </nodeMappingSet>
+          </attributeDefs>
+        </childElements>
+        <childElements name="Topic" expanded="true" maxMultiplicity="-1">
+          <nodeMappingSet>
+            <objectMappings mappedClass="ANY" mappedPackage="datatypes"/>
+            <associationMappings>
+              <mappedEnd1 mappedClass="Observation_ProblemObservation" mappedPackage="CDA" mappedRole=""/>
+              <mappedEnd2 mappedClass="ANY" mappedPackage="datatypes" mappedRole="value" requiredForObject="true"/>
+            </associationMappings>
+          </nodeMappingSet>
+          <attributeDefs name="code">
+            <nodeMappingSet>
+              <propertyMappings mappedClass="ANY" mappedPackage="datatypes" mappedProperty="code"/>
+            </nodeMappingSet>
+          </attributeDefs>
+          <attributeDefs name="codeSystem">
+            <nodeMappingSet>
+              <propertyMappings mappedClass="ANY" mappedPackage="datatypes" mappedProperty="codeSystem"/>
+            </nodeMappingSet>
+          </attributeDefs>
+        </childElements>
+        <attributeDefs name="status">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="CS" mappedPackage="datatypes" mappedProperty="code"/>
+          </nodeMappingSet>
+        </attributeDefs>
+      </childElements>
+    </childElements>
+  </rootElement>
+  <mappingParameters>
+    <nameSpaces uRL="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
+  </mappingParameters>
+</com.charteris.mapper:MappedStructure>

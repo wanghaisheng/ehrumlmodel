@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <!--
+   Title: greenCDA Schema Module: Header
+
+   Original Filename: greenCDA_header.xsd
+   Version: 0.3  
+   December 14 2009
+
+   This file is part of the greenCDA package created by
+   Alschuler Associates, LLC and Semantically Yours, LLC
+   to stimulate discussion and further experimentation 
+   with approaches to simplifying CDA instance creation.
+
+   With the greenCDA files, you can
+
+     - validate the sample instance with its green schema
+     - convert the sample instance to full CDA.
+  -->
+
+  <xs:complexType name="DocumentInformationType">
+  
+    <xs:sequence>
+
+      <!-- hardcoded in the transform for now -->
+      <xs:element name="documentID"/>
+      <xs:element name="documentTypeCode"/>
+      <xs:element name="documenteffectiveTime"/>
+      <xs:element name="documentConfidentialityCode"/>
+
+      <xs:element name="Author">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AuthorTime" type="TimeValue"/>
+            <xs:element name="Organization" type="Organization"/>
+            <xs:element name="Name" type="PersonName"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="IdSet"/>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="Custodian">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Organization" type="Organization"/>
+            <xs:element name="Name" type="PersonName"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="IdSet"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- This corresponds to CDA recordTarget -->
+  <xs:complexType name="PatientInformationType">
+    <xs:sequence>
+      <xs:element name="Patient">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Id" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:attributeGroup ref="IdSet"/>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Name" type="PersonName"/>
+          </xs:sequence>
+          <xs:attribute name="birthDate"/>
+          <xs:attribute name="gender"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="EncounterInformationType">
+    <xs:sequence>
+      <xs:element name="TimeOf" type="TimeValue"/>
+      <xs:element name="Performer" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TimeOf" type="TimeValue"/>
+            <xs:element name="Name" type="PersonName"/>
+            <xs:element name="Address" type="Address"/>
+            <xs:element name="Phone" type="Phone"/>
+          </xs:sequence>
+          <xs:attribute name="SNOMEDFunction"/>
+          <xs:attribute name="SNOMEDProfession"/>
+          <xs:attributeGroup ref="IdSet"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="SNOMEDType"/>
+  </xs:complexType>
+
+
+</xs:schema>

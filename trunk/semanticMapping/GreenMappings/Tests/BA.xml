@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ClinicalDocument>
+	<PatientInformation>
+		<Patient>
+			<id authority="2.16.840.1.113883.19.5" idValue="996-756-495"/>
+		</Patient>
+	</PatientInformation>
+	<ProblemSet>
+		<Problem>
+			<TimeRange start="1950"/>
+			<Topic code="195967001" codeSystem="2.16.840.1.113883.6.96"/>
+		</Problem>
+		<Problem>
+			<TimeRange start="199701"/>
+			<Topic code="233604007" codeSystem="2.16.840.1.113883.6.96"/>
+		</Problem>
+		<Problem>
+			<TimeRange start="199903"/>
+			<Topic code="233604007" codeSystem="2.16.840.1.113883.6.96"/>
+		</Problem>
+		<Problem>
+			<TimeRange start="199701"/>
+			<Topic code="22298006" codeSystem="2.16.840.1.113883.6.96"/>
+		</Problem>
+	</ProblemSet>
+</ClinicalDocument>

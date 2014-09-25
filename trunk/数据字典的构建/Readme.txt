@@ -1,0 +1,2 @@
+从excel中读取数据 转换成voc.xml的形式
+代码见包readExcelToXMLVocab

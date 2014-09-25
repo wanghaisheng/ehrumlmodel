@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="ANY" abstract="true">
+		<xs:annotation>
+			<xs:documentation>
+            Defines the basic properties of every data value. This
+            is an abstract type, meaning that no value can be just
+            a data value without belonging to any concrete type.
+            Every concrete type is a specialization of this
+            general abstract DataValue type.
+         </xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:simpleType name="l">
+		<xs:annotation>
+			<xs:documentation>
+            The Boolean type stands for the values of two-valued logic.
+            A Boolean value can be either true or
+            false, or, as any other value may be NULL.
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:boolean">
+			<xs:pattern value="((true|false)|(0|1))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="L">
+		<xs:annotation>
+			<xs:documentation>
+            The Boolean type stands for the values of two-valued logic.
+            A Boolean value can be either true or
+            false, or, as any other value may be NULL.
+         </xs:documentation>
+			<xs:appinfo>
+				<sch:pattern name="validate BL">
+					<sch:rule abstract="true" id="rule-BL">
+						<sch:report test="(@nullFlavor or @value) and not(@nullFlavor and @value)"/>
+					</sch:rule>
+				</sch:pattern>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ANY">
+				<xs:attribute name="value" type="l" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="s">
+		<xs:annotation>
+			<xs:documentation>
+			通过字符形式表达的值的类型。可包含字母字符A-Z a-z数字字符0-9等。默认为GB2312
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value="	(([0-9]+[a-zA-Z]+[0-9]*)|([a-zA-Z]+[0-9]+[a-zA-Z]*)|([0-9]*)|([a-zA-Z]*)|([u4e00-u9fa5]*))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="n">
+		<xs:annotation>
+			<xs:documentation>
+			通过0-9的数字形式表示的值的类型
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value="[0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="a">
+		<xs:annotation>
+			<xs:documentation>
+			通过A-Z a-z的字母字符形式表示的值的类型
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value="[a-zA-Z]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="s1">
+		<xs:annotation>
+			<xs:documentation>
+			S1表示不可枚举的,且以字符a-zA-Z描述的形式表示的值的类型
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value="(([0-9]+[a-zA-Z]+[0-9]*)|([a-zA-Z]+[0-9]+[a-zA-Z]*)|([0-9]*)|([a-zA-Z]*)|([a-zA-Z]*)|([0-9]*)|((.)*))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="S" abstract="true">
+		<xs:annotation>
+			<xs:documentation>通过字符形式表达的值的类型。可包含字母字符A-Z a-z数字字符0-9等。默认为GB2312</xs:documentation>
+			<xs:appinfo>
+				<sch:pattern name="validate S">
+					<sch:rule abstract="true" id="rule-S">
+						<sch:report test="(([0-9]+[a-zA-Z]+[0-9]*)|([a-zA-Z]+[0-9]+[a-zA-Z]*)|([0-9]*)|([a-zA-Z]*))"/>
+					</sch:rule>
+				</sch:pattern>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="N" abstract="true">
+		<xs:annotation>
+			<xs:documentation>通过0-9的数字形式表示的值的类型.</xs:documentation>
+			<xs:appinfo>
+				<sch:pattern name="validate N">
+					<sch:rule abstract="true" id="rule-N">
+						<sch:report test="([0-9]*)"/>
+					</sch:rule>
+				</sch:pattern>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="A" abstract="true">
+		<xs:annotation>
+			<xs:documentation>通过A-Z a-z的字母字符形式表示的值的类型.</xs:documentation>
+			<xs:appinfo>
+				<sch:pattern name="validate A">
+					<sch:rule abstract="true" id="rule-A">
+						<sch:report test="([[a-zA-Z]*)"/>
+					</sch:rule>
+				</sch:pattern>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="S1">
+		<xs:annotation>
+			<xs:documentation>S1表示不可枚举的,且以字符a-zA-Z描述的形式表示的值的类型.</xs:documentation>
+			<xs:appinfo>
+				<sch:pattern name="validate S1">
+					<sch:rule abstract="true" id="rule-S1">
+						<sch:report test="(([0-9]+[a-zA-Z]+[0-9]*)|([a-zA-Z]+[0-9]+[a-zA-Z]*)|([0-9]*)|([a-zA-Z]*))"/>
+					</sch:rule>
+				</sch:pattern>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="S">
+				<xs:sequence>
+					<xs:element name="数据元值" type="s1" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>
+                        The primary measure of variance/uncertainty of the
+                        value (the square root of the sum of the squares of
+                        the differences between all data points and the mean).
+                        The standard deviation is used to normalize the data
+                        for computing the distribution function. Applications
+                        that cannot deal with probability distributions can
+                        still get an idea about the confidence level by looking
+                        at the standard deviation.
+                     </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="S2">
+		<xs:annotation>
+			<xs:documentation>S2表示枚举型，且列举值不超过3个的形式表示的值的类型.这里的S1其实相当于valueset的code</xs:documentation>
+			<xs:appinfo>
+				<sch:pattern name="validate S2">
+					<sch:rule abstract="true" id="rule-S2">
+						<sch:report test="查询对应的词汇表 对照是否是词汇表中的有效元素 一般而言它的值都是一位的数字 要确定的是给出的数字值是否为枚举值中的一员"/>
+					</sch:rule>
+				</sch:pattern>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="S">
+				<xs:attribute name="value" type="n" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="S3">
+		<xs:annotation>
+			<xs:documentation>S3表示代码表的形式表示的值的类型.这里的S3其实相当于codesystem的code</xs:documentation>
+			<xs:appinfo>
+				<sch:pattern name="validate S3">
+					<sch:rule abstract="true" id="rule-S3">
+						<sch:report test="查询对应的编码系统 对照是否是编码系统中的有效元素 一般而言它的值都是数字 要确定的是给出的数字值是否为编码系统中的一员"/>
+					</sch:rule>
+				</sch:pattern>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="S">
+				<xs:attribute name="value" type="n" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BY" mixed="true">
+		<xs:annotation>
+			<xs:documentation>上述无法表示的其他数据类型，如图象、音频、视频等二进制流文件格式
+         </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent mixed="true">
+			<xs:extension base="ANY">
+				<xs:attribute name="representation" type="BinaryDataEncoding" use="optional" default="TXT">
+					<xs:annotation>
+						<xs:documentation>
+                     Specifies the representation of the binary data that
+                     is the content of the binary data value.
+                  </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="bin">
+		<xs:annotation>
+			<xs:documentation>
+            Binary data is a raw block of bits. Binary data is a
+            protected type that MUST not be used outside the data
+            type specification.
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:base64Binary"/>
+	</xs:simpleType>
+	<xs:simpleType name="BinaryDataEncoding">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="B64"/>
+			<xs:enumeration value="TXT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--定义YYYYMMDD格式的日期
+		DateTime值类型表示值范围在公元（基督纪元）0001 年 1 月 1 日午夜 12:00:00 到公元 (C.E.) 9999 年 12 月 31 日晚上 11:59:59 之间的日期和时间。
+		YYYY对应的正则表达式为[0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3} 		   YYYYMMDD对应的正则表达式为(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229)
+		另一种表达方式为(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229)
+		YYYY-MM-DD对应的正则表达式为
+									(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29)
+		
+	-->
+	<xs:simpleType name="datetype">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--定义hhmmss格式的时间-->
+	<xs:simpleType name="timetype">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="((([1-9])|([0-1][0-9])|([1-2][0-3]))(([0-5][0-9]))(([0-5][0-9])))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--定义格式YYYYMMDDThhmmss的日期时间-->
+	<xs:simpleType name="datetimetype">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="
+((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229))T((([1-9])|([0-1][0-9])|([1-2][0-3]))(([0-5][0-9]))(([0-5][0-9])))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--
+	<xs:complexType name="D8">
+		<xs:annotation>
+			<xs:documentation>定义YYYYMMDD格式的日期</xs:documentation>
+			<xs:appinfo>
+				<sch:pattern name="validate D8">
+					<sch:rule abstract="true" id="rule-D8">
+						<sch:report test="(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229)"/>
+					</sch:rule>
+				</sch:pattern>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ANY">
+				<xs:attribute name="value" type="datetype" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DT15">
+		<xs:annotation>
+			<xs:documentation>定义格式YYYYMMDDThhmmss的日期时间</xs:documentation>
+			<xs:appinfo>
+				<sch:pattern name="validate DT15">
+					<sch:rule abstract="true" id="rule-DT15">
+						<sch:report test="((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229))T((([1-9])|([0-1][0-9])|([1-2][0-3]))(([0-5][0-9]))(([0-5][0-9])))"/>
+					</sch:rule>
+				</sch:pattern>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ANY">
+				<xs:attribute name="value" type="datetimetype" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+-->
+</xs:schema>

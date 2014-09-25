@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><procedures>
+				<proc type="create">
+					<context/>
+					<step caseNo="start" class="datatypes.TEL" specialNode="false" stepNumber="0" stepType="getAllObjects" subset="" tagName="top"/>
+				</proc>
+				<element name="top" path="/top">
+					<procedures>
+						<proc type="create">
+							<context>
+								<ClassSet class="datatypes.TEL" subset=""/>
+							</context>
+							<step caseNo="3.5.2" minIs1="false" pName="value" stepNumber="0" stepType="getProperty">
+								<ClassSet class="datatypes.TEL" subset=""/>
+							</step>
+							<step caseNo="3.5.2" ifString="true" stepNumber="1" stepType="addElement" tagName="XTN.1"/>
+						</proc>
+					</procedures>
+					<element name="XTN.1" path="/top/XTN.1">
+						<procedures>
+							<proc type="create">
+								<context>
+									<ClassSet class="datatypes.TEL" subset=""/>
+								</context>
+								<step caseNo="C.1" minIs1="false" pName="value" stepNumber="0" stepType="getProperty">
+									<ClassSet class="datatypes.TEL" subset=""/>
+								</step>
+								<step appendFlag="false" caseNo="content" stepNumber="1" stepType="setText"/>
+							</proc>
+						</procedures>
+					</element>
+				</element>
+			</procedures>

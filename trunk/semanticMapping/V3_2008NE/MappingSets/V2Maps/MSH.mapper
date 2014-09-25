@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/V3_2008NE/ClassModel/PRPA_MT101301UV02.ecore" structureType="V2" structureURL="platform:/resource/V3_2008NE/Structures/V2Structures/ADT_A28Def.xml" topElementType="MSH_Type">
+  <rootElement name="MSH" type="MSH_Type" description="message header segment" minMultiplicity="1" expanded="true">
+    <annotations>
+      <notes key="V2NodeType" value="Segment"/>
+    </annotations>
+    <childElements name="MSH.1" type="ST" description="Field Separator" minMultiplicity="1" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="1"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.2" type="ST" description="Encoding Characters" minMultiplicity="1" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="4"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.3" type="HD" description="Sending Application">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0361"/>
+        <notes key="Length" value="180"/>
+        <notes key="V2DataType" value="HD"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.4" type="HD" description="Sending Facility">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0362"/>
+        <notes key="Length" value="180"/>
+        <notes key="V2DataType" value="HD"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.5" type="HD" description="Receiving Application">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0361"/>
+        <notes key="Length" value="180"/>
+        <notes key="V2DataType" value="HD"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.6" type="HD" description="Receiving Facility">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0362"/>
+        <notes key="Length" value="180"/>
+        <notes key="V2DataType" value="HD"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.7" type="TS" description="Date/Time Of Message">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="26"/>
+        <notes key="V2DataType" value="TS"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.8" type="ST" description="Security" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="40"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.9" type="CM_MSG" description="Message Type" minMultiplicity="1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0076"/>
+        <notes key="Length" value="11"/>
+        <notes key="V2DataType" value="CM_MSG"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.10" type="ST" description="Message Control ID" minMultiplicity="1" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="20"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.11" type="PT" description="Processing ID" minMultiplicity="1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0103"/>
+        <notes key="Length" value="7"/>
+        <notes key="V2DataType" value="PT"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.12" type="VID" description="Version ID" minMultiplicity="1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0104"/>
+        <notes key="Length" value="60"/>
+        <notes key="V2DataType" value="VID"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.13" type="NM" description="Sequence Number" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="15"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.14" type="ST" description="Continuation Pointer" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="180"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.15" type="ID" description="Accept Acknowledgment Type" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0155"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.16" type="ID" description="Application Acknowledgment Type" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0155"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.17" type="ID" description="Country Code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="2"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.18" type="ID" description="Character Set" expanded="true" maxMultiplicity="-1">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0211"/>
+        <notes key="Length" value="16"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.19" type="CE" description="Principal Language Of Message">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Length" value="60"/>
+        <notes key="V2DataType" value="CE"/>
+      </annotations>
+    </childElements>
+    <childElements name="MSH.20" type="ID" description="Alternate Character Set Handling Scheme" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Field"/>
+        <notes key="Table" value="0356"/>
+        <notes key="Length" value="20"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+  </rootElement>
+</com.charteris.mapper:MappedStructure>

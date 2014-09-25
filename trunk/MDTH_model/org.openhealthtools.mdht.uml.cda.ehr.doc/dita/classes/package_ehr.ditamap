@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Package: ehr">
+<topicref href="ABO血型观察条目.dita" type="topic" />
+<topicref href="RH血型观察条目.dita" type="topic" />
+<topicref href="社会史章节Nar.dita" type="topic" />
+<topicref href="社会史章节Nom.dita" type="topic" />
+<topicref href="社会史观察条目.dita" type="topic" />
+<topicref href="血型章节Nar.dita" type="topic" />
+<topicref href="血型章节Nom.dita" type="topic" />
+<topicref href="血型观察条目.dita" type="topic" />
+</map>

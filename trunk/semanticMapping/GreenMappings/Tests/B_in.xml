@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+	
+	<id root="db734647-fc99-424c-a864-7e3cda82e703"/>
+	
+	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1" displayName="Summarization of episode note"/>
+	
+	<title>Good Health Clinic Continuity of Care Document</title>
+	
+	<effectiveTime value="20000407130000+0500"/>
+	
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	
+	<languageCode code="en-US"/>
+	
+	<recordTarget>
+		
+		<patientRole>
+			
+			<id extension="996-756-495" root="2.16.840.1.113883.19.5"/>
+			
+			<patient>
+				
+				<name>
+					
+					<given>Henry</given>
+					
+					<family>Levin</family>
+					
+					<suffix>the 7th</suffix>
+				</name>
+				
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				
+				<birthTime value="19320924"/>
+			</patient>
+			
+			<providerOrganization>
+				
+				<id root="2.16.840.1.113883.19.5"/>
+				
+				<name>Good Health Clinic</name>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	
+	<component_T>
+		
+		<structuredBody_T>
+			
+			<component_Problem>
+				
+				<section_Problem>
+					
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1"/>
+					
+					<title>Problems</title>
+					
+					<text>
+						
+						<table border="1" width="100%">
+							
+							<thead>
+								
+								<tr>
+									
+									<th>Condition</th>
+									
+									<th>Effective Dates</th>
+									
+									<th>Condition Status</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								
+								<tr>
+									
+									<td>Asthma</td>
+									
+									<td>1950</td>
+									
+									<td>Active</td>
+								</tr>
+								
+								<tr>
+									
+									<td>Pneumonia</td>
+									
+									<td>Jan 1997</td>
+									
+									<td>Resolved</td>
+								</tr>
+								
+								<tr>
+									
+									<td>"</td>
+									
+									<td>Mar 1999</td>
+									
+									<td>Resolved</td>
+								</tr>
+								
+								<tr>
+									
+									<td>Myocardial Infarction</td>
+									
+									<td>Jan 1997</td>
+									
+									<td>Resolved</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					
+					<entry_ProblemAct typeCode="DRIV">
+						
+						<act_ProblemAct classCode="ACT" moodCode="EVN">
+							
+							<id root="6a2fa88d-4174-4909-aece-db44b60a3abb"/>
+							
+							<code nullFlavor="NA"/>
+							
+							<entryRelationship_ProblemObservation typeCode="SUBJ">
+								
+								<observation_ProblemObservation classCode="OBS" moodCode="EVN">
+									
+									<id root="d11275e7-67ae-11db-bd13-0800200c9a66"/>
+									
+									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+									
+									<statusCode code="completed"/>
+									
+									<effectiveTime>
+										
+										<low value="1950"/>
+									</effectiveTime>
+									
+									<value code="195967001" codeSystem="2.16.840.1.113883.6.96" displayName="Asthma" xsi:type="CD"/>
+									
+									<entryRelationship_ProblemStatusObservation typeCode="REFR">
+										
+										<observation_ProblemStatusObservation classCode="OBS" moodCode="EVN">
+											
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											
+											<statusCode code="completed"/>
+											
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE"/>
+										</observation_ProblemStatusObservation>
+									</entryRelationship_ProblemStatusObservation>
+								</observation_ProblemObservation>
+							</entryRelationship_ProblemObservation>
+						</act_ProblemAct>
+					</entry_ProblemAct>
+					
+					<entry_ProblemAct typeCode="DRIV">
+						
+						<act_ProblemAct classCode="ACT" moodCode="EVN">
+							
+							<id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+							
+							<code nullFlavor="NA"/>
+							
+							<entryRelationship_ProblemObservation typeCode="SUBJ">
+								
+								<observation_ProblemObservation classCode="OBS" moodCode="EVN">
+									
+									<id root="ab1791b0-5c71-11db-b0de-0800200c9a66"/>
+									
+									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+									
+									<statusCode code="completed"/>
+									
+									<effectiveTime>
+										
+										<low value="199701"/>
+									</effectiveTime>
+									
+									<value code="233604007" codeSystem="2.16.840.1.113883.6.96" displayName="Pneumonia" xsi:type="CD"/>
+									
+									<entryRelationship_ProblemStatusObservation typeCode="REFR">
+										
+										<observation_ProblemStatusObservation classCode="OBS" moodCode="EVN">
+											
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											
+											<statusCode code="completed"/>
+											
+											<value code="413322009" codeSystem="2.16.840.1.113883.6.96" displayName="Resolved" xsi:type="CE"/>
+										</observation_ProblemStatusObservation>
+									</entryRelationship_ProblemStatusObservation>
+								</observation_ProblemObservation>
+							</entryRelationship_ProblemObservation>
+						</act_ProblemAct>
+					</entry_ProblemAct>
+					
+					<entry_ProblemAct typeCode="DRIV">
+						
+						<act_ProblemAct classCode="ACT" moodCode="EVN">
+							
+							<id root="d11275e9-67ae-11db-bd13-0800200c9a66"/>
+							
+							<code nullFlavor="NA"/>
+							
+							<entryRelationship_ProblemObservation typeCode="SUBJ">
+								
+								<observation_ProblemObservation classCode="OBS" moodCode="EVN">
+									
+									<id root="9d3d416d-45ab-4da1-912f-4583e0632000"/>
+									
+									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+									
+									<statusCode code="completed"/>
+									
+									<effectiveTime>
+										
+										<low value="199903"/>
+									</effectiveTime>
+									
+									<value code="233604007" codeSystem="2.16.840.1.113883.6.96" displayName="Pneumonia" xsi:type="CD"/>
+									
+									<entryRelationship_ProblemStatusObservation typeCode="REFR">
+										
+										<observation_ProblemStatusObservation classCode="OBS" moodCode="EVN">
+											
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											
+											<statusCode code="completed"/>
+											
+											<value code="413322009" codeSystem="2.16.840.1.113883.6.96" displayName="Resolved" xsi:type="CE"/>
+										</observation_ProblemStatusObservation>
+									</entryRelationship_ProblemStatusObservation>
+								</observation_ProblemObservation>
+							</entryRelationship_ProblemObservation>
+							
+							<entryRelationship_EpisodeObservation inversionInd="true" typeCode="SUBJ">
+								
+								<observation_EpisodeObservation classCode="OBS" moodCode="EVN">
+									
+									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+									
+									<statusCode code="completed"/>
+									
+									<value code="404684003" codeSystem="2.16.840.1.113883.6.96" displayName="Clinical finding" xsi:type="CD">
+										
+										<qualifier>
+											
+											<name code="246456000" displayName="Episodicity"/>
+											
+											<value code="288527008" displayName="New episode"/>
+										</qualifier>
+									</value>
+									
+									<entryRelationship typeCode="SAS">
+										
+										<act classCode="ACT" moodCode="EVN">
+											
+											<id root="ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"/>
+											
+											<code nullFlavor="NA"/>
+										</act>
+									</entryRelationship>
+								</observation_EpisodeObservation>
+							</entryRelationship_EpisodeObservation>
+						</act_ProblemAct>
+					</entry_ProblemAct>
+					
+					<entry_ProblemAct typeCode="DRIV">
+						
+						<act_ProblemAct classCode="ACT" moodCode="EVN">
+							
+							<id root="5a2c903c-bd77-4bd1-ad9d-452383fbfefa"/>
+							
+							<code nullFlavor="NA"/>
+							
+							<entryRelationship_ProblemObservation typeCode="SUBJ">
+								
+								<observation_ProblemObservation classCode="OBS" moodCode="EVN">
+									
+									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+									
+									<statusCode code="completed"/>
+									
+									<effectiveTime>
+										
+										<low value="199701"/>
+									</effectiveTime>
+									
+									<value code="22298006" codeSystem="2.16.840.1.113883.6.96" displayName="Myocardial infarction" xsi:type="CD"/>
+									
+									<entryRelationship_ProblemStatusObservation typeCode="REFR">
+										
+										<observation_ProblemStatusObservation classCode="OBS" moodCode="EVN">
+											
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											
+											<statusCode code="completed"/>
+											
+											<value code="413322009" codeSystem="2.16.840.1.113883.6.96" displayName="Resolved" xsi:type="CE"/>
+										</observation_ProblemStatusObservation>
+									</entryRelationship_ProblemStatusObservation>
+								</observation_ProblemObservation>
+							</entryRelationship_ProblemObservation>
+						</act_ProblemAct>
+					</entry_ProblemAct>
+				</section_Problem>
+			</component_Problem>
+		</structuredBody_T>
+	</component_T>
+</ClinicalDocument>

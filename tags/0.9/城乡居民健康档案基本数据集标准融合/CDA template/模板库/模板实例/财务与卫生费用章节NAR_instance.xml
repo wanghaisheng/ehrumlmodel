@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    卫生费用
+    ********************************************************
+	描述居民卫生服务/事件卫生费用相关信息，可能包括费用分类、金额以及医疗费用结算支付方式等
+	对应的数据元如下
+	DE07.00.001.00	个人承担费用（元）
+	DE07.00.002.00	门诊费用分类代码
+	DE07.00.003.00	门诊费用分类名称
+	DE07.00.004.00	门诊费用金额（元）
+	DE07.00.005.00	收入与支出金额数（万元）
+	DE07.00.006.00	医疗费用结算方式代码
+	DE07.00.007.00	医疗费用支付方式代码
+	DE07.00.008.00	住院费用分类代码
+	DE07.00.009.00	住院费用分类名称
+	DE07.00.010.00	住院费用金额（元）
+
+    ********************************************************
+-->
+<component typeCode="COMP" contextConductionInd="true">
+    <section classCode="DOCSECT" moodCode="EVN">
+	    <templateId  root="Section_template_Root_OID.3">
+        <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources" />
+        <title>财务与卫生费用</title>
+        <text>
+            <!-- 呈現方式  		1. 文字敘述。 -->
+            <paragraph>医疗费用支付方式代码：03 </paragraph>
+            <!--  呈现方式 		2  列表-->    
+            <!--    
+            <list>
+                <item>医疗费用支付方式代码：03</item>
+            </list> 
+            -->         
+            <!-- 呈現方式 		3. 表格 -->          
+          <!--  
+            <table>
+                <thead>
+                <tr>
+                <td>医疗费用支付方式代码</td>			
+                </tr>
+                </thead> 
+                <tbody>
+                <tr>
+                <td>03</td>
+   			    </tr>
+                </tbody>
+          --> 
+        </text>
+    </section>
+</component>

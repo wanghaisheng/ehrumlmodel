@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    血型
+    ********************************************************
+	描述居民血型相关信息的叙述文字，可能包括ABO血型和Rh血型信息
+    HDSD00.01.014	DE04.50.010.00	Rh血型代码
+	HDSD00.01.015	DE02.01.041.00	学历代码
+    ********************************************************
+-->
+<component typeCode="COMP" contextConductionInd="true">
+    <section classCode="DOCSECT" moodCode="EVN">
+	    <templateId  root="Section_template_Root_OID.1">
+        <code code="19146-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Reference lab test results" />
+        <title>血型</title>
+        <text>
+            <!-- 呈現方式  		1. 文字敘述。 -->
+            <paragraph>ABO血型代码：4 Rh血型代码：1 </paragraph>
+            <!--  呈现方式 		2  列表-->    
+            <!--    
+            <list>
+                <item>ABO血型代码：4</item>
+                <item>Rh血型代码：1</item>
+                </list> 
+            -->         
+            <!-- 呈現方式 		3. 表格 -->          
+          <!--  
+            <table>
+                <thead>
+                <tr>
+                <td>ABO血型代码</td>
+                <td>Rh血型代码</td>
+                </tr>
+                </thead> 
+                <tbody>
+                <tr>
+                <td>4</td>
+                <td>1</td>
+                </tr>
+                </tbody>
+          --> 
+        </text>
+    </section>
+</component>

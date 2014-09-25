@@ -1,0 +1,49 @@
+<!--  EHR CDA规范 家族遗传病观察条目: Entry_template_Root_OID.15 -->
+
+<!-- errors -->
+
+  <pattern id="p-Entry_template_Root_OID.15-errors">
+    <title>EHR CDA规范 家族遗传病观察条目 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.15"]'>
+    <assert test='../cda:Observation [@classCode="OBS"] and
+                      ../cda:Observation [@moodCode="EVN"]'>
+	   Error: EHR CDA 规范 家族遗传病观察条目,classCode="OBS" moodCode="EVN"所表示的是家族病编组条目中包含的某个特殊家族/庭成员相关的观察
+	</assert>
+    <assert test='cda:statusCode[@code = "completed"]'>
+       Error: In EHR CDA规范 家族遗传病观察条目 (Entry_template_Root_OID.15), statuscode必须是completed.
+    </assert>	
+    <assert test='cda:text/cda:reference'>
+       Error: In EHR CDA 规范 家族遗传病观察条目 (Entry_template_Root_OID.15), text 必须包含一个到表示三代以内有血缘关系的家族成员中所患遗传疾病史的描述文字的引用
+    </assert>	
+    </rule>
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Entry_template_Root_OID.15-warnings">
+    <title>EHR CDA规范 家族遗传病观察条目 - warning validation phase</title>
+    <rule context='*[cda:templateId/@root="Entry_template_Root_OID.15"]'>
+<!--
+    <assert test='cda:code[@code = "64572001" or
+                           @code = "418799008" or
+                           @code = "404684003" or
+                           @code = "409586006" or
+                           @code = "248536006" or
+                           @code = "55607006" or
+                           @code = "282291009"]'>
+       Warning: In EHR CDA规范 家族遗传病观察条目 (Entry_template_Root_OID.15), the suggested codes are
+       64572001, 418799008, 404684003, 409586006, 248536006, 55607006, and 282291009.  Please refer to the table in the 
+       specification for more information.
+    </assert>
+-->	
+    <assert test='cda:code[@code = "55607006"]'>
+       Warning: EHR CDA规范 家族遗传病观察条目 (Entry_template_Root_OID.15),code的值为55607006Problem
+    </assert>	
+    <assert test='cda:value[@codeSystem="CV02.10.005"]'>
+       Warning: In EHR CDA规范 家族遗传病观察条目 (Entry_template_Root_OID.15), 推荐值取自CV02.10.005既往常见疾病种类代码表。
+    </assert>
+    
+    </rule>
+
+
+  </pattern>

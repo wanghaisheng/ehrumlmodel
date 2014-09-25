@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    血型
+    ********************************************************
+	描述居民社会史相关信息，可能包括教育/文化程度/学历(如学历代码)、职业(如职业类别代码)、工作(如工作单位名称、参加工作日期)、
+	户籍(如常住地户籍标志)、生活方式(如运动方式、次数)、健康危险因素(如吸烟、饮酒、性行为)、生活环境(如厕所类别、禽畜栏类别、燃料类型)、
+	经济情况(如家庭年人均收入、经济状况代码)、额外的婚姻、宗教、种族、信仰等信息(如结婚日期)、家庭成员间的关系(监护人与本人关系代码)等等
+	对于理解病人情况起重要作用的社会性信息(更多定义请参考WHO2003年发布的《Social Determinants of Health-- the Solid Facts》)。
+	
+	
+	HDSD00.01.011	DE02.01.003.00	常住地址户籍标志
+	HDSD00.01.015	DE02.01.041.00	学历代码
+	HDSD00.01.016	DE02.01.052.00	职业类别代码
+	HDSD00.01.037	DE03.00.099.00	家庭厨房排风设施标识
+	HDSD00.01.038	DE03.00.006.00	家庭厨房排风设施类别代码
+	HDSD00.01.039	DE03.00.050.00	家庭燃料类型类别代码
+	HDSD00.01.040	DE03.00.082.00	家庭饮水类别代码
+	HDSD00.01.041	DE03.00.005.00	家庭厕所类别代码
+	HDSD00.01.042	DE03.00.049.00	家庭禽畜栏类别
+	................
+    ********************************************************
+-->
+<component typeCode="COMP" contextConductionInd="true">
+    <section classCode="DOCSECT" moodCode="EVN">
+	    <templateId  root="Section_template_Root_OID.2.1">
+        <code code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Social History" />
+        <title>社交史</title>
+        <text>
+            <!-- 呈現方式  		1. 文字敘述。 -->
+            <paragraph>常住地址户籍标志：0 ；学历代码：10；职业类别代码：128</paragraph>
+            <!--  呈现方式 		2  列表-->    
+            <!--    
+            <list>
+                <item>常住地址户籍标志：0</item>
+                <item>学历代码：10</item>
+                <item>职业类别代码：128</item>
+            </list> 
+            -->         
+            <!-- 呈現方式 		3. 表格 -->          
+          <!--  
+            <table>
+                <thead>
+                <tr>
+                <td>常住地址户籍标志</td>
+                <td>学历代码</td>
+                <td>职业类别代码</td>				
+                </tr>
+                </thead> 
+                <tbody>
+                <tr>
+                <td>0</td>
+                <td>10</td>
+                <td>128</td>
+   			    </tr>
+                </tbody>
+          --> 
+        </text>
+        <entry typeCode="DRIV"> 
+            <observation classCode="OBS" moodCode="EVN">
+                <templateId  root=” Entry_template_Root_OID.2”>
+                <code code="HDSD00.01.011" codeSystem="EHRDATASET_OID"  codeSystemName="城乡居民健康档案基本数据集"" displayName="常住地址户籍标志" /> 
+                <value xsi:type="BL" value="false"/ /> 
+            </observation> 
+        </entry> 
+        <entry typeCode="DRIV"> 
+            <observation classCode="OBS" moodCode="EVN">
+                <templateId  root=” Entry_template_Root_OID.2”>
+                <code code="HDSD00.01.015" codeSystem="EHRDATASET_OID"  codeSystemName="城乡居民健康档案基本数据集"" displayName="学历代码" /> 
+                <value xsi:type="CD" code="10" codeSystem="GB/T 4658-2006" codeSystemName="学历代码" codeSystemVersion="2003" displayName="研究生教育" /> 
+            </observation> 
+        </entry> 	   
+        <entry typeCode="DRIV"> 
+            <observation classCode="OBS" moodCode="EVN">
+                <templateId  root=” Entry_template_Root_OID.2”>
+                <code code="HDSD00.01.016" codeSystem="EHRDATASET_OID"  codeSystemName="城乡居民健康档案基本数据集"" displayName="职业类别代码" /> 
+                <value xsi:type="CD" code="128" codeSystem="GB/T 6565-2009" codeSystemName="职业分类与代码" codeSystemVersion="1999" displayName="医学科学研究人员" /> 
+            </observation> 
+        </entry> 	   		
+    </section>
+</component>

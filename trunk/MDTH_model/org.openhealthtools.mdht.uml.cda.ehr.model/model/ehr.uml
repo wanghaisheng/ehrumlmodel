@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Package xmi:id="_9x52AHzhEeGoerzCtd9i1A" name="ehr">
+    <packageImport xmi:id="_96P5sHzhEeGoerzCtd9i1A">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg"/>
+    </packageImport>
+    <packageImport xmi:id="_96P5sXzhEeGoerzCtd9i1A">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Association" xmi:id="_9x52AXzhEeGoerzCtd9i1A" memberEnd="_9x52AnzhEeGoerzCtd9i1A">
+      <ownedEnd xmi:id="_9x52AnzhEeGoerzCtd9i1A" name="" visibility="private" association="_9x52AXzhEeGoerzCtd9i1A">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9x52A3zhEeGoerzCtd9i1A" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9x52BHzhEeGoerzCtd9i1A"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_9x52BXzhEeGoerzCtd9i1A" memberEnd="_9x52BnzhEeGoerzCtd9i1A">
+      <ownedEnd xmi:id="_9x52BnzhEeGoerzCtd9i1A" name="" visibility="private" association="_9x52BXzhEeGoerzCtd9i1A">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9x52B3zhEeGoerzCtd9i1A" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9x52CHzhEeGoerzCtd9i1A"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ec-lEHziEeGoerzCtd9i1A" name="血型章节Nar">
+      <generalization xmi:id="_edSHEHziEeGoerzCtd9i1A">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_fxUh0HziEeGoerzCtd9i1A" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ppNIsH2tEeGfK4t8PAy6mA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ppNIsX2tEeGfK4t8PAy6mA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_9lgCcErmEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fxUh03ziEeGoerzCtd9i1A" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jvq8E8AEd6ohP_YEXs4Wg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hIV_IHziEeGoerzCtd9i1A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hIV_IXziEeGoerzCtd9i1A" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_vJtnoEAMEd6wZe6nFLrjsw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fxUh1nziEeGoerzCtd9i1A" name="title" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3uDnwHziEeGoerzCtd9i1A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3uDnwXziEeGoerzCtd9i1A" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_AP-EoErnEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1FUxQH2uEeGfK4t8PAy6mA" name="血型观察条目">
+      <ownedComment xmi:id="_-bnLMH2uEeGfK4t8PAy6mA">
+        <body>血型观察条目表示血型鉴定的结果，用于表示已知的或者实验室中血型鉴定的ABO血型代码或Rh血型代码相关信息。</body>
+      </ownedComment>
+      <generalization xmi:id="_1FeiQH2uEeGfK4t8PAy6mA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_6fCA4H2uEeGfK4t8PAy6mA" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVdYEDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_FcjT0EbtEd6besF9iFIJkQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_D85WQIGQEeGdntgx2LWeLQ" value="OBS"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_6fCA4X2uEeGfK4t8PAy6mA" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_WEYp4Eo8Ed6c3qsAxlFHaQ"/>
+        <qualifier xmi:id="_c-D3cEo8Ed6c3qsAxlFHaQ" name="statusCode" visibility="private" aggregation="composite">
+          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dvFEsUo8Ed6c3qsAxlFHaQ" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dvFEsEo8Ed6c3qsAxlFHaQ"/>
+        </qualifier>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_6fCA4n2uEeGfK4t8PAy6mA" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_BLZhcEo_Ed6c3qsAxlFHaQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_MgERMIGQEeGdntgx2LWeLQ" value="EVN"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_6fCA432uEeGfK4t8PAy6mA" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6fCA5H2uEeGfK4t8PAy6mA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6fCA5X2uEeGfK4t8PAy6mA"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_bHcUEEo8Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_6fCA5n2uEeGfK4t8PAy6mA" name="value" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4UWT4IGREeGdntgx2LWeLQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4UWT4YGREeGdntgx2LWeLQ" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_tRpv0Eo-Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_06KhcIGQEeGdntgx2LWeLQ" name="statusCode" isReadOnly="true">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GbtJwIGKEeGpiPpjNWkxlg" name="血型章节Nom">
+      <ownedComment xmi:id="_NRpG0IGKEeGpiPpjNWkxlg">
+        <body>包含计算机可理解的ABO血型 RH血型编码信息</body>
+      </ownedComment>
+      <generalization xmi:id="_GbtJwYGKEeGpiPpjNWkxlg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_H3o8QIGKEeGpiPpjNWkxlg" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4x_rcIGMEeGed_ywkm7JWw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4x_rcYGMEeGed_ywkm7JWw" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_9lgCcErmEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_H3o8Q4GKEeGpiPpjNWkxlg" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jvq8E8AEd6ohP_YEXs4Wg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5hE_AIGMEeGed_ywkm7JWw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5hE_AYGMEeGed_ywkm7JWw" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_vJtnoEAMEd6wZe6nFLrjsw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_H3ytQIGKEeGpiPpjNWkxlg" name="title" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6K9CcIGMEeGed_ywkm7JWw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6K9CcYGMEeGed_ywkm7JWw" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_AP-EoErnEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_WP_mAIS4EeGejc1Jrk9-tw" name="aBO血型观察条目" type="_0RIR4IGYEeGVhK3gGtqaGg" association="_WQcR8YS4EeGejc1Jrk9-tw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YsKGcIS4EeGejc1Jrk9-tw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YsKGcYS4EeGejc1Jrk9-tw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_XiizAIS4EeGejc1Jrk9-tw" name="rH血型观察条目" type="_O4fLAIGZEeGVhK3gGtqaGg" association="_XiizAoS4EeGejc1Jrk9-tw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZkCJoIS4EeGejc1Jrk9-tw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZkCJoYS4EeGejc1Jrk9-tw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0RIR4IGYEeGVhK3gGtqaGg" name="ABO血型观察条目">
+      <generalization xmi:id="_0RIR4YGYEeGVhK3gGtqaGg" general="_1FUxQH2uEeGfK4t8PAy6mA"/>
+      <ownedAttribute xmi:id="_4kXBoIGYEeGVhK3gGtqaGg" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVdYEDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_FcjT0EbtEd6besF9iFIJkQ"/>
+        <redefinedProperty href="#_6fCA4H2uEeGfK4t8PAy6mA"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_4kXBoYGYEeGVhK3gGtqaGg" value="OBS"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_4kgLkIGYEeGVhK3gGtqaGg" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_WEYp4Eo8Ed6c3qsAxlFHaQ"/>
+        <redefinedProperty href="#_6fCA4X2uEeGfK4t8PAy6mA"/>
+        <qualifier xmi:id="_4kgLkYGYEeGVhK3gGtqaGg" name="statusCode" visibility="private" aggregation="composite">
+          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kgLkoGYEeGVhK3gGtqaGg" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kgLk4GYEeGVhK3gGtqaGg"/>
+        </qualifier>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_4kgLloGYEeGVhK3gGtqaGg" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_BLZhcEo_Ed6c3qsAxlFHaQ"/>
+        <redefinedProperty href="#_6fCA4n2uEeGfK4t8PAy6mA"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_4kgLl4GYEeGVhK3gGtqaGg" value="EVN"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_4kgLmYGYEeGVhK3gGtqaGg" name="statusCode" isReadOnly="true" redefinedProperty="_06KhcIGQEeGdntgx2LWeLQ">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_4kp8koGYEeGVhK3gGtqaGg" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kp8k4GYEeGVhK3gGtqaGg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kp8lIGYEeGVhK3gGtqaGg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_bHcUEEo8Ed6c3qsAxlFHaQ"/>
+        <redefinedProperty href="#_6fCA432uEeGfK4t8PAy6mA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_4kp8loGYEeGVhK3gGtqaGg" name="value" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kp8l4GYEeGVhK3gGtqaGg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kp8mIGYEeGVhK3gGtqaGg" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_tRpv0Eo-Ed6c3qsAxlFHaQ"/>
+        <redefinedProperty href="#_6fCA5n2uEeGfK4t8PAy6mA"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_O4fLAIGZEeGVhK3gGtqaGg" name="RH血型观察条目">
+      <generalization xmi:id="_O4fLAYGZEeGVhK3gGtqaGg" general="_1FUxQH2uEeGfK4t8PAy6mA"/>
+      <ownedAttribute xmi:id="_RR0Z4IGZEeGVhK3gGtqaGg" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVdYEDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_FcjT0EbtEd6besF9iFIJkQ"/>
+        <redefinedProperty href="#_6fCA4H2uEeGfK4t8PAy6mA"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_RR0Z4YGZEeGVhK3gGtqaGg" value="OBS"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_RR0Z44GZEeGVhK3gGtqaGg" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_WEYp4Eo8Ed6c3qsAxlFHaQ"/>
+        <redefinedProperty href="#_6fCA4X2uEeGfK4t8PAy6mA"/>
+        <qualifier xmi:id="_RR0Z5IGZEeGVhK3gGtqaGg" name="statusCode" visibility="private" aggregation="composite">
+          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RR0Z5YGZEeGVhK3gGtqaGg" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RR0Z5oGZEeGVhK3gGtqaGg"/>
+        </qualifier>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_RR0Z6YGZEeGVhK3gGtqaGg" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_BLZhcEo_Ed6c3qsAxlFHaQ"/>
+        <redefinedProperty href="#_6fCA4n2uEeGfK4t8PAy6mA"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_RR0Z6oGZEeGVhK3gGtqaGg" value="EVN"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_RR0Z7IGZEeGVhK3gGtqaGg" name="statusCode" isReadOnly="true" redefinedProperty="_06KhcIGQEeGdntgx2LWeLQ">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_RR-K4YGZEeGVhK3gGtqaGg" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RR-K4oGZEeGVhK3gGtqaGg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RR-K44GZEeGVhK3gGtqaGg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_bHcUEEo8Ed6c3qsAxlFHaQ"/>
+        <redefinedProperty href="#_6fCA432uEeGfK4t8PAy6mA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_RSHU0IGZEeGVhK3gGtqaGg" name="value" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RSHU0YGZEeGVhK3gGtqaGg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RSHU0oGZEeGVhK3gGtqaGg" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_tRpv0Eo-Ed6c3qsAxlFHaQ"/>
+        <redefinedProperty href="#_6fCA5n2uEeGfK4t8PAy6mA"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_WQcR8YS4EeGejc1Jrk9-tw" memberEnd="_WP_mAIS4EeGejc1Jrk9-tw _WQcR8oS4EeGejc1Jrk9-tw">
+      <ownedEnd xmi:id="_WQcR8oS4EeGejc1Jrk9-tw" type="_GbtJwIGKEeGpiPpjNWkxlg" association="_WQcR8YS4EeGejc1Jrk9-tw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_XiizAoS4EeGejc1Jrk9-tw" memberEnd="_XiizAIS4EeGejc1Jrk9-tw _XiizA4S4EeGejc1Jrk9-tw">
+      <ownedEnd xmi:id="_XiizA4S4EeGejc1Jrk9-tw" type="_GbtJwIGKEeGpiPpjNWkxlg" association="_XiizAoS4EeGejc1Jrk9-tw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ON7-oIS5EeGejc1Jrk9-tw" name="社会史章节Nar">
+      <ownedComment xmi:id="_rMYq8IS5EeGejc1Jrk9-tw">
+        <body>本章用于描述居民社会史相关信息，可能包括教育/文化程度/学历(如学历代码)、职业(如职业类别代码)、工作(如工作单位名称、参加工作日期)、户籍(如常住地户籍标志)、生活方式(如运动方式、次数)、健康危险因素(如吸烟、饮酒、性行为)、生活环境(如厕所类别、禽畜栏类别、燃料类型)、经济情况(如家庭年人均收入、经济状况代码)、额外的婚姻、宗教、种族、信仰等信息(如结婚日期)、家庭成员间的关系(监护人与本人关系代码)等等对于理解病人情况起重要作用的社会性信息(更多定义请参考WHO2003年发布的《Social Determinants of Health-- the Solid Facts》)</body>
+      </ownedComment>
+      <generalization xmi:id="_ON7-oYS5EeGejc1Jrk9-tw">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_RW8-AIS5EeGejc1Jrk9-tw" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_50BpwIS5EeGejc1Jrk9-tw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_50BpwYS5EeGejc1Jrk9-tw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_RW8-BoS5EeGejc1Jrk9-tw" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jvq8E8AEd6ohP_YEXs4Wg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6bhHkIS5EeGejc1Jrk9-tw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6bhHkYS5EeGejc1Jrk9-tw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_RW8-CYS5EeGejc1Jrk9-tw" name="title" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7TsFsIS5EeGejc1Jrk9-tw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7TsFsYS5EeGejc1Jrk9-tw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BsRCQITDEeG78eqkrGrSKw" name="社会史章节Nom">
+      <generalization xmi:id="_BsazQITDEeG78eqkrGrSKw">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_EXocUITDEeG78eqkrGrSKw" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TDAEkITDEeG78eqkrGrSKw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TDAEkYTDEeG78eqkrGrSKw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_EXxmQITDEeG78eqkrGrSKw" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jvq8E8AEd6ohP_YEXs4Wg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TWhdgITDEeG78eqkrGrSKw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TWhdgYTDEeG78eqkrGrSKw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_EXxmQ4TDEeG78eqkrGrSKw" name="title" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tx8OMITDEeG78eqkrGrSKw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tx8OMYTDEeG78eqkrGrSKw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_LAYAAITFEeG78eqkrGrSKw" name="社会史观察条目" type="_P-yQMITEEeG78eqkrGrSKw" association="_LAYAAoTFEeG78eqkrGrSKw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Mx62IITFEeG78eqkrGrSKw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Mx62IYTFEeG78eqkrGrSKw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_P-yQMITEEeG78eqkrGrSKw" name="社会史观察条目">
+      <generalization xmi:id="_P-yQMYTEEeG78eqkrGrSKw">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_aAIZUITEEeG78eqkrGrSKw" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVecEDcEd6xYZuu1VKCVw"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_mJ0H8ITEEeG78eqkrGrSKw" value="OBS"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_aAIZUYTEEeG78eqkrGrSKw" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_aAIZUoTEEeG78eqkrGrSKw" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOoCEDcEd6xYZuu1VKCVw"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_pBjKEITEEeG78eqkrGrSKw" value="EVN"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_aAIZU4TEEeG78eqkrGrSKw" name="statusCode" visibility="private" isReadOnly="true" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x1aMYITEEeG78eqkrGrSKw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_x1aMYYTEEeG78eqkrGrSKw" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_A4d74ITFEeG78eqkrGrSKw" value="completed"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_aAIZWYTEEeG78eqkrGrSKw" name="value" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#__I8BwDxZEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y2hrIITEEeG78eqkrGrSKw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y2hrIYTEEeG78eqkrGrSKw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_LAYAAoTFEeG78eqkrGrSKw" name="社会史观察" memberEnd="_LAYAAITFEeG78eqkrGrSKw _LAYAA4TFEeG78eqkrGrSKw">
+      <ownedEnd xmi:id="_LAYAA4TFEeG78eqkrGrSKw" type="_BsRCQITDEeG78eqkrGrSKw" association="_LAYAAoTFEeG78eqkrGrSKw"/>
+    </packagedElement>
+    <profileApplication xmi:id="_9x52CXzhEeGoerzCtd9i1A">
+      <eAnnotations xmi:id="_9x52CnzhEeGoerzCtd9i1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_9x52C3zhEeGoerzCtd9i1A">
+      <eAnnotations xmi:id="_9x52DHzhEeGoerzCtd9i1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/cda/4#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <CDA:CodegenSupport xmi:id="_92hQQHzhEeGoerzCtd9i1A" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ehr" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ehr" packageName="ehr" prefix="ehr" base_Namespace="_9x52AHzhEeGoerzCtd9i1A"/>
+  <CDA:CDATemplate xmi:id="_92hQQnzhEeGoerzCtd9i1A" templateId="" assigningAuthorityName=""/>
+  <CDA:CodeSystemConstraint xmi:id="_576mcHziEeGoerzCtd9i1A" code="882-1" displayName="ABO+RH血型代码" base_Property="_fxUh0HziEeGoerzCtd9i1A">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+    <ruleId>0003</ruleId>
+  </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_GFAfMHzjEeGoerzCtd9i1A" base_Property="_fxUh03ziEeGoerzCtd9i1A">
+    <ruleId>0005</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CDATemplate xmi:id="_eMAXgH2rEeGfK4t8PAy6mA" message="不能包含子章节和条目模板" base_Class="_ec-lEHziEeGoerzCtd9i1A" templateId="Section_template_Root_OID.1" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0001</ruleId>
+    <ruleId>CONF-0002</ruleId>
+  </CDA:CDATemplate>
+  <CDA:TextValue xmi:id="_q5qrAH2tEeGfK4t8PAy6mA" base_Property="_fxUh1nziEeGoerzCtd9i1A" value="血型">
+    <ruleId>0004</ruleId>
+  </CDA:TextValue>
+  <CDA:CDATemplate xmi:id="_vgoNwIGMEeGed_ywkm7JWw" base_Class="_GbtJwIGKEeGpiPpjNWkxlg" templateId="Section_template_Root_OID.1.1" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0006</ruleId>
+    <ruleId>CONF-0007</ruleId>
+  </CDA:CDATemplate>
+  <CDA:PropertyValidation xmi:id="_67rUwIGMEeGed_ywkm7JWw" base_Property="_H3o8QIGKEeGpiPpjNWkxlg">
+    <ruleId>CONF-0008</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CodeSystemConstraint xmi:id="_9CFnoIGMEeGed_ywkm7JWw" code="882-1" displayName="ABO+RH血型代码" base_Property="_H3o8QIGKEeGpiPpjNWkxlg">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_Z6fEYIGPEeGdntgx2LWeLQ" base_Property="_H3o8Q4GKEeGpiPpjNWkxlg">
+    <ruleId>CONF-0010</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:TextValue xmi:id="_b4ZikIGPEeGdntgx2LWeLQ" base_Property="_H3ytQIGKEeGpiPpjNWkxlg" value="血型">
+    <ruleId>CONF-0009</ruleId>
+  </CDA:TextValue>
+  <CDA:PropertyValidation xmi:id="_87B2AIGPEeGdntgx2LWeLQ" base_Property="_6fCA4H2uEeGfK4t8PAy6mA">
+    <ruleId>CONF-0012</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_NIvawIGQEeGdntgx2LWeLQ" base_Property="_6fCA4n2uEeGfK4t8PAy6mA">
+    <ruleId>CONF-0013</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CDATemplate xmi:id="_Z_4sUIGQEeGdntgx2LWeLQ" base_Class="_1FUxQH2uEeGfK4t8PAy6mA" templateId="Entry_template_Root_OID.1" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0014</ruleId>
+  </CDA:CDATemplate>
+  <CDA:PropertyValidation xmi:id="_OWHXYIGREeGdntgx2LWeLQ" base_Property="_6fCA4X2uEeGfK4t8PAy6mA">
+    <ruleId>CONF-0016</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:TextValue xmi:id="_SxhywIGREeGdntgx2LWeLQ" severity="WARNING" base_Property="_6fCA432uEeGfK4t8PAy6mA">
+    <ruleId>CONF-0015</ruleId>
+  </CDA:TextValue>
+  <CDA:PropertyValidation xmi:id="_bQrwYIGREeGdntgx2LWeLQ" base_Property="_06KhcIGQEeGdntgx2LWeLQ">
+    <ruleId>CONF-0017</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CodeSystemConstraint xmi:id="_QZ2XcIGWEeGVhK3gGtqaGg" binding="Dynamic" base_Property="_6fCA4X2uEeGfK4t8PAy6mA">
+    <reference href="vovab.uml#_BjwF4YGWEeGVhK3gGtqaGg"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_rOho8IGYEeGVhK3gGtqaGg" code="completed" base_Property="_06KhcIGQEeGdntgx2LWeLQ">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_4kXBooGYEeGVhK3gGtqaGg" base_Property="_4kXBoIGYEeGVhK3gGtqaGg">
+    <ruleId>CONF-0012</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CodeSystemConstraint xmi:id="_4kgLlIGYEeGVhK3gGtqaGg" code="HDSD00.01.013" displayName="ABO血型代码" base_Property="_4kgLkIGYEeGVhK3gGtqaGg">
+    <reference href="vovab.uml#_BjwF4YGWEeGVhK3gGtqaGg"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_4kgLlYGYEeGVhK3gGtqaGg" base_Property="_4kgLkIGYEeGVhK3gGtqaGg">
+    <ruleId>CONF-0016</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_4kgLmIGYEeGVhK3gGtqaGg" base_Property="_4kgLloGYEeGVhK3gGtqaGg">
+    <ruleId>CONF-0013</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_4kgLmoGYEeGVhK3gGtqaGg" base_Property="_4kgLmYGYEeGVhK3gGtqaGg">
+    <ruleId>CONF-0017</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CodeSystemConstraint xmi:id="_4kp8kYGYEeGVhK3gGtqaGg" code="completed" base_Property="_4kgLmYGYEeGVhK3gGtqaGg">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:TextValue xmi:id="_4kp8lYGYEeGVhK3gGtqaGg" severity="WARNING" base_Property="_4kp8koGYEeGVhK3gGtqaGg" value="ABO血型代码">
+    <ruleId>CONF-0015</ruleId>
+  </CDA:TextValue>
+  <CDA:ValueSetConstraint xmi:id="_CHAckIGZEeGVhK3gGtqaGg" base_Property="_4kp8loGYEeGVhK3gGtqaGg">
+    <reference href="vovab.uml#_kTr6kIGUEeGVhK3gGtqaGg"/>
+  </CDA:ValueSetConstraint>
+  <CDA:PropertyValidation xmi:id="_RR0Z4oGZEeGVhK3gGtqaGg" base_Property="_RR0Z4IGZEeGVhK3gGtqaGg">
+    <ruleId>CONF-0012</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CodeSystemConstraint xmi:id="_RR0Z54GZEeGVhK3gGtqaGg" code="HDSD00.01.014" displayName="Rh血型代码" base_Property="_RR0Z44GZEeGVhK3gGtqaGg">
+    <reference href="vovab.uml#_BjwF4YGWEeGVhK3gGtqaGg"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_RR0Z6IGZEeGVhK3gGtqaGg" base_Property="_RR0Z44GZEeGVhK3gGtqaGg">
+    <ruleId>CONF-0016</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_RR0Z64GZEeGVhK3gGtqaGg" base_Property="_RR0Z6YGZEeGVhK3gGtqaGg">
+    <ruleId>CONF-0013</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_RR0Z7YGZEeGVhK3gGtqaGg" base_Property="_RR0Z7IGZEeGVhK3gGtqaGg">
+    <ruleId>CONF-0017</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:ConceptDomainConstraint xmi:id="_RR0Z7oGZEeGVhK3gGtqaGg" base_Property="_RR0Z7IGZEeGVhK3gGtqaGg"/>
+  <CDA:CodeSystemConstraint xmi:id="_RR-K4IGZEeGVhK3gGtqaGg" code="completed" base_Property="_RR0Z7IGZEeGVhK3gGtqaGg">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:TextValue xmi:id="_RR-K5IGZEeGVhK3gGtqaGg" severity="WARNING" base_Property="_RR-K4YGZEeGVhK3gGtqaGg" value="Rh血型代码">
+    <ruleId>CONF-0015</ruleId>
+  </CDA:TextValue>
+  <CDA:ValueSetConstraint xmi:id="_X-OngIGZEeGVhK3gGtqaGg" base_Property="_RSHU0IGZEeGVhK3gGtqaGg">
+    <reference href="vovab.uml#_ccp3cYGVEeGVhK3gGtqaGg"/>
+  </CDA:ValueSetConstraint>
+  <CDA:PropertyValidation xmi:id="_pstwkIGbEeGVhK3gGtqaGg" mandatory="true" base_Property="_6fCA5n2uEeGfK4t8PAy6mA"/>
+  <CDA:CodeSystemConstraint xmi:id="_6FybUIGcEeGVhK3gGtqaGg" binding="Dynamic" base_Property="_6fCA5n2uEeGfK4t8PAy6mA">
+    <reference href="vovab.uml#_sbST0YGUEeGVhK3gGtqaGg"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CDATemplate xmi:id="_lqehkIS5EeGejc1Jrk9-tw" base_Class="_ON7-oIS5EeGejc1Jrk9-tw" templateId="Section_template_Root_OID.2" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0020</ruleId>
+    <ruleId>CONF-0021</ruleId>
+  </CDA:CDATemplate>
+  <CDA:CodeSystemConstraint xmi:id="_8sgSwIS5EeGejc1Jrk9-tw" code="29762-2" displayName="社会史" base_Property="_RW8-AIS5EeGejc1Jrk9-tw">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+    <ruleId>CONF-0022</ruleId>
+  </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_urSrsITCEeG78eqkrGrSKw" base_Property="_RW8-BoS5EeGejc1Jrk9-tw">
+    <ruleId>CONF-0024</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_xNaqMITCEeG78eqkrGrSKw" base_Property="_RW8-CYS5EeGejc1Jrk9-tw">
+    <ruleId>CONF-0023</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:TextValue xmi:id="_4fE58ITCEeG78eqkrGrSKw" base_Property="_RW8-CYS5EeGejc1Jrk9-tw" value="社会史">
+    <ruleId>CONF-0023</ruleId>
+  </CDA:TextValue>
+  <CDA:CDATemplate xmi:id="_KYE70ITDEeG78eqkrGrSKw" base_Class="_BsRCQITDEeG78eqkrGrSKw" templateId="Section_template_Root_OID.2.1" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0025</ruleId>
+  </CDA:CDATemplate>
+  <CDA:PropertyValidation xmi:id="_SVGcwITDEeG78eqkrGrSKw" base_Property="_EXocUITDEeG78eqkrGrSKw">
+    <ruleId>0026</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CodeSystemConstraint xmi:id="_XmA8wITDEeG78eqkrGrSKw" code="29762-2" displayName="社会史" base_Property="_EXocUITDEeG78eqkrGrSKw">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_fPOJ0ITDEeG78eqkrGrSKw" base_Property="_EXxmQITDEeG78eqkrGrSKw">
+    <ruleId>0029</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_hmxQAITDEeG78eqkrGrSKw" base_Property="_EXxmQ4TDEeG78eqkrGrSKw">
+    <ruleId>CONF-0028</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:TextValue xmi:id="_kH_2oITDEeG78eqkrGrSKw" base_Property="_EXxmQ4TDEeG78eqkrGrSKw" value="社会史">
+    <ruleId>CONF-0028</ruleId>
+  </CDA:TextValue>
+  <CDA:PropertyValidation xmi:id="_kwHKEITEEeG78eqkrGrSKw" base_Property="_aAIZUITEEeG78eqkrGrSKw">
+    <ruleId>CONF-0031</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_p8HU4ITEEeG78eqkrGrSKw" base_Property="_aAIZUoTEEeG78eqkrGrSKw">
+    <ruleId>CONF-0032</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CDATemplate xmi:id="_suCC4ITEEeG78eqkrGrSKw" base_Class="_P-yQMITEEeG78eqkrGrSKw" templateId="Entry_template_Root_OID.2" assigningAuthorityName="四川省卫生厅">
+    <ruleId>CONF-0033</ruleId>
+  </CDA:CDATemplate>
+  <CDA:PropertyValidation xmi:id="_wnBtsITEEeG78eqkrGrSKw" base_Property="_aAIZUYTEEeG78eqkrGrSKw">
+    <ruleId>CONF-0034</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CodeSystemConstraint xmi:id="_3YD8oITEEeG78eqkrGrSKw" base_Property="_aAIZUYTEEeG78eqkrGrSKw">
+    <reference href="vovab.uml#_BjwF4YGWEeGVhK3gGtqaGg"/>
+    <ruleId>CONF-0034</ruleId>
+  </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_9ifekITEEeG78eqkrGrSKw" base_Property="_aAIZU4TEEeG78eqkrGrSKw">
+    <ruleId>CONF-0035</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_ELd9sITFEeG78eqkrGrSKw" base_Property="_aAIZWYTEEeG78eqkrGrSKw">
+    <ruleId>CONF-0037</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:Entry xmi:id="_PYz_4ITFEeG78eqkrGrSKw" base_Association="_LAYAAoTFEeG78eqkrGrSKw">
+    <ruleId>CONF-0030</ruleId>
+  </CDA:Entry>
+  <CDA:ActRelationship xmi:id="_SOArYITFEeG78eqkrGrSKw" base_Association="_WQcR8YS4EeGejc1Jrk9-tw"/>
+  <CDA:Entry xmi:id="_TadQYITFEeG78eqkrGrSKw" base_Association="_WQcR8YS4EeGejc1Jrk9-tw"/>
+  <CDA:Entry xmi:id="_VQLb4ITFEeG78eqkrGrSKw" base_Association="_XiizAoS4EeGejc1Jrk9-tw"/>
+</xmi:XMI>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<region country = "England">
+	<drivers>
+		<driver license = "L12778" age = "45">Black</driver>
+		<driver license = "L4314" age = "28">Jones</driver>
+	</drivers>
+	<cars>
+		<category carType = "saloon" >
+			<car make = "Ford" regNo = "KLL788">L12778</car>
+		</category>
+		<category carType = "sports" >
+			<car make = "Ferrari" regNo = "PEW445">L12778</car>
+			<car make = "Alfa Romeo" regNo = "VBG999">L4314</car>
+		</category>
+	</cars>
+</region>

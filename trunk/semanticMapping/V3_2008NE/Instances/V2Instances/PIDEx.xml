@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<PID xmlns = "urn:hl7-org:v2xml">
+		<PID.3>
+			<CX.1>000197245</CX.1>
+			<CX.4>
+				<HD.1>NationalPN</HD.1>
+				<HD.2>2.16.840.1.113883.19.3</HD.2>
+				<HD.3>ISO</HD.3>
+			</CX.4>
+			<CX.5>PN</CX.5>
+		</PID.3>
+		<PID.3>
+			<CX.1>4532</CX.1>
+			<CX.4>
+				<HD.1>CarefulCareClinic</HD.1>
+				<HD.2>2.16.840.1.113883.19.2.400566</HD.2>
+				<HD.3>ISO</HD.3>
+			</CX.4>
+			<CX.5>PI</CX.5>
+		</PID.3>
+		<PID.3>
+			<CX.1>3242346</CX.1>
+			<CX.3>GoodmanGP&amp;2.16.840.1.113883.19.2.450998&amp;ISO</CX.3>
+			<CX.4>
+				<HD.1>PI</HD.1>
+			</CX.4>
+		</PID.3>
+		<PID.5>
+			<XPN.1>Patient</XPN.1>
+			<XPN.2>Particia</XPN.2>
+			<XPN.7>L</XPN.7>
+		</PID.5>
+		<PID.7>
+			<TS.1>19750103</TS.1>
+		</PID.7>
+		<PID.8>F</PID.8>
+		<PID.11>
+			<XAD.1>Randomroad 23a&amp;Randomroad&amp;23a</XAD.1>
+			<XAD.3>Anytown</XAD.3>
+			<XAD.5>1200</XAD.5>
+			<XAD.7>H</XAD.7>
+		</PID.11>
+		<PID.13>
+			<XTN.1>555 3542557</XTN.1>
+			<XTN.2>ORN</XTN.2>
+			<XTN.3>PH</XTN.3>
+		</PID.13>
+		<PID.13>
+			<XTN.1>555 3542558</XTN.1>
+			<XTN.2>ORN</XTN.2>
+			<XTN.3>FX</XTN.3>
+		</PID.13>
+		<PID.14>
+			<XTN.1>555 5557865</XTN.1>
+			<XTN.2>WPN</XTN.2>
+			<XTN.3>PH</XTN.3>
+		</PID.14>
+	</PID>

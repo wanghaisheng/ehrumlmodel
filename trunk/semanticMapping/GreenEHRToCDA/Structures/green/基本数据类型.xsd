@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="ANY" abstract="true">
+		<xs:annotation>
+			<xs:documentation>
+            Defines the basic properties of every data value. This
+            is an abstract type, meaning that no value can be just
+            a data value without belonging to any concrete type.
+            Every concrete type is a specialization of this
+            general abstract DataValue type.
+         </xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:simpleType name="L">
+		<xs:annotation>
+			<xs:documentation>
+逻辑型,采用 0(Fa1se)或 1(True)形 式表示的逻辑值的类型
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:boolean">
+			<xs:pattern value="(0|1)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="S">
+		<xs:annotation>
+			<xs:documentation>
+			通过字符形式表达的值的类型。可包含字母字符A-Z a-z数字字符0-9等。默认为GB2312 这里的S可以理解成任意字符吗？包括各种特殊字符吗?还是只能是字母 数字 和中文字符
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value="	(([0-9]+[a-zA-Z]+[0-9]*)|([a-zA-Z]+[0-9]+[a-zA-Z]*)|([0-9]*)|([a-zA-Z]*)|([u4e00-u9fa5]*))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="N">
+		<xs:annotation>
+			<xs:documentation>
+			通过0-9的数字形式表示的值的类型
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value="[0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="S1">
+		<xs:annotation>
+			<xs:documentation>
+			S1表示不可枚举的,且以字符描述的形式表示的值的类型
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value=".*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="S2">
+		<xs:annotation>
+			<xs:documentation>
+			S3表示代码表的形式表示的值的类型.这里的S3其实相当于codesystem的code
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value=".*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="S3">
+		<xs:annotation>
+			<xs:documentation>
+			S3表示代码表的形式表示的值的类型.这里的S3其实相当于codesystem的code
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value=".*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BY" mixed="true">
+		<xs:annotation>
+			<xs:documentation>上述无法表示的其他数据类型，如图象、音频、视频等二进制流文件格式
+         </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent mixed="true">
+			<xs:extension base="ANY">
+				<xs:attribute name="representation" type="BinaryDataEncoding" use="optional" default="TXT">
+					<xs:annotation>
+						<xs:documentation>
+                     Specifies the representation of the binary data that
+                     is the content of the binary data value.
+                  </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="BinaryDataEncoding">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="B64"/>
+			<xs:enumeration value="TXT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="D8">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T6">
+		<xs:annotation>
+			<xs:documentation>
+			定义hhmmss格式的时间
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value="((([1-9])|([0-1][0-9])|([1-2][0-3]))(([0-5][0-9]))(([0-5][0-9])))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DT15">
+		<xs:annotation>
+			<xs:documentation>
+		定义格式YYYYMMDDThhmmss的日期时间
+         </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value="
+((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229))T((([1-9])|([0-1][0-9])|([1-2][0-3]))(([0-5][0-9]))(([0-5][0-9])))"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/CCDMappings/ClassModel/POCD_RM000040.ecore" structureURL="" topElementType="CDA_ClinicalDocument">
+  <rootElement name="ClinicalDocument" fixedValue=""/>
+  <mappingParameters mappingClass="com.charteris.mapper.converters.V3_XML_ITS" wrapperClass="com.charteris.mapper.converters.CDAConverter">
+    <nameSpaces uRL="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+    <nameSpaces uRL="urn:hl7-org:v3" prefix=""/>
+    <nameSpaces uRL="urn:hl7-org:v3/voc" prefix="voc"/>
+  </mappingParameters>
+  <parameterClasses className="ClinicalDocument" packageName="CDA"/>
+</com.charteris.mapper:MappedStructure>

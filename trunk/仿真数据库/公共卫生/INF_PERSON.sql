@@ -1,0 +1,139 @@
+CREATE TABLE HEALTH_RECORD.INF_PERSON(
+     PERSON_KEY               RAW(16)           DEFAULT sys_guid() NOT NULL,
+     HR_CODE                  CHAR(18)          NOT NULL,
+     HR_ID                    CHAR(21)          NOT NULL,
+     NAME                     VARCHAR2(50 CHAR) NOT NULL,
+     GENDER                   CHAR(1)           NOT NULL,
+     BIRTHDAY                 DATE              NOT NULL,
+     ID_NO                    VARCHAR2(18),
+     WORK_UNIT                VARCHAR2(100 CHAR),
+     TEL                      VARCHAR2(50),
+     CONTACT_NAME             VARCHAR2(50 CHAR),
+     CONTACT_TEL              VARCHAR2(50),
+     RSOPR_CODE               CHAR(1),
+     NATION_CODE              CHAR(2),
+     ABO_CODE                 CHAR(1),
+     RH_CODE                  CHAR(1),
+     EDUCATION_CODE           CHAR(1),
+     OCCUPATION_CODE          CHAR(2),
+     MARRIAGE_CODE            CHAR(1),
+     AREA_CODE                CHAR(12)          NOT NULL,
+     AREA_GROUPCODE           CHAR(2)           DEFAULT '01' NOT NULL,
+     ADDRESS                  VARCHAR2(250 CHAR),
+     ORIGIN_AREA_CODE         CHAR(6),
+     BIRTH_AREA_CODE          CHAR(6),
+     REGISTERED_AREA_CODE     VARCHAR2(12),
+     FATHER_PERSON_KEY        RAW(16),
+     MOTHER_PERSON_KEY        RAW(16),
+     SPOUSE_PERSON_KEY        RAW(16),
+     IS_PUBLIC                CHAR(1)           DEFAULT '1' NOT NULL,
+     STATUS                   CHAR(1)           DEFAULT '0' NOT NULL,
+     NOW_PERSON_KEY           RAW(16),
+     USER_CREATE              RAW(16),
+     USER_LAST_MODI           RAW(16),
+     DATE_CREATE              DATE              DEFAULT sysdate NOT NULL,
+     DATE_UPDATE              DATE              DEFAULT sysdate NOT NULL,
+     REMARK                   VARCHAR2(250 CHAR),
+     FATHER_NAME              VARCHAR2(50 CHAR),
+     MOTHER_NAME              VARCHAR2(50 CHAR),
+     SPOUSE_NAME              VARCHAR2(50 CHAR),
+     NAME_PY                  VARCHAR2(50),
+     IS_PERFECT               CHAR(1)           DEFAULT '0' NOT NULL,
+     IS_LOCK                  CHAR(1)           DEFAULT '0' NOT NULL,
+     ORG_CREATE               RAW(16),
+     REG_AREA_GROUPCODE       CHAR(2),
+     REG_ADDRESS              VARCHAR2(250 CHAR),
+     DATE_ENABLE              DATE,
+     DATE_DISABLE             DATE,
+     DATE_LOCK                DATE,
+     DATE_UNLOCK              DATE,
+     USER_ENABLE              RAW(16),
+     USER_DISABLE             RAW(16),
+     USER_LOCK                RAW(16),
+     USER_UNLOCK              RAW(16),
+     USERNAME_CREATE          VARCHAR2(50 CHAR),
+     USERNAME_LAST_MODI       VARCHAR2(50 CHAR),
+     USERNAME_ENABLE          VARCHAR2(50 CHAR),
+     USERNAME_DISABLE         VARCHAR2(50 CHAR),
+     USERNAME_LOCK            VARCHAR2(50 CHAR),
+     USERNAME_UNLOCK          VARCHAR2(50 CHAR),
+     DATE_PUBLIC              DATE,
+     USER_PUBLIC              RAW(16),
+     USERNAME_PUBLIC          VARCHAR2(50 CHAR),
+     DATE_NOTPUBLIC           DATE,
+     USER_NOTPUBLIC           RAW(16),
+     USERNAME_NOTPUBLIC       VARCHAR2(50 CHAR),
+     IS_DEAD                  CHAR(1)           DEFAULT '0',
+     DEATH_DATE               DATE,
+     RESPONSIBLE_MPERSON      RAW(16),
+     CONSTRAINT INF_PERSON_PK PRIMARY KEY (PERSON_KEY)
+     USING INDEX
+         PCTFREE 10
+         INITRANS 2
+         MAXTRANS 255
+         TABLESPACE USERS
+         LOGGING
+         STORAGE(INITIAL 64K
+                 NEXT 1024K
+                 MINEXTENTS 1
+                 MAXEXTENTS UNLIMITED
+                 PCTINCREASE 0
+                 FREELISTS 1
+                 FREELIST GROUPS 1
+                 BUFFER_POOL DEFAULT
+                 ),
+     CONSTRAINT INF_PERSON_U01   UNIQUE (HR_CODE)
+     USING INDEX
+         PCTFREE 10
+         INITRANS 2
+         MAXTRANS 255
+         TABLESPACE USERS
+         LOGGING
+         STORAGE(INITIAL 64K
+                 NEXT 1024K
+                 MINEXTENTS 1
+                 MAXEXTENTS UNLIMITED
+                 PCTINCREASE 0
+                 FREELISTS 1
+                 FREELIST GROUPS 1
+                 BUFFER_POOL DEFAULT
+                 ),
+     CONSTRAINT INF_PERSON_U02   UNIQUE (HR_ID)
+     USING INDEX
+         PCTFREE 10
+         INITRANS 2
+         MAXTRANS 255
+         TABLESPACE USERS
+         LOGGING
+         STORAGE(INITIAL 64K
+                 NEXT 1024K
+                 MINEXTENTS 1
+                 MAXEXTENTS UNLIMITED
+                 PCTINCREASE 0
+                 FREELISTS 1
+                 FREELIST GROUPS 1
+                 BUFFER_POOL DEFAULT
+                 ), 
+     CONSTRAINT INF_PERSON_R01 FOREIGN KEY (USER_CREATE)
+     REFERENCES HEALTH_RECORD.SYS_USER(USER_KEY),
+     CONSTRAINT INF_PERSON_R02 FOREIGN KEY (USER_LAST_MODI)
+     REFERENCES HEALTH_RECORD.SYS_USER(USER_KEY),
+     CONSTRAINT INF_PERSON_R03 FOREIGN KEY (ORG_CREATE)
+     REFERENCES HEALTH_RECORD.INF_ORG(ORG_KEY)
+)
+PCTFREE 10
+PCTUSED 40
+INITRANS 1
+MAXTRANS 255
+TABLESPACE USERS
+LOGGING
+STORAGE(INITIAL 64K
+         NEXT 1024K
+         MINEXTENTS 1
+         MAXEXTENTS UNLIMITED
+         PCTINCREASE 0
+         FREELISTS 1
+         FREELIST GROUPS 1
+         BUFFER_POOL DEFAULT
+         )
+;

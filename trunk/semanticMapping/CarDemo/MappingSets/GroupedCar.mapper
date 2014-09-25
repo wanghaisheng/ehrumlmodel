@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/CarDemo/ClassModel/car.ecore" structureURL="platform:/resource/CarDemo/Structures/GroupedCar.xsd" topElementName="region">
+  <rootElement name="region" expanded="true">
+    <nodeMappingSet>
+      <objectMappings mappedClass="region"/>
+    </nodeMappingSet>
+    <childElements name="drivers" type="driversType" minMultiplicity="1" expanded="true">
+      <childElements name="driver" type="driverType" minMultiplicity="1" expanded="true" maxMultiplicity="-1">
+        <nodeMappingSet>
+          <objectMappings mappedClass="person"/>
+          <propertyMappings mappedClass="person" mappedProperty="surname"/>
+          <associationMappings>
+            <mappedEnd1 mappedClass="person" mappedRole="containsPerson" requiredForObject="true"/>
+            <mappedEnd2 mappedClass="region" mappedRole="pContainedBy"/>
+          </associationMappings>
+        </nodeMappingSet>
+        <attributeDefs name="license" minMultiplicity="1" defaultValue="null">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="person" mappedProperty="licence"/>
+          </nodeMappingSet>
+        </attributeDefs>
+        <attributeDefs name="age" minMultiplicity="1" defaultValue="null">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="person" mappedProperty="age"/>
+          </nodeMappingSet>
+        </attributeDefs>
+      </childElements>
+    </childElements>
+    <childElements name="cars" type="carsType" minMultiplicity="1" expanded="true">
+      <childElements name="category" type="categoryType" minMultiplicity="1" expanded="true" maxMultiplicity="-1">
+        <childElements name="car" type="carType" minMultiplicity="1" expanded="true" maxMultiplicity="-1">
+          <nodeMappingSet>
+            <objectMappings mappedClass="car"/>
+            <associationMappings>
+              <mappedEnd1 mappedClass="region" mappedRole="cContainedBy"/>
+              <mappedEnd2 mappedClass="car" mappedRole="containsCar" requiredForObject="true"/>
+            </associationMappings>
+            <associationMappings>
+              <mappedEnd1 mappedClass="person" mappedRole="drivenBy">
+                <mappingConditions xsi:type="com.charteris.mapper:CrossCondition" leftPath="." leftFunction="" rightPath="@license"/>
+              </mappedEnd1>
+              <mappedEnd2 mappedClass="car" mappedRole="drives"/>
+            </associationMappings>
+          </nodeMappingSet>
+          <attributeDefs name="make" minMultiplicity="1" defaultValue="null">
+            <nodeMappingSet>
+              <propertyMappings mappedClass="car" mappedProperty="make"/>
+            </nodeMappingSet>
+          </attributeDefs>
+          <attributeDefs name="regNo" minMultiplicity="1" defaultValue="null">
+            <nodeMappingSet>
+              <propertyMappings mappedClass="car" mappedProperty="registration"/>
+            </nodeMappingSet>
+          </attributeDefs>
+        </childElements>
+        <attributeDefs name="carType" minMultiplicity="1" defaultValue="null">
+          <nodeMappingSet>
+            <propertyMappings mappedClass="car" mappedProperty="type"/>
+          </nodeMappingSet>
+        </attributeDefs>
+      </childElements>
+    </childElements>
+    <attributeDefs name="country" minMultiplicity="1" defaultValue="null">
+      <nodeMappingSet>
+        <propertyMappings mappedClass="region" mappedProperty="country"/>
+      </nodeMappingSet>
+    </attributeDefs>
+  </rootElement>
+  <mappingParameters/>
+</com.charteris.mapper:MappedStructure>

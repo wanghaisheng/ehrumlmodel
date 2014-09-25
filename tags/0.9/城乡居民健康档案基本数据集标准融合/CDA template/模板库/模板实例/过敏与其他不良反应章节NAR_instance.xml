@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    过敏与其他不良反应
+    ********************************************************
+	描述居民过敏与不良反应相关信息，可能包括过敏史标志和药物过敏源等
+	出现在城乡居民健康档案数据集中对应的数据元如下
+	HDSD00.01.019	DE05.01.022.00	药物过敏史标志
+	HDSD00.01.020	DE05.01.022.00	药物过敏源.
+
+
+    ********************************************************
+-->
+<component typeCode="COMP" contextConductionInd="true">
+    <section classCode="DOCSECT" moodCode="EVN">
+	    <templateId  root="Section_template_Root_OID.3">
+        <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies and Other Adverse Reactions" />
+        <title>过敏与其他不良反应</title>
+        <text>
+            <!-- 呈現方式  		1. 文字敘述。 -->
+            <paragraph>药物过敏史标志： 有    药物过敏源：青霉素类抗生素 </paragraph>
+            <!--  呈现方式 		2  列表-->    
+            <!--    
+            <list>
+                <item>药物过敏史标志： 有</item>
+                <item>药物过敏史标志： 青霉素类抗生素</item>				
+            </list> 
+            -->         
+            <!-- 呈現方式 		3. 表格 -->          
+          <!--  
+            <table>
+                <thead>
+                <tr>
+                <td>药物过敏史标志</td>		
+                <td>药物过敏源</td>					
+                </tr>
+                </thead> 
+                <tbody>
+                <tr>
+                <td>有</td>
+                <td>青霉素类抗生素</td>				
+   			    </tr>
+                </tbody>
+          --> 
+        </text>
+    </section>
+</component>

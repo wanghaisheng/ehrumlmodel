@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="ClinicalDocument">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="居民基础信息" type="居民基础信息_type"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="居民基础信息_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="居民人口学信息" type="居民人口学信息_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="居民人口学信息_type">
+		<xs:attribute name="本人姓名" type="xs:string"/>
+	</xs:complexType>
+</xs:schema>

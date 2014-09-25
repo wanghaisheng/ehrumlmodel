@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<observation classCode="OBS" moodCode="EVN">
+   <!-- allergy observation template -->
+   <templateId root="2.16.840.1.113883.10.20.21.4.7"/>
+   <id root="4adc1020-7b14-11db-9fe1-0800200c9a66"/>
+   <code code="1" displayName="药物" 
+         codeSystem="CV05.01.038" codeSystemName="过敏源代码表"/>
+   <statusCode code="completed"/>
+   <effectiveTime>
+    <low value="20110215"/>
+   </effectiveTime>   
+   <value xsi:type="CD" code="282100009" displayName="Adverse reaction to 
+    substance" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <originalText>
+     <reference value=""/>
+    </originalText>
+   </value>   
+   <participant typeCode="CSM">
+    <participantRole classCode="MANU">
+     <playingEntity classCode="MMAT">
+      <code code="314422" displayName="ALLERGENIC EXTRACT, PENICILLIN" 
+            codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm">
+         <originalText>
+          <reference value=""/>
+         </originalText>
+      </code>
+      <name>Penicillin</name>
+     </playingEntity>
+    </participantRole>
+   </participant>
+   </entryRelationship typeCode="REFR">
+</observation classCode="OBS" moodCode="EVN">
+

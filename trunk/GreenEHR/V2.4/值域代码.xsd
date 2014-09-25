@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation> $Id: mConcept.cls,v 1.9 2007/11/26 19:28:05 wbeeler Exp $ 
+RoseTree XML to Schema: $Id: VocabXMLtoXSD.xsl,v 1.8 2007/03/20 02:48:50 wbeeler Exp $</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="基本数据类型.xsd"/>
+	<xs:simpleType name="婚姻状况代码">
+		<xs:annotation>
+			<xs:documentation>个人基本信息与分类代码 婚姻状况代码 GB/T 2261.2-2003</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="21"/>
+			<xs:enumeration value="22"/>
+			<xs:enumeration value="23"/>
+			<xs:enumeration value="30"/>
+			<xs:enumeration value="40"/>
+			<xs:enumeration value="90"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="民族代码">
+		<xs:annotation>
+			<xs:documentation>中国各民族名称的罗马字母拼写法和代码 GB 3304-1991</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="8"/>
+			<xs:enumeration value="9"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="17"/>
+			<xs:enumeration value="18"/>
+			<xs:enumeration value="19"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="21"/>
+			<xs:enumeration value="22"/>
+			<xs:enumeration value="23"/>
+			<xs:enumeration value="24"/>
+			<xs:enumeration value="25"/>
+			<xs:enumeration value="26"/>
+			<xs:enumeration value="27"/>
+			<xs:enumeration value="28"/>
+			<xs:enumeration value="29"/>
+			<xs:enumeration value="30"/>
+			<xs:enumeration value="31"/>
+			<xs:enumeration value="32"/>
+			<xs:enumeration value="33"/>
+			<xs:enumeration value="34"/>
+			<xs:enumeration value="35"/>
+			<xs:enumeration value="36"/>
+			<xs:enumeration value="37"/>
+			<xs:enumeration value="38"/>
+			<xs:enumeration value="39"/>
+			<xs:enumeration value="40"/>
+			<xs:enumeration value="41"/>
+			<xs:enumeration value="42"/>
+			<xs:enumeration value="43"/>
+			<xs:enumeration value="44"/>
+			<xs:enumeration value="45"/>
+			<xs:enumeration value="46"/>
+			<xs:enumeration value="47"/>
+			<xs:enumeration value="48"/>
+			<xs:enumeration value="49"/>
+			<xs:enumeration value="50"/>
+			<xs:enumeration value="51"/>
+			<xs:enumeration value="52"/>
+			<xs:enumeration value="53"/>
+			<xs:enumeration value="54"/>
+			<xs:enumeration value="55"/>
+			<xs:enumeration value="56"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="身份证件类别代码">
+		<xs:annotation>
+			<xs:documentation>身份证件类别代码 CV02.01.101</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="性别代码">
+		<xs:annotation>
+			<xs:documentation>性别代码 GB/T2261.1-2003</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="学历代码">
+		<xs:annotation>
+			<xs:documentation>学历代码 GB/T 4658-2006</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="17"/>
+			<xs:enumeration value="18"/>
+			<xs:enumeration value="19"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="21"/>
+			<xs:enumeration value="22"/>
+			<xs:enumeration value="23"/>
+			<xs:enumeration value="28"/>
+			<xs:enumeration value="30"/>
+			<xs:enumeration value="31"/>
+			<xs:enumeration value="32"/>
+			<xs:enumeration value="33"/>
+			<xs:enumeration value="40"/>
+			<xs:enumeration value="41"/>
+			<xs:enumeration value="42"/>
+			<xs:enumeration value="43"/>
+			<xs:enumeration value="44"/>
+			<xs:enumeration value="45"/>
+			<xs:enumeration value="46"/>
+			<xs:enumeration value="47"/>
+			<xs:enumeration value="48"/>
+			<xs:enumeration value="49"/>
+			<xs:enumeration value="60"/>
+			<xs:enumeration value="61"/>
+			<xs:enumeration value="62"/>
+			<xs:enumeration value="63"/>
+			<xs:enumeration value="70"/>
+			<xs:enumeration value="71"/>
+			<xs:enumeration value="73"/>
+			<xs:enumeration value="80"/>
+			<xs:enumeration value="81"/>
+			<xs:enumeration value="83"/>
+			<xs:enumeration value="90"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="职业分类与代码">
+		<xs:annotation>
+			<xs:documentation>职业分类与代码 GB/T 6565-2009</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="0-1"/>
+			<xs:enumeration value="0-2"/>
+			<xs:enumeration value="0-3"/>
+			<xs:enumeration value="0-4"/>
+			<xs:enumeration value="0-5"/>
+			<xs:enumeration value="1/2"/>
+			<xs:enumeration value="1-1"/>
+			<xs:enumeration value="1-2"/>
+			<xs:enumeration value="1-3"/>
+			<xs:enumeration value="1-4"/>
+			<xs:enumeration value="1-5"/>
+			<xs:enumeration value="1-6"/>
+			<xs:enumeration value="1-7"/>
+			<xs:enumeration value="1-8"/>
+			<xs:enumeration value="1-9"/>
+			<xs:enumeration value="2-1"/>
+			<xs:enumeration value="2-2"/>
+			<xs:enumeration value="2-3"/>
+			<xs:enumeration value="2-4"/>
+			<xs:enumeration value="2-5"/>
+			<xs:enumeration value="2-6"/>
+			<xs:enumeration value="2-7"/>
+			<xs:enumeration value="2-8"/>
+			<xs:enumeration value="2-9"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="3-1"/>
+			<xs:enumeration value="3-2"/>
+			<xs:enumeration value="3-3"/>
+			<xs:enumeration value="3-9"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="4-1"/>
+			<xs:enumeration value="4-2"/>
+			<xs:enumeration value="4-3"/>
+			<xs:enumeration value="4-4"/>
+			<xs:enumeration value="4-5"/>
+			<xs:enumeration value="4-6"/>
+			<xs:enumeration value="4-7"/>
+			<xs:enumeration value="4-8"/>
+			<xs:enumeration value="4-9"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="5-1"/>
+			<xs:enumeration value="5-2"/>
+			<xs:enumeration value="5-3"/>
+			<xs:enumeration value="5-4"/>
+			<xs:enumeration value="5-5"/>
+			<xs:enumeration value="5-9"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="6-1"/>
+			<xs:enumeration value="6-2"/>
+			<xs:enumeration value="6-3"/>
+			<xs:enumeration value="6-4"/>
+			<xs:enumeration value="6-5"/>
+			<xs:enumeration value="6-6"/>
+			<xs:enumeration value="6-7"/>
+			<xs:enumeration value="6-8"/>
+			<xs:enumeration value="6-9"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="7-1"/>
+			<xs:enumeration value="7-2"/>
+			<xs:enumeration value="7-3"/>
+			<xs:enumeration value="7-4"/>
+			<xs:enumeration value="7-5"/>
+			<xs:enumeration value="7-6"/>
+			<xs:enumeration value="7-7"/>
+			<xs:enumeration value="7-8"/>
+			<xs:enumeration value="7-9"/>
+			<xs:enumeration value="8"/>
+			<xs:enumeration value="8-1"/>
+			<xs:enumeration value="8-2"/>
+			<xs:enumeration value="8-3"/>
+			<xs:enumeration value="8-4"/>
+			<xs:enumeration value="8-5"/>
+			<xs:enumeration value="8-6"/>
+			<xs:enumeration value="8-7"/>
+			<xs:enumeration value="8-8"/>
+			<xs:enumeration value="8-9"/>
+			<xs:enumeration value="9"/>
+			<xs:enumeration value="9-1"/>
+			<xs:enumeration value="9-2"/>
+			<xs:enumeration value="9-3"/>
+			<xs:enumeration value="X"/>
+			<xs:enumeration value="Y"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="家庭厨房排风设施类别代码">
+		<xs:annotation>
+			<xs:documentation>WS364.5 卫生信息数据元值域代码 第5部分：健康危险因素 厨房排风设施类别代码表 CV03.00.302</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="家庭燃料类型类别代码">
+		<xs:annotation>
+			<xs:documentation>WS364.5 卫生信息数据元值域代码 第5部分：健康危险因素 燃料类型类别代码表 CV03.00.303</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="家庭饮水类别代码">
+		<xs:annotation>
+			<xs:documentation>WS364.5 卫生信息数据元值域代码第5部分：健康危险因素  饮水类别代码表 CV03.00.115</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="家庭厕所类别代码">
+		<xs:annotation>
+			<xs:documentation>WS364.5 卫生信息数据元值域代码第5部分：健康危险因素  厕所类别代码表  CV03.00.304</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="家庭禽畜栏类别">
+		<xs:annotation>
+			<xs:documentation>本人家庭中所使用的禽畜养殖场所的类别代码 1 单设 2室内 3室外</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S2">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="环境危险因素暴露类别代码">
+		<xs:annotation>
+			<xs:documentation>WS364.5 卫生信息数据元值域代码第5部分：健康危险因素  环境危险因素暴露类别代码表CV03.00.301</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="过敏源代码表">
+		<xs:annotation>
+			<xs:documentation>WS364.10 卫生信息数据元值域代码 第13部分：医疗诊断 过敏源代码表 CV05.01.038</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="101"/>
+			<xs:enumeration value="102"/>
+			<xs:enumeration value="103"/>
+			<xs:enumeration value="104"/>
+			<xs:enumeration value="105"/>
+			<xs:enumeration value="106"/>
+			<xs:enumeration value="199"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="201"/>
+			<xs:enumeration value="202"/>
+			<xs:enumeration value="203"/>
+			<xs:enumeration value="204"/>
+			<xs:enumeration value="205"/>
+			<xs:enumeration value="206"/>
+			<xs:enumeration value="207"/>
+			<xs:enumeration value="208"/>
+			<xs:enumeration value="299"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="301"/>
+			<xs:enumeration value="302"/>
+			<xs:enumeration value="303"/>
+			<xs:enumeration value="399"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ABO血型代码">
+		<xs:annotation>
+			<xs:documentation>WS364.9 卫生信息数据元值域代码第9部分：实验室检查  ABO血型代码 CV04.50.005</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Rh血型代码">
+		<xs:annotation>
+			<xs:documentation>按照Rh血型系统决定的血型类别代码1.Rh阳性 2.Rh阴性 3.不详</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="既往常见疾病种类代码表">
+		<xs:annotation>
+			<xs:documentation>WS364.4 卫生信息数据元值域代码 第4部分：健康史  既往常见疾病种类代码表 CV02.10.005</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="08"/>
+			<xs:enumeration value="09"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="98"/>
+			<xs:enumeration value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="家庭关系代码">
+		<xs:annotation>
+			<xs:documentation>GB/T4761 家庭关系代码2008</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="21"/>
+			<xs:enumeration value="22"/>
+			<xs:enumeration value="23"/>
+			<xs:enumeration value="24"/>
+			<xs:enumeration value="25"/>
+			<xs:enumeration value="26"/>
+			<xs:enumeration value="27"/>
+			<xs:enumeration value="28"/>
+			<xs:enumeration value="29"/>
+			<xs:enumeration value="30"/>
+			<xs:enumeration value="31"/>
+			<xs:enumeration value="32"/>
+			<xs:enumeration value="33"/>
+			<xs:enumeration value="34"/>
+			<xs:enumeration value="35"/>
+			<xs:enumeration value="36"/>
+			<xs:enumeration value="37"/>
+			<xs:enumeration value="38"/>
+			<xs:enumeration value="39"/>
+			<xs:enumeration value="40"/>
+			<xs:enumeration value="41"/>
+			<xs:enumeration value="42"/>
+			<xs:enumeration value="43"/>
+			<xs:enumeration value="44"/>
+			<xs:enumeration value="45"/>
+			<xs:enumeration value="46"/>
+			<xs:enumeration value="47"/>
+			<xs:enumeration value="48"/>
+			<xs:enumeration value="49"/>
+			<xs:enumeration value="50"/>
+			<xs:enumeration value="51"/>
+			<xs:enumeration value="52"/>
+			<xs:enumeration value="53"/>
+			<xs:enumeration value="54"/>
+			<xs:enumeration value="55"/>
+			<xs:enumeration value="56"/>
+			<xs:enumeration value="57"/>
+			<xs:enumeration value="58"/>
+			<xs:enumeration value="59"/>
+			<xs:enumeration value="60"/>
+			<xs:enumeration value="61"/>
+			<xs:enumeration value="62"/>
+			<xs:enumeration value="63"/>
+			<xs:enumeration value="64"/>
+			<xs:enumeration value="65"/>
+			<xs:enumeration value="66"/>
+			<xs:enumeration value="67"/>
+			<xs:enumeration value="68"/>
+			<xs:enumeration value="69"/>
+			<xs:enumeration value="70"/>
+			<xs:enumeration value="71"/>
+			<xs:enumeration value="72"/>
+			<xs:enumeration value="73"/>
+			<xs:enumeration value="74"/>
+			<xs:enumeration value="75"/>
+			<xs:enumeration value="76"/>
+			<xs:enumeration value="77"/>
+			<xs:enumeration value="78"/>
+			<xs:enumeration value="79"/>
+			<xs:enumeration value="80"/>
+			<xs:enumeration value="81"/>
+			<xs:enumeration value="82"/>
+			<xs:enumeration value="83"/>
+			<xs:enumeration value="84"/>
+			<xs:enumeration value="85"/>
+			<xs:enumeration value="86"/>
+			<xs:enumeration value="87"/>
+			<xs:enumeration value="88"/>
+			<xs:enumeration value="89"/>
+			<xs:enumeration value="90"/>
+			<xs:enumeration value="91"/>
+			<xs:enumeration value="92"/>
+			<xs:enumeration value="93"/>
+			<xs:enumeration value="94"/>
+			<xs:enumeration value="95"/>
+			<xs:enumeration value="96"/>
+			<xs:enumeration value="97"/>
+			<xs:enumeration value="98"/>
+			<xs:enumeration value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="残疾情况代码表">
+		<xs:annotation>
+			<xs:documentation>WS364.11 卫生信息数据元值域代码 第11部分：医学评估  残疾情况代码表 CV05.10.001</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="医疗费用来源类别代码表">
+		<xs:annotation>
+			<xs:documentation>WS364.13 卫生信息数据元值域代码 第13部分：卫生费用 CV07.10.003</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="S3">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

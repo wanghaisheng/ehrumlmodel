@@ -1,0 +1,12 @@
+Welcome to Grails 1.3.7 - http://grails.org/
+Licensed under Apache Standard License 2.0
+Grails home is set to: D:\ProjectLib\grails-1.3.7
+
+Base Directory: D:\workspace1\siframework-toc-demo
+Resolving dependencies...
+Dependencies resolved in 2563ms.
+Running script D:\ProjectLib\grails-1.3.7\scripts\RunApp.groovy
+Environment set to development
+  [groovyc] Compiling 1 source file to D:\workspace1\siframework-toc-demo\target\classes
+Running Grails application..
+Server running. Browse to http://localhost:8080/siframework-toc-demo

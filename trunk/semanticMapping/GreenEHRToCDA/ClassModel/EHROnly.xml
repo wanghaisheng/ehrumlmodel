@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templateCollection name = "EHROnly">
+	<templateSet name = "EHR" location="basicpatientinfo.sch" rootId="section_template_Root_OID">
+
+		<templateLevel level="CDA">
+			<template id="root"/>
+		</templateLevel>
+		<templateLevel level="section">
+			<template id="1" name = "血型章节Nar">
+				<in>root</in>
+			</template>	
+			<template id="1.1" name = "血型章节Nom">
+				<in>root</in>
+			</template>
+			<template id="2" name = "社会史章节Nar">
+				<in>root</in>
+			</template>		
+			<template id="2.1" name = "社会史章节Nom">
+				<in>root</in>
+			</template>	
+			<template id="3" name = "财务与卫生费用章节Nar">
+				<in>root</in>
+			</template>		
+			<template id="3.1" name = "财务与卫生费用章节Nom">
+				<in>root</in>
+			</template>	
+			<template id="4" name = "过敏与不良反应章节Nar">
+				<in>root</in>
+			</template>		
+			<template id="4.1" name = "过敏与不良反应章节Nom">
+				<in>root</in>
+			</template>	
+			<template id="5" name = "既往疾病史章节Nar">
+				<in>root</in>
+			</template>		
+			<template id="5.1" name = "既往疾病史章节Nom">
+				<in>root</in>
+			</template>	
+				<template id="6" name = "手术史章节Nar">
+				<in>root</in>
+			</template>		
+			<template id="6.1" name = "手术史章节Nom">
+				<in>root</in>
+			</template>	
+				<template id="7" name = "输血史章节Nar">
+				<in>root</in>
+			</template>		
+			<template id="7.1" name = "输血史章节Nom">
+				<in>root</in>
+			</template>	
+				<template id="8" name = "外伤史章节Nar">
+				<in>root</in>
+			</template>		
+			<template id="8.1" name = "外伤史章节Nom">
+				<in>root</in>
+			</template>	
+				<template id="9" name = "家族遗传病史章节Nar">
+				<in>root</in>
+			</template>		
+			<template id="9.1" name = "家族遗传病史章节Nom">
+				<in>root</in>
+			</template>	
+				<template id="10" name = "功能状态章节章节Nar">
+				<in>root</in>
+			</template>		
+			<template id="10.1" name = "功能状态章节章节Nom">
+				<in>root</in>
+			</template>																																									
+		</templateLevel>
+
+	</templateSet>
+</templateCollection>

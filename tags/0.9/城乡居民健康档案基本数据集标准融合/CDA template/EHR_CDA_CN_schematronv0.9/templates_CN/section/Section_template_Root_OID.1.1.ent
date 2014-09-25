@@ -1,0 +1,30 @@
+<!--  EHR CDA规范 血型章节: Section_template_Root_OID.1 -->
+
+<!-- errors -->
+
+  <pattern id="p-Section_template_Root_OID.1-errors">
+    <title>EHR CDA规范血型章节 - 错误验证阶段</title>
+    <rule context='*[cda:templateId/@root="Section_template_Root_OID.1"]'>
+     <!-- Verify that the template id is used on the appropriate type of object --> 
+   <assert test='../cda:section'> 
+      Error: 在EHR CDA规范血型章节(Section_template_Root_OID.1)中, 血型只能用在section上。 
+   </assert> 
+   <!-- Verify the section type code --> 
+   <assert test='cda:code[@code = "882-1"]'> 
+      Error: 在EHR CDA规范血型章节中(Section_template_Root_OID.1), 章节类型的code值必须为882-1
+   </assert> 
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+      Error: EHR CDA规范血型章节中(Section_template_Root_OID.1, 章节类型的code必须来自LOINC编码系统(2.16.840.1.113883.6.1). 
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "Entry_template_Root_OID.1"]'> 
+     <!-- Verify that all required data elements are present -->
+      Error: 在EHR CDA规范血型章节中 (Section_template_Root_OID.1), 血型章节必须包含一个及一个以上的"血型观察条目"
+   </assert> 
+ 
+    </rule>
+
+  </pattern>
+  
+  </pattern>
+

@@ -1,0 +1,55 @@
+<!--  个人基本信息数据集 v1.0 Templates Root: section_template_Root_OID -->
+
+<!-- errors -->
+
+<pattern id='p-section_template_Root_OID-errors' see='#p-section_template_Root_OID-errors'>
+	<title>个人基本信息数据集 v1.0 Templates Root - errors validation phase</title>
+	<rule context='*[cda:templateId/@root="section_template_Root_OID"]'>
+	<assert test="self::cda:ClinicalDocument">The root of a 个人基本信息数据集 document must be ClinicalDocument in the HL7 namespace</assert>
+	<assert test="cda:code[@code='34133-9'][@codeSystem='2.16.840.1.113883.6.1']">The ClinicalDocument/code element SHALL be present, and SHALL be valued with LOINC code 34133-9 (SUMMARIZATION OF EPISODE NOTE).</assert>
+	<assert test="cda:documentationOf/cda:serviceEvent">A 个人基本信息数据集 SHALL contain exactly one ClinicalDocument / documentationOf / serviceEvent.</assert>
+	<assert test="cda:documentationOf/cda:serviceEvent/@classCode='PCPR'">The value for "ClinicalDocument / documentationOf / serviceEvent / classCode" SHALL be "PCPR" "Care provision" 2.16.840.1.113883.5.6 ActClass STATIC.</assert>
+	<assert test="cda:documentationOf/cda:serviceEvent/cda:effectiveTime/cda:low">ClinicalDocument / documentationOf / serviceEvent SHALL contain exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high.</assert>
+	<assert test="cda:documentationOf/cda:serviceEvent/cda:effectiveTime/cda:high">ClinicalDocument / documentationOf / serviceEvent SHALL contain exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high.</assert>
+	<assert test="count(cda:languageCode)=1">个人基本信息数据集 SHALL contain exactly one ClinicalDocument / languageCode.</assert>
+	<assert test="count(cda:templateId)&gt;=1">个人基本信息数据集 SHALL contain one or more ClinicalDocument / templateId.</assert>
+	<assert test="cda:templateId[@root='section_template_Root_OID' and not(@extension)]">At least one ClinicalDocument / templateId SHALL value ClinicalDocument / templateId / @root with "section_template_Root_OID", and SHALL NOT contain ClinicalDocument / templateId / @extension.</assert>
+	<assert test="string-length(cda:effectiveTime/@value) &gt; 18">ClinicalDocument / effectiveTime SHALL be expressed with precision to include seconds.</assert>
+	<assert test='contains(translate(cda:effectiveTime/@value,"+-","ZZ"),"Z")'>ClinicalDocument / effectiveTime SHALL include an explicit time zone offset.</assert>
+	<assert test="count(cda:recordTarget)&lt;=2">个人基本信息数据集 shall contain one to two ClinicalDocument / recordTarget.</assert>
+	<assert test="cda:author/cda:assignedAuthor/cda:assignedPerson | cda:author/cda:assignedAuthor/cda:representedOrganization">个人基本信息数据集 SHALL contain one or more ClinicalDocument / author / assignedAuthor / assignedPerson and/or ClinicalDocument / author / assignedAuthor / representedOrganization.</assert>
+	<assert test='count(.//cda:templateId[@root="section_template_Root_OID.13"]) &lt;= 1'>个人基本信息数据集 MAY contain exactly one and SHALL NOT contain more than one Purpose section (templateId section_template_Root_OID.13).</assert>
+	<assert test='count(.//cda:templateId[@root="section_template_Root_OID.9"])  &lt;= 1'>个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Payers section (templateId section_template_Root_OID.9).</assert>
+	<assert test='count(.//cda:templateId[@root="section_template_Root_OID.1"])  &lt;= 1'>个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Advance directives section (templateId section_template_Root_OID.1).</assert>
+	<assert test='count(.//cda:templateId[@root="section_template_Root_OID.11"]) &lt;= 1'>个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Problem section (templateId section_template_Root_OID.11). </assert>
+	<assert test='count(.//cda:templateId[@root="section_template_Root_OID.7"])  &lt;= 1'>个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Medical Equipment section (templateId section_template_Root_OID.7).</assert>
+	<assert test='count(.//cda:templateId[@root="section_template_Root_OID.6"])  &lt;= 1'>个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Immunizations section (templateId section_template_Root_OID.6).</assert>
+	<assert test='count(.//cda:templateId[@root="section_template_Root_OID.9"])  &lt;= 1'>个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Payers section (templateId section_template_Root_OID.9).</assert>
+	<assert test='count(.//cda:templateId[@root="section_template_Root_OID.1"])  &lt;= 1'>个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Advance directives section (templateId section_template_Root_OID.1).</assert>
+	<assert test='count(.//cda:templateId[@root="section_template_Root_OID.5"])  &lt;= 1'>个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Functional status section (templateId section_template_Root_OID.5).</assert>
+	<assert test="count(.//cda:templateId[@root='section_template_Root_OID.14']) &lt;= 1">个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Results section (templateId section_template_Root_OID.14).</assert>
+	<assert test="count(.//cda:templateId[@root='section_template_Root_OID.12']) &lt;=1">个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Procedures section (templateId section_template_Root_OID.12). </assert>
+	<assert test="count(.//cda:templateId[@root='section_template_Root_OID.3'])  &lt;= 1">个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Encounters section (templateId section_template_Root_OID.3). </assert>
+	<assert test="count(.//cda:templateId[@root='section_template_Root_OID.1.1'])  &lt;= 1">个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Encounters section (templateId section_template_Root_OID.1.1). </assert>
+	<assert test="count(.//cda:templateId[@root='section_template_Root_OID.22'])  &lt;= 1">个人基本信息数据集 SHOULD contain exactly one and SHALL NOT contain more than one Encounters section (templateId section_template_Root_OID.22). </assert>
+	</rule>
+</pattern>
+
+<!-- warning -->
+
+<pattern id='p-section_template_Root_OID-warning' see='#p-section_template_Root_OID-warning'>
+	<title>个人基本信息数据集 v1.0 Templates Root - warning validation phase</title>
+	<rule context='*[cda:templateId/@root="section_template_Root_OID"]'>
+	<report test='.'></report>
+	</rule>
+</pattern>
+
+<!-- manual -->
+
+<pattern id='p-section_template_Root_OID-manual' see='#p-section_template_Root_OID-manual'>
+	<title>个人基本信息数据集 v1.0 Templates Root - manual validation phase</title>
+	<rule context='*[cda:templateId/@root="section_template_Root_OID"]'>
+	<report test='.'></report>
+	</rule>
+</pattern>
+

@@ -1,0 +1,37 @@
+<!--  EHR CDA 规范 输血史章节: Section_template_Root_OID.7 -->
+
+<!-- errors -->
+
+  <pattern id="p-Section_template_Root_OID.7-errors">
+    <title>EHR CDA 规范 输血史章节 - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="Section_template_Root_OID.7"]'>
+
+   <assert test='../cda:section'> 
+      Error: In EHR CDA 规范 输血史章节 (Section_template_Root_OID.7), the Transfusion History
+      Section can only be used on sections. 
+   </assert> 
+
+   <assert test='cda:code[@code = "56836-0"]'> 
+      Error: In EHR CDA 规范 输血史章节 (Section_template_Root_OID.7), 输血史章节的code必须是 56836-0.
+   </assert> 
+
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+      Error: In EHR CDA 规范 输血史章节 (Section_template_Root_OID.7), 输血史章节的code必须取自LOINC code system (2.16.840.1.113883.6.1). 
+   </assert> 
+
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Section_template_Root_OID.7-warnings">
+    <title>EHR CDA 规范 输血史章节 - warning validation phase</title>
+
+    <rule context='*[cda:templateId/@root="Section_template_Root_OID.7"]'>
+
+    </rule>
+
+  </pattern>
+
+

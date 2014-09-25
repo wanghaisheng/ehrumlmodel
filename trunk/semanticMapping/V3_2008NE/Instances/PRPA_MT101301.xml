@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<IdentifiedPerson classCode="IDENT">
+   <!-- Primary ID as used/known by this registry -->
+   <id extension="000197245" root="2.16.840.1.113883.19.3"/>
+   <addr use="H">
+     <streetName mediaType="text/plain" partType="STR" representation="TXT">Randomroad</streetName>
+     <houseNumber mediaType="text/plain" partType="BNR" representation="TXT">25a</houseNumber>
+     <postalCode mediaType="text/plain" partType="ZIP" representation="TXT">1200</postalCode>
+     <city mediaType="text/plain" partType="CTY" representation="TXT">Anytown</city>
+   </addr>
+   <telecom use="H" value="tel:555 3542557"/>
+   <telecom use="H" value="fax:555 3542558"/>
+   <telecom use="WP" value="tel:555 5557865"/>
+   <statusCode code="active"/>
+   <identifiedPerson classCode="PSN" determinerCode="INSTANCE">
+     <name use="L">
+       <given mediaType="text/plain" partType="GIV" representation="TXT">Patricia</given>
+       <family mediaType="text/plain" partType="FAM" representation="TXT">Patient</family>
+     </name>
+     <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+     <birthTime value="19750103"/>
+     <maritalStatusCode code="F" codeSystem="2.16.840.1.113883.5.2"/>
+     <!-- Secondary IDs of same person in other Roles -->
+     <asOtherIDs  classCode="ROL">
+        <id extension="4532" root="2.16.840.1.113883.19.2.400566" 
+         assigningAuthorityName="Careful Care Clinic"/>
+        </asOtherIDs>
+     <asOtherIDs  classCode="ROL">
+       <id extension="3242346" root="2.16.840.1.113883.19.2.450998" 
+           assigningAuthorityName="Dr.Goodman GP Practice"/>
+     </asOtherIDs>
+   </identifiedPerson>
+   <assigningOrganization classCode="ORG" determinerCode= "INSTANCE">
+       <!-- Scoper, the registering organisation -->
+       <id extension="1002777" root="2.16.840.1.113883.19.200"/>
+       <contactParty classCode="CON" nullFlavor="UNK"/>
+   </assigningOrganization>
+ </IdentifiedPerson>

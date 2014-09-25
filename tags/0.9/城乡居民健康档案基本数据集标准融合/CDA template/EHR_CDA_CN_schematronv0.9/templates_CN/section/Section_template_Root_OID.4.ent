@@ -1,0 +1,36 @@
+<!--  EHR CDA 规范 过敏与不良反应章节: Section_template_Root_OID.4 -->
+
+<!-- errors -->
+
+  <pattern id="p-Section_template_Root_OID.4-errors">
+    <title>EHR CDA 规范 过敏与不良反应章节 - errors validation phase</title>
+    <rule context="*[cda:templateId/@root=&quot;Section_template_Root_OID.4&quot;]">
+     <!-- Verify that the template id is used on the appropriate type of object --> 
+   <assert test='../cda:section'> 
+      Error: EHR CDA 规范 过敏与不良反应章节(Section_template_Root_OID.4)只能用在section上。 
+   </assert> 
+   <!-- Verify the section type code --> 
+   <assert test='cda:code[@code = "48765-2"]'> 
+      Error: 在EHR CDA 规范 过敏与不良反应章节(Section_template_Root_OID.4), 章节类型的code值必须为48765-2
+   </assert> 
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+      Error:EHR CDA 规范 过敏与不良反应章节(Section_template_Root_OID.4, 章节类型的code必须来自LOINC编码系统(2.16.840.1.113883.6.1). 
+   </assert>
+
+
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-Section_template_Root_OID.4-warnings">
+    <title>EHR CDA 规范 过敏与不良反应章节 - warning validation phase</title>
+
+<!--
+    <rule context="*[cda:templateId/@root=&quot;Section_template_Root_OID.4&quot;]">
+      <report test="."/>
+    </rule>
+-->
+
+  </pattern>

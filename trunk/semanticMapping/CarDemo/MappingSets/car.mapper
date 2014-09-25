@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/CarDemo/ClassModel/car.ecore" structureURL="platform:/resource/CarDemo/Structures/ImportCar.xsd" topElementType="drivesCarType">
+  <rootElement name="Dummy" type="drivesCarType" fixedValue="" expanded="true">
+    <nodeMappingSet>
+      <objectMappings mappedClass="car"/>
+    </nodeMappingSet>
+    <childElements name="carDetails" type="carDetailsType" minMultiplicity="1" expanded="true">
+      <attributeDefs name="make" minMultiplicity="1" defaultValue="null">
+        <nodeMappingSet>
+          <propertyMappings mappedClass="car" mappedProperty="make"/>
+        </nodeMappingSet>
+      </attributeDefs>
+      <attributeDefs name="type" minMultiplicity="1" defaultValue="null">
+        <nodeMappingSet>
+          <propertyMappings mappedClass="car" mappedProperty="type"/>
+        </nodeMappingSet>
+      </attributeDefs>
+    </childElements>
+    <attributeDefs name="reg" minMultiplicity="1" defaultValue="null">
+      <nodeMappingSet>
+        <propertyMappings mappedClass="car" mappedProperty="registration"/>
+      </nodeMappingSet>
+    </attributeDefs>
+  </rootElement>
+  <mappingParameters>
+    <nameSpaces uRL="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
+  </mappingParameters>
+  <parameterClasses className="car"/>
+</com.charteris.mapper:MappedStructure>

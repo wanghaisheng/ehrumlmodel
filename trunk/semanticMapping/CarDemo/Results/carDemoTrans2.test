@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ViewContents view="Translation Summary">
+	<HeaderInformation>
+		<Sort>
+			<Column index="1"/>
+			<Column index="0"/>
+		</Sort>
+		<ViewContents view="Data Sources">
+			<HeaderInformation/>
+			<TableColumns>
+				<column>Code</column>
+				<column>Type</column>
+				<column>Source</column>
+				<column>Mappings</column>
+				<column>ClassModel</column>
+			</TableColumns>
+			<TableContent>
+				<row>
+					<Code>A</Code>
+					<Type>XSD</Type>
+					<Source>/CarDemo/Instances/FlatCar.xml</Source>
+					<Mappings>/CarDemo/MappingSets/FlatCar.mapper</Mappings>
+					<ClassModel>/CarDemo/ClassModel/car.ecore</ClassModel>
+				</row>
+				<row>
+					<Code>B</Code>
+					<Type>XSD</Type>
+					<Source>/CarDemo/Instances/GroupedCar.xml</Source>
+					<Mappings>/CarDemo/MappingSets/GroupedCar.mapper</Mappings>
+					<ClassModel>/CarDemo/ClassModel/car.ecore</ClassModel>
+				</row>
+				<row>
+					<Code>C</Code>
+					<Type>XSD</Type>
+					<Source>/CarDemo/Instances/NestedImportNS.xml</Source>
+					<Mappings>/CarDemo/MappingSets/NestedImportNS.mapper</Mappings>
+					<ClassModel>/CarDemo/ClassModel/car.ecore</ClassModel>
+				</row>
+				<row>
+					<Code>D</Code>
+					<Type>XSD</Type>
+					<Source>/CarDemo/Instances/ImportCar.xml</Source>
+					<Mappings>/CarDemo/MappingSets/ImportCar.mapper</Mappings>
+					<ClassModel>/CarDemo/ClassModel/car.ecore</ClassModel>
+				</row>
+			</TableContent>
+		</ViewContents>
+		<ViewContents view="Translation Issues">
+			<HeaderInformation>
+				<Sort>
+					<Column index="0"/>
+					<Column index="1"/>
+					<Column index="3"/>
+				</Sort>
+			</HeaderInformation>
+			<TableColumns>
+				<column>Code</column>
+				<column>Type</column>
+				<column>Occs</column>
+				<column>Description</column>
+				<column>CauseorLocationinResult</column>
+			</TableColumns>
+			<TableContent>
+				<row>
+					<Code>A</Code>
+					<Type>Validate</Type>
+					<Occs>1</Occs>
+					<Description>Min multiplicity of region.containsCar(car) is 0 in the class model, 1 from the mappings, and there are no cross-conditions.</Description>
+					<CauseorLocationinResult>FlatCar.mapper: validate to locate occurrences</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>A</Code>
+					<Type>Validate</Type>
+					<Occs>1</Occs>
+					<Description>Min multiplicity of region.containsPerson(person) is 0 in the class model, 1 from the mappings, and there are no cross-conditions.</Description>
+					<CauseorLocationinResult>FlatCar.mapper: validate to locate occurrences</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>ABC</Code>
+					<Type>Semantic</Type>
+					<Occs>1</Occs>
+					<Description>Missing property 'country' in class 'region'</Description>
+					<CauseorLocationinResult>No property mapping for 'region:country' in source C</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>ABC.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/ex:drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>ABC.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'http://com.charteris.example#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>ABCD</Code>
+					<Type>Run</Type>
+					<Occs>1</Occs>
+					<Description>Missing in input: Found no mapping or property conversion for property 'region':country</Description>
+					<CauseorLocationinResult>/drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>ABCD</Code>
+					<Type>Semantic</Type>
+					<Occs>1</Occs>
+					<Description>Missing property 'country' in class 'region'</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>ABCD.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>ABCD.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'platform:/resource/CarDemo/Structures/ImportCar.xsd#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>ABCDA</Code>
+					<Type>Semantic</Type>
+					<Occs>1</Occs>
+					<Description>Missing property 'country' in class 'region'</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>ABCDA.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/region</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>ABCDA.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'platform:/resource/CarDemo/Structures/FlatCar.xsd#RegionType{xml#//@region}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>AC</Code>
+					<Type>Semantic</Type>
+					<Occs>1</Occs>
+					<Description>Missing property 'country' in class 'region'</Description>
+					<CauseorLocationinResult>No property mapping for 'region:country' in source C</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>AC.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/ex:drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>AC.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'http://com.charteris.example#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>ACA</Code>
+					<Type>Run</Type>
+					<Occs>1</Occs>
+					<Description>Missing in input: Found no mapping or property conversion for property 'region':country</Description>
+					<CauseorLocationinResult>/region</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>ACA</Code>
+					<Type>Semantic</Type>
+					<Occs>1</Occs>
+					<Description>Missing property 'country' in class 'region'</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>ACA.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/region</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>ACA.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'platform:/resource/CarDemo/Structures/FlatCar.xsd#RegionType{xml#//@region}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>B</Code>
+					<Type>Validate</Type>
+					<Occs>1</Occs>
+					<Description>Min multiplicity of region.containsCar(car) is 0 in the class model, 1 from the mappings, and there are no cross-conditions.</Description>
+					<CauseorLocationinResult>GroupedCar.mapper: validate to locate occurrences</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>B</Code>
+					<Type>Validate</Type>
+					<Occs>1</Occs>
+					<Description>Min multiplicity of region.containsPerson(person) is 0 in the class model, 1 from the mappings, and there are no cross-conditions.</Description>
+					<CauseorLocationinResult>GroupedCar.mapper: validate to locate occurrences</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>BC</Code>
+					<Type>Semantic</Type>
+					<Occs>1</Occs>
+					<Description>Missing property 'country' in class 'region'</Description>
+					<CauseorLocationinResult>No property mapping for 'region:country' in source C</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>BC.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/ex:drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>BC.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'http://com.charteris.example#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>BCB</Code>
+					<Type>Run</Type>
+					<Occs>1</Occs>
+					<Description>Missing in input: Found no mapping or property conversion for property 'region':country</Description>
+					<CauseorLocationinResult>/region</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>BCB</Code>
+					<Type>Semantic</Type>
+					<Occs>1</Occs>
+					<Description>Missing property 'country' in class 'region'</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>BCB.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/region</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>BCB.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'platform:/resource/CarDemo/Structures/GroupedCar.xsd#RegionType{xml#//@region}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>C</Code>
+					<Type>Compile</Type>
+					<Occs>1</Occs>
+					<Description>Association containsCar should be required for class car</Description>
+					<CauseorLocationinResult>NestedImportNS.mapper:/ex:drivers/ex:person/ex:drivesCar</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>C</Code>
+					<Type>Compile</Type>
+					<Occs>1</Occs>
+					<Description>Association containsPerson should be required for class person</Description>
+					<CauseorLocationinResult>NestedImportNS.mapper:/ex:drivers/ex:person</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>C</Code>
+					<Type>Compile</Type>
+					<Occs>1</Occs>
+					<Description>Association drives should be required for class car</Description>
+					<CauseorLocationinResult>NestedImportNS.mapper:/ex:drivers/ex:person/ex:drivesCar</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>C</Code>
+					<Type>Validate</Type>
+					<Occs>1</Occs>
+					<Description>Min multiplicity of person.drives(car) is 0 in the class model, 1 from the mappings, and there are no cross-conditions.</Description>
+					<CauseorLocationinResult>NestedImportNS.mapper: validate to locate occurrences</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>C</Code>
+					<Type>Validate</Type>
+					<Occs>1</Occs>
+					<Description>Min multiplicity of region.containsCar(car) is 0 in the class model, 1 from the mappings, and there are no cross-conditions.</Description>
+					<CauseorLocationinResult>NestedImportNS.mapper: validate to locate occurrences</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>C</Code>
+					<Type>Validate</Type>
+					<Occs>1</Occs>
+					<Description>Min multiplicity of region.containsPerson(person) is 0 in the class model, 1 from the mappings, and there are no cross-conditions.</Description>
+					<CauseorLocationinResult>NestedImportNS.mapper: validate to locate occurrences</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CA</Code>
+					<Type>Run</Type>
+					<Occs>1</Occs>
+					<Description>Missing in input: Found no mapping or property conversion for property 'region':country</Description>
+					<CauseorLocationinResult>/region</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CA.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/region</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CA.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'platform:/resource/CarDemo/Structures/FlatCar.xsd#RegionType{xml#//@region}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>CAC.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/ex:drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CAC.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'http://com.charteris.example#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>CB</Code>
+					<Type>Run</Type>
+					<Occs>1</Occs>
+					<Description>Missing in input: Found no mapping or property conversion for property 'region':country</Description>
+					<CauseorLocationinResult>/region</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CB.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/region</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CB.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'platform:/resource/CarDemo/Structures/GroupedCar.xsd#RegionType{xml#//@region}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>CBC.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/ex:drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CBC.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'http://com.charteris.example#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>CC.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/ex:drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CC.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'http://com.charteris.example#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>CD</Code>
+					<Type>Run</Type>
+					<Occs>1</Occs>
+					<Description>Missing in input: Found no mapping or property conversion for property 'region':country</Description>
+					<CauseorLocationinResult>/drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CD.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CD.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'platform:/resource/CarDemo/Structures/ImportCar.xsd#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>CDC.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/ex:drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>CDC.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'http://com.charteris.example#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>D</Code>
+					<Type>Compile</Type>
+					<Occs>1</Occs>
+					<Description>Association containsCar should be required for class car</Description>
+					<CauseorLocationinResult>ImportCar.mapper:/drivers/person/drivesCar</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>D</Code>
+					<Type>Compile</Type>
+					<Occs>1</Occs>
+					<Description>Association containsPerson should be required for class person</Description>
+					<CauseorLocationinResult>ImportCar.mapper:/drivers/person</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>D</Code>
+					<Type>Compile</Type>
+					<Occs>1</Occs>
+					<Description>Association drives should be required for class car</Description>
+					<CauseorLocationinResult>ImportCar.mapper:/drivers/person/drivesCar</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>D</Code>
+					<Type>Validate</Type>
+					<Occs>1</Occs>
+					<Description>Min multiplicity of person.drives(car) is 0 in the class model, 1 from the mappings, and there are no cross-conditions.</Description>
+					<CauseorLocationinResult>ImportCar.mapper: validate to locate occurrences</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>D</Code>
+					<Type>Validate</Type>
+					<Occs>1</Occs>
+					<Description>Min multiplicity of region.containsCar(car) is 0 in the class model, 1 from the mappings, and there are no cross-conditions.</Description>
+					<CauseorLocationinResult>ImportCar.mapper: validate to locate occurrences</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>D</Code>
+					<Type>Validate</Type>
+					<Occs>1</Occs>
+					<Description>Min multiplicity of region.containsPerson(person) is 0 in the class model, 1 from the mappings, and there are no cross-conditions.</Description>
+					<CauseorLocationinResult>ImportCar.mapper: validate to locate occurrences</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>DC</Code>
+					<Type>Semantic</Type>
+					<Occs>1</Occs>
+					<Description>Missing property 'country' in class 'region'</Description>
+					<CauseorLocationinResult>No property mapping for 'region:country' in source C</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>DC.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/ex:drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>DC.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'http://com.charteris.example#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>DCD</Code>
+					<Type>Run</Type>
+					<Occs>1</Occs>
+					<Description>Missing in input: Found no mapping or property conversion for property 'region':country</Description>
+					<CauseorLocationinResult>/drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>DCD</Code>
+					<Type>Semantic</Type>
+					<Occs>1</Occs>
+					<Description>Missing property 'country' in class 'region'</Description>
+					<CauseorLocationinResult/>
+				</row>
+				<row>
+					<Code>DCD.xml</Code>
+					<Type>Structure</Type>
+					<Occs/>
+					<Description>Missing node with name 'country'</Description>
+					<CauseorLocationinResult>/drivers</CauseorLocationinResult>
+				</row>
+				<row>
+					<Code>DCD.xml</Code>
+					<Type>XML Schema</Type>
+					<Occs/>
+					<Description>The required feature 'country' of 'platform:/resource/CarDemo/Structures/ImportCar.xsd#DriversType{xml#//@drivers}' must be set</Description>
+					<CauseorLocationinResult/>
+				</row>
+			</TableContent>
+		</ViewContents>
+	</HeaderInformation>
+	<TableColumns>
+		<column>Code</column>
+		<column>Steps</column>
+		<column>Sourceitems</column>
+		<column>Percent</column>
+		<column>Issues</column>
+	</TableColumns>
+	<TableContent>
+		<row>
+			<Code>A</Code>
+			<Steps>0</Steps>
+			<Sourceitems>0</Sourceitems>
+			<Percent>0</Percent>
+			<Issues>2</Issues>
+		</row>
+		<row>
+			<Code>B</Code>
+			<Steps>0</Steps>
+			<Sourceitems>0</Sourceitems>
+			<Percent>0</Percent>
+			<Issues>2</Issues>
+		</row>
+		<row>
+			<Code>C</Code>
+			<Steps>0</Steps>
+			<Sourceitems>0</Sourceitems>
+			<Percent>0</Percent>
+			<Issues>6</Issues>
+		</row>
+		<row>
+			<Code>D</Code>
+			<Steps>0</Steps>
+			<Sourceitems>0</Sourceitems>
+			<Percent>0</Percent>
+			<Issues>6</Issues>
+		</row>
+		<row>
+			<Code>AA</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>AB</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>AC</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>96</Percent>
+			<Issues>3</Issues>
+		</row>
+		<row>
+			<Code>AD</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>BA</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>BB</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>BC</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>96</Percent>
+			<Issues>3</Issues>
+		</row>
+		<row>
+			<Code>BD</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>CA</Code>
+			<Steps>1</Steps>
+			<Sourceitems>32</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>3</Issues>
+		</row>
+		<row>
+			<Code>CB</Code>
+			<Steps>1</Steps>
+			<Sourceitems>32</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>3</Issues>
+		</row>
+		<row>
+			<Code>CC</Code>
+			<Steps>1</Steps>
+			<Sourceitems>32</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>2</Issues>
+		</row>
+		<row>
+			<Code>CD</Code>
+			<Steps>1</Steps>
+			<Sourceitems>32</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>3</Issues>
+		</row>
+		<row>
+			<Code>DA</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>DB</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>DC</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>96</Percent>
+			<Issues>3</Issues>
+		</row>
+		<row>
+			<Code>DD</Code>
+			<Steps>1</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>ABA</Code>
+			<Steps>2</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>ABC</Code>
+			<Steps>2</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>96</Percent>
+			<Issues>3</Issues>
+		</row>
+		<row>
+			<Code>ACA</Code>
+			<Steps>2</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>96</Percent>
+			<Issues>4</Issues>
+		</row>
+		<row>
+			<Code>ADA</Code>
+			<Steps>2</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>BAB</Code>
+			<Steps>2</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>BCB</Code>
+			<Steps>2</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>96</Percent>
+			<Issues>4</Issues>
+		</row>
+		<row>
+			<Code>BDB</Code>
+			<Steps>2</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>CAC</Code>
+			<Steps>2</Steps>
+			<Sourceitems>32</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>2</Issues>
+		</row>
+		<row>
+			<Code>CBC</Code>
+			<Steps>2</Steps>
+			<Sourceitems>32</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>2</Issues>
+		</row>
+		<row>
+			<Code>CDC</Code>
+			<Steps>2</Steps>
+			<Sourceitems>32</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>2</Issues>
+		</row>
+		<row>
+			<Code>DAD</Code>
+			<Steps>2</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>DBD</Code>
+			<Steps>2</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>100</Percent>
+			<Issues>0</Issues>
+		</row>
+		<row>
+			<Code>DCD</Code>
+			<Steps>2</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>96</Percent>
+			<Issues>4</Issues>
+		</row>
+		<row>
+			<Code>ABCD</Code>
+			<Steps>3</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>96</Percent>
+			<Issues>4</Issues>
+		</row>
+		<row>
+			<Code>ABCDA</Code>
+			<Steps>4</Steps>
+			<Sourceitems>33</Sourceitems>
+			<Percent>96</Percent>
+			<Issues>3</Issues>
+		</row>
+	</TableContent>
+</ViewContents>

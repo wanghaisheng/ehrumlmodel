@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.charteris.mapper:MappedStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.mapper="http:///com/charteris/mapper.ecore" uMLModelURL="platform:/resource/V3_2008NE/ClassModel/PRPA_MT101301UV02.ecore" structureType="V2" structureURL="platform:/resource/V3_2008NE/Structures/V2Structures/ADT_A28Def.xml" topElementType="XTN">
+  <rootElement name="top" type="XTN" description="" expanded="true">
+    <nodeMappingSet>
+      <objectMappings mappedClass="TEL" mappedPackage="datatypes"/>
+    </nodeMappingSet>
+    <annotations>
+      <notes key="V2NodeType" value="Field"/>
+      <notes key="Length" value="40"/>
+      <notes key="V2DataType" value="XTN"/>
+    </annotations>
+    <childElements name="XTN.1" type="TN" description="[(999)] 999-9999 [X99999][C any text]" expanded="true">
+      <nodeMappingSet>
+        <propertyMappings mappedClass="TEL" mappedPackage="datatypes" mappedProperty="value"/>
+      </nodeMappingSet>
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="TN"/>
+      </annotations>
+    </childElements>
+    <childElements name="XTN.2" type="ID" description="telecommunication use code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="XTN.3" type="ID" description="telecommunication equipment type (ID)" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ID"/>
+      </annotations>
+    </childElements>
+    <childElements name="XTN.4" type="ST" description="Email address" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+    <childElements name="XTN.5" type="NM" description="Country Code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="XTN.6" type="NM" description="Area/city code" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="XTN.7" type="NM" description="Phone number" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="XTN.8" type="NM" description="Extension" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="NM"/>
+      </annotations>
+    </childElements>
+    <childElements name="XTN.9" type="ST" description="any text" expanded="true">
+      <annotations>
+        <notes key="V2NodeType" value="Component"/>
+        <notes key="Length" value="3"/>
+        <notes key="V2DataType" value="ST"/>
+      </annotations>
+    </childElements>
+  </rootElement>
+  <mappingParameters>
+    <nameSpaces uRL="urn:hl7-org:v2xml" prefix=""/>
+  </mappingParameters>
+  <parameterClasses className="TEL" packageName="datatypes"/>
+</com.charteris.mapper:MappedStructure>

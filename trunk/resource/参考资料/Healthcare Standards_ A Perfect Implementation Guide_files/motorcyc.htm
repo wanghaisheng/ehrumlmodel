@@ -1,0 +1,70 @@
+<link rel="stylesheet" type="text/css" href="widget_h.css">
+<style>
+body{ background-color: transparent; }
+#klout_name{ color: #343432; }
+</style>
+<script type="text/javascript" src="mixpanel.js"></script>
+<script type='text/javascript'>
+try {
+	var mpmetrics = new MixpanelLib(''); 
+		} catch(err) { 
+	null_fn = function () {}; 
+	var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; } 
+</script>
+
+<!-- chartbeat -->
+<script type="text/javascript">
+    var _sf_async_config={uid:2165,domain:"widgets.klout.com"};
+    (function(){
+        function loadChartbeat() {
+            window._sf_endpt=(new Date()).getTime();
+            var e = document.createElement('script');
+            e.setAttribute('language', 'javascript');
+            e.setAttribute('type', 'text/javascript');
+            e.setAttribute('src', "http://static.chartbeat.com/js/chartbeat.js") ;
+            document.body.appendChild(e);
+        }
+        var oldonload = window.onload;
+        window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+</script>
+<!-- end chartbeat -->
+
+<!-- google analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855509-1']);
+      _gaq.push(['_trackPageview']);
+
+        (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                       })();
+
+</script>
+<!-- end google analytics -->
+
+<div class="badge_cont_120">
+<a href="http://klout.com/motorcycle_guy" onclick="mpmetrics.track(&#039;widgets-badget-click&#039;, {&#039;referer&#039;:&#039;http://motorcycleguy.blogspot.com/2009/09/template-identifiers-business-rules-and.html&#039;});" target="_blank">
+<div class="tile">
+	<div class="centered_tile_badge">
+		<div id="photo"><img height="44" width="44" src="motorcyc.jpg" class="avatar"/></div>
+		<div id="badge">
+			<div class="user_score">
+				<div id="klout_score">47</div>
+				<span>KLOUT SCORE</span>
+			</div>
+		</div>	
+	</div>								
+</div>
+<div class="content">
+	<div class="user">
+		<div id="klout_name">motorcycle_guy</div>
+	</div>
+</div>
+</a>
+</div>
+
+<!-- This document saved from http://widgets.klout.com/badge/motorcycle_guy?size=s -->

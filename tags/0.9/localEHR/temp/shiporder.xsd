@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="stringtype">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="inttype">
+		<xs:restriction base="xs:positiveInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="dectype">
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
+	<xs:simpleType name="orderidtype">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--定义字母和/或数字型字符-->
+	<xs:simpleType name="alphabetORANDnumbercharactertype">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\W{0,25}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="shiptotype">
+		<xs:sequence>
+			<xs:element name="name" type="alphabetORANDnumbercharactertype"/>
+			<xs:element name="address" type="stringtype"/>
+			<xs:element name="city" type="stringtype"/>
+			<xs:element name="country" type="stringtype"/>
+			<xs:element name="ValueDate" type="timestampType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="itemtype">
+		<xs:sequence>
+			<xs:element name="title" type="stringtype"/>
+			<xs:element name="note" type="stringtype" minOccurs="0"/>
+			<xs:element name="quantity" type="inttype"/>
+			<xs:element name="price" type="dectype"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="shipordertype">
+		<xs:sequence>
+			<xs:element name="orderperson" type="stringtype"/>
+			<xs:element name="shipto" type="shiptotype"/>
+			<xs:element name="item" type="itemtype" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="orderid" type="orderidtype" use="required"/>
+	</xs:complexType>
+	<xs:element name="shiporder" type="shipordertype"/>
+	<xs:simpleType name="timestampType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229))T((([1-9])|([0-1][0-9])|([1-2][0-3]))(([0-5][0-9]))(([0-5][0-9])))"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

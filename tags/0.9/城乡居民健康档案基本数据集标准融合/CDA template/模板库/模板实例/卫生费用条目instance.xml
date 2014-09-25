@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    卫生费用条目
+    ********************************************************
+	卫生费用条目表示用于结构化表达具体医疗服务项目费用的信息，例如费用类别，具体金额。
+	DE07.00.002.00	门诊费用分类代码
+	DE07.00.003.00	门诊费用分类名称
+	DE07.00.004.00	门诊费用金额（元）
+
+	
+	DE07.00.008.00	住院费用分类代码
+	DE07.00.009.00	住院费用分类名称
+	DE07.00.010.00	住院费用金额（元）
+
+	................
+    ********************************************************
+-->
+            <observation classCode="OBS" moodCode="EVN">
+                <templateId  root=” Entry_template_Root_OID.2”>
+                <code code="07" codeSystem="CV07.10.002"  codeSystemName="住院费用类别代码表" displayName="化验费" /> 
+				<text><reference value='#xxx'/></text>
+				<statusCode code='completed'/>
+				<effectiveTime value='20091129'/>
+				<value xsi:type='MO' value='250' currency='CNY'/>
+            </observation> 
+<!--
+            <observation classCode="OBS" moodCode="EVN">
+                <templateId  root=” Entry_template_Root_OID.2”>
+                <code code="06" codeSystem="CV07.10.001"  codeSystemName="门诊费用类别代码表" displayName="化验费" /> 
+				<text><reference value='#xxx'/></text>
+				<statusCode code='completed'/>
+				<effectiveTime value='20091129'/>
+				<value xsi:type='MO' value='250' currency='CNY'/>
+            </observation> 
+
+
+
+
+
+-->

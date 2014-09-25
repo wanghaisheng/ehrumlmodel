@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:complexType name="carType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="make" type="xs:string" use="required"/>
+				<xs:attribute name="regNo" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="carsType">
+		<xs:sequence>
+			<xs:element name="category" type="categoryType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="categoryType">
+		<xs:sequence>
+			<xs:element name="car" type="carType" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="carType" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="driverType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="license" type="xs:string" use="required"/>
+				<xs:attribute name="age" type="xs:byte" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="driversType">
+		<xs:sequence>
+			<xs:element name="driver" type="driverType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="region">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="drivers" type="driversType"/>
+				<xs:element name="cars" type="carsType"/>
+			</xs:sequence>
+			<xs:attribute name="country" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

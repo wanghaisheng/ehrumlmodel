@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<templateId root="2.16.840.1.113883.10.20.1"/>
+	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1"/>
+	<documentationOf>
+		<serviceEvent classCode="PCPR"/>
+	</documentationOf>
+	<recordTarget>
+		<patientRole>
+			<id extension="996-756-495" root="2.16.840.1.113883.19.5"/>
+			<patient>
+				<administrativeGenderCode/>
+				<birthTime>
+					<center/>
+				</birthTime>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.11"/>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1"/>
+					<entry>
+						<act>
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<code nullFlavor="NA"/>
+							<statusCode/>
+							<entryRelationship>
+								<observation>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="1950"/>
+										<high/>
+									</effectiveTime>
+									<value code="195967001" codeSystem="2.16.840.1.113883.6.96"/>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act>
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<code nullFlavor="NA"/>
+							<statusCode/>
+							<entryRelationship>
+								<observation>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="199701"/>
+										<high/>
+									</effectiveTime>
+									<value code="22298006" codeSystem="2.16.840.1.113883.6.96"/>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act>
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<code nullFlavor="NA"/>
+							<statusCode/>
+							<entryRelationship>
+								<observation>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="199903"/>
+										<high/>
+									</effectiveTime>
+									<value code="233604007" codeSystem="2.16.840.1.113883.6.96"/>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act>
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<code nullFlavor="NA"/>
+							<statusCode/>
+							<entryRelationship>
+								<observation>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="199701"/>
+										<high/>
+									</effectiveTime>
+									<value code="233604007" codeSystem="2.16.840.1.113883.6.96"/>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

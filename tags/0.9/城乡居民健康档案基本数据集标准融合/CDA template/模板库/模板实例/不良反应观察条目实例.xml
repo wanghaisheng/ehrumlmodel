@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<observation classCode="OBS" moodCode="EVN">
+  <templateId root="2.16.840.1.113883.10.20.21.4.9"/>
+  <!-- Reaction observation template -->
+  <code code="ASSERTION" 
+        codeSystem="2.16.840.1.113883.5.4"/>
+  <statusCode code="completed"/>
+  <value xsi:type="CD" code="56018004" 
+         codeSystem="2.16.840.1.113883.6.96" 
+         displayName="Wheezing" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+</observation>
+

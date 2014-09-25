@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.charteris.models.car:car xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.charteris.models.car="http:///com/charteris/models/car/car.ecore" make="Ferrari" type="sports" registration="PEW445"/>
